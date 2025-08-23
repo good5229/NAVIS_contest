@@ -46,13 +46,19 @@
 - **검증 시스템**: 상관관계, 선행성, 독립성, 변동성 검증
 - **종합 검증 점수**: 0.282 (보완 지표 수준)
 
-### 2. 종합 시각화 시스템
+### 2. KOSIS 데이터 기반 BDS 모델 (신규)
+- **실시간 데이터 활용**: KOSIS 지역내총생산 데이터 기반
+- **확장된 시계열**: 1997-2025년 (29년간)
+- **GDP 기반 검증**: 2020년 이후 실제 경제지표와 비교 검증
+- **분기별 데이터 통합**: 연간 및 분기별 데이터를 통합한 정확한 추정
+
+### 3. 종합 시각화 시스템
 - **한국 지도 히트맵**: Geojson을 활용한 지역별 상관관계 시각화
 - **Bootstrap 모달**: 상세한 설명과 도움말 시스템
 - **인터랙티브 차트**: Plotly 기반의 동적 시각화
 - **정책 시뮬레이션**: 지역별 특성을 반영한 투자 효과 분석
 
-### 3. 정책 시뮬레이션
+### 4. 정책 시뮬레이션
 - **5가지 투자 유형**: 인프라, 혁신, 사회, 환경, 균형 투자
 - **지역별 특성 반영**: 도시/도 지역별 차별화된 가중치 적용
 - **투자 금액별 효과**: 지역별 개별 분석
@@ -66,6 +72,15 @@
 - **평균 상관관계**: 0.934
 - **평균 변동성 비율**: 1.147
 - **종합 검증 점수**: 0.282
+
+### KOSIS 데이터 기반 BDS 모델 검증 결과 (신규)
+- **총 지역**: 17개
+- **분석 기간**: 1997-2025년 (29년간)
+- **NAVIS vs BDS 상관관계**: 0.8176 (2019년까지)
+- **GDP vs BDS 상관관계**: 0.4672 (2020년 이후)
+- **2025년 BDS 예측값 범위**: 47.01-61.91
+- **최고 성능 지역**: 서울특별시 (61.91)
+- **최저 성능 지역**: 광주광역시 (47.01)
 
 ### 지역별 선행성 분석
 **✅ 선행성 우위 지역 (12개)**:
@@ -111,6 +126,15 @@ pip install -r requirements.txt
 python enhanced_bds_visualization_final.py
 ```
 
+#### KOSIS 데이터 기반 BDS 모델 (신규)
+```bash
+# KOSIS 데이터 기반 BDS 모델 생성
+python enhanced_bds_with_kosis_data.py
+
+# KOSIS 데이터 기반 시각화 생성
+python create_kosis_bds_visualization.py
+```
+
 ## 📁 파일 구조
 
 ```
@@ -118,8 +142,16 @@ NAVIS_contest/
 ├── navis_data/                                    # NAVIS 원본 데이터
 │   ├── 1_2. 시계열자료(사이트게재)_지역발전지수_2021년.xlsx
 │   └── skorea-provinces-2018-geo.json            # 한국 지도 Geojson
+├── kosis_data/                                    # KOSIS 데이터 (신규)
+│   └── 2025년_1분기_실질_지역내총생산(잠정).xlsx  # KOSIS 지역내총생산 데이터
 ├── enhanced_bds_visualization_final.py           # 향상된 BDS 모델 및 시각화
+├── enhanced_bds_with_kosis_data.py               # KOSIS 데이터 기반 BDS 모델 (신규)
+├── create_kosis_bds_visualization.py             # KOSIS 데이터 기반 시각화 (신규)
 ├── enhanced_bds_comprehensive_dashboard_final.html # 종합 대시보드
+├── kosis_bds_comprehensive_dashboard.html        # KOSIS 데이터 기반 종합 대시보드 (신규)
+├── kosis_bds_geojson_map.html                    # KOSIS 데이터 기반 Geojson 맵 (신규)
+├── enhanced_bds_model_with_kosis.csv             # KOSIS 데이터 기반 BDS 모델 결과 (신규)
+├── enhanced_bds_validation_with_kosis.csv        # KOSIS 데이터 기반 검증 결과 (신규)
 ├── bds_policy_simulation_final.html              # 정책 시뮬레이션
 ├── bds_policy_simulation_results_final.csv       # 시뮬레이션 결과
 ├── requirements.txt                               # Python 의존성
@@ -133,9 +165,13 @@ NAVIS_contest/
 ### 시각화 결과
 - `enhanced_bds_comprehensive_dashboard_final.html`: Bootstrap 모달이 포함된 종합 대시보드
 - `bds_policy_simulation_final.html`: Bootstrap 모달이 포함된 정책 시뮬레이션
+- `kosis_bds_comprehensive_dashboard.html`: KOSIS 데이터 기반 종합 대시보드 (신규)
+- `kosis_bds_geojson_map.html`: KOSIS 데이터 기반 Geojson 맵 (신규)
 
 ### 데이터 결과
 - `bds_policy_simulation_results_final.csv`: 상세 시뮬레이션 결과
+- `enhanced_bds_model_with_kosis.csv`: KOSIS 데이터 기반 BDS 모델 결과 (신규)
+- `enhanced_bds_validation_with_kosis.csv`: KOSIS 데이터 기반 검증 결과 (신규)
 
 ## 🔬 학술적 의의
 
