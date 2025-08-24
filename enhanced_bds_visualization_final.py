@@ -1394,10 +1394,11 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             <div class="info-panel">
                 <h5>📊 시각화 설명</h5>
                 <ul>
-                    <li><strong>NAVIS 지도</strong>: 실제 NAVIS 지역발전지수를 연도별로 표시 (1997-2019)</li>
+                    <li><strong>NAVIS 지도</strong>: 실제 NAVIS 지역발전지수를 연도별로 표시 (1995-2019)</li>
                     <li><strong>BDS 지도</strong>: 향상된 BDS 모델의 지역발전지수를 연도별로 표시 (1997-2025)</li>
-                    <li><strong>연도 선택</strong>: 1997년부터 2025년까지 연도를 선택하여 비교 가능</li>
-                    <li><strong>색상 범례</strong>: 높은 값(빨강) ~ 낮은 값(파랑)으로 구분</li>
+                    <li><strong>연도 선택</strong>: 1995년부터 2025년까지 연도를 선택하여 비교 가능</li>
+                    <li><strong>색상 범례</strong>: 공통 기준으로 설정되어 시간에 따른 변화를 정확히 비교 가능</li>
+                    <li><strong>시간 변화 분석</strong>: 동일한 색상 기준으로 지역발전의 추세를 파악할 수 있습니다</li>
                 </ul>
             </div>
             
@@ -1443,6 +1444,25 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             const years = {years};
             let currentYear = 2025;
             
+            // 공통 색상 범위 계산 (전체 기간 데이터 기준)
+            const allNavisValues = [];
+            const allBdsValues = [];
+            
+            for (const year in navisData) {{
+                allNavisValues.push(...Object.values(navisData[year]));
+            }}
+            for (const year in bdsData) {{
+                allBdsValues.push(...Object.values(bdsData[year]));
+            }}
+            
+            const navisMin = Math.min(...allNavisValues);
+            const navisMax = Math.max(...allNavisValues);
+            const bdsMin = Math.min(...allBdsValues);
+            const bdsMax = Math.max(...allBdsValues);
+            
+            console.log('NAVIS 공통 범위:', navisMin, '-', navisMax);
+            console.log('BDS 공통 범위:', bdsMin, '-', bdsMax);
+            
             // NAVIS 데이터 준비
             const navisData = {{
                 {', '.join([f'"{year}": {{' + 
@@ -1478,11 +1498,23 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
                     }}
                 }}
                 
+                // 공통 색상 범위 설정
+                let zmin, zmax;
+                if (title.includes('NAVIS')) {{
+                    zmin = navisMin;
+                    zmax = navisMax;
+                }} else {{
+                    zmin = bdsMin;
+                    zmax = bdsMax;
+                }}
+                
                 const trace = {{
                     type: 'choropleth',
                     geojson: geojsonData,
                     locations: locations,
                     z: z_values,
+                    zmin: zmin,
+                    zmax: zmax,
                     colorscale: 'RdYlBu_r',
                     featureidkey: 'properties.name',
                     hovertemplate: '%{{text}}<extra></extra>',
@@ -1555,6 +1587,7 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
                                 <li>평균: ${{navisAvg.toFixed(3)}}</li>
                                 <li>최대: ${{navisMax.toFixed(3)}}</li>
                                 <li>최소: ${{navisMin.toFixed(3)}}</li>
+                                <li><strong>공통 범위: ${{navisMin.toFixed(3)}} - ${{navisMax.toFixed(3)}}</strong></li>
                             </ul>
                         </div>
                         <div class="col-md-6">
@@ -1563,12 +1596,14 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
                                 <li>평균: ${{bdsAvg.toFixed(3)}}</li>
                                 <li>최대: ${{bdsMax.toFixed(3)}}</li>
                                 <li>최소: ${{bdsMin.toFixed(3)}}</li>
+                                <li><strong>공통 범위: ${{bdsMin.toFixed(3)}} - ${{bdsMax.toFixed(3)}}</strong></li>
                             </ul>
                         </div>
                     </div>
                     <div class="mt-3">
                         <strong>💡 주요 특징:</strong>
                         <ul>
+                            <li><strong>공통 색상 기준:</strong> 모든 연도에서 동일한 색상 범위를 사용하여 시간에 따른 변화를 정확히 비교할 수 있습니다</li>
                             <li>NAVIS와 BDS의 패턴이 유사하면서도 BDS가 더 세밀한 변화를 보여줍니다</li>
                             <li>지역별 발전 수준의 차이를 색상으로 직관적으로 확인할 수 있습니다</li>
                             <li>연도별 변화를 통해 지역발전의 추세를 파악할 수 있습니다</li>
