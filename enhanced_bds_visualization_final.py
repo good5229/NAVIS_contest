@@ -1295,15 +1295,18 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
     """
     print("\n=== 연도별 NAVIS vs BDS Geojson 시각화 생성 ===")
     
-    # 연도 범위 설정 (1997-2022)
-    years = list(range(1997, 2023))
+    # 연도 범위 설정 (BDS 데이터의 전체 연도 사용)
+    bds_years = sorted(bds_df['year'].unique())
+    navis_years = sorted(navis_df['year'].unique())
+    all_years = sorted(list(set(bds_years + navis_years)))
+    years = all_years
     
     # HTML 페이지 생성
     html_content = f"""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>NAVIS vs BDS 연도별 지역 비교 (1997-2022)</title>
+        <title>NAVIS vs BDS 연도별 지역 비교 (1997-2025)</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -1360,14 +1363,14 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
     </head>
     <body>
         <div class="container-fluid">
-            <h1 class="text-center mb-4">🗺️ NAVIS vs BDS 연도별 지역 비교 (1997-2022)</h1>
+            <h1 class="text-center mb-4">🗺️ NAVIS vs BDS 연도별 지역 비교 (1997-2025)</h1>
             
             <div class="info-panel">
                 <h5>📊 시각화 설명</h5>
                 <ul>
-                    <li><strong>NAVIS 지도</strong>: 실제 NAVIS 지역발전지수를 연도별로 표시</li>
-                    <li><strong>BDS 지도</strong>: 향상된 BDS 모델의 지역발전지수를 연도별로 표시</li>
-                    <li><strong>연도 선택</strong>: 1997년부터 2022년까지 연도를 선택하여 비교 가능</li>
+                    <li><strong>NAVIS 지도</strong>: 실제 NAVIS 지역발전지수를 연도별로 표시 (1997-2019)</li>
+                    <li><strong>BDS 지도</strong>: 향상된 BDS 모델의 지역발전지수를 연도별로 표시 (1997-2025)</li>
+                    <li><strong>연도 선택</strong>: 1997년부터 2025년까지 연도를 선택하여 비교 가능</li>
                     <li><strong>색상 범례</strong>: 높은 값(빨강) ~ 낮은 값(파랑)으로 구분</li>
                 </ul>
             </div>
@@ -1412,7 +1415,7 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             
             // 연도별 데이터 준비
             const years = {years};
-            let currentYear = 2022;
+            let currentYear = 2025;
             
             // NAVIS 데이터 준비
             const navisData = {{
