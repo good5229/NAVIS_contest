@@ -1337,7 +1337,7 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
         <style>
             .container-fluid {{
                 padding: 20px;
@@ -1405,7 +1405,7 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             <div class="year-selector">
                 <h5>📅 연도 선택</h5>
                 <div id="yearButtons">
-                    {''.join([f'<button class="year-btn" onclick="changeYear({year})">{year}</button>' for year in years])}
+                    {''.join([f'<button class="year-btn" onclick="changeYear({year}, event)">{year}</button>' for year in years])}
                 </div>
             </div>
             
@@ -1444,25 +1444,6 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             const years = {years};
             let currentYear = 2025;
             
-            // 공통 색상 범위 계산 (전체 기간 데이터 기준)
-            const allNavisValues = [];
-            const allBdsValues = [];
-            
-            for (const year in navisData) {{
-                allNavisValues.push(...Object.values(navisData[year]));
-            }}
-            for (const year in bdsData) {{
-                allBdsValues.push(...Object.values(bdsData[year]));
-            }}
-            
-            const navisMin = Math.min(...allNavisValues);
-            const navisMax = Math.max(...allNavisValues);
-            const bdsMin = Math.min(...allBdsValues);
-            const bdsMax = Math.max(...allBdsValues);
-            
-            console.log('NAVIS 공통 범위:', navisMin, '-', navisMax);
-            console.log('BDS 공통 범위:', bdsMin, '-', bdsMax);
-            
             // NAVIS 데이터 준비
             const navisData = {{
                 {', '.join([f'"{year}": {{' + 
@@ -1478,6 +1459,33 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
                     for region in bds_df["region"].unique()]) + 
                     '}' for year in years])}
             }};
+            
+            // 공통 색상 범위 계산 (전체 기간 데이터 기준)
+            const allNavisValues = [];
+            const allBdsValues = [];
+            
+            for (const year in navisData) {{
+                const values = Object.values(navisData[year]).filter(v => v !== 0 && !isNaN(v));
+                allNavisValues.push(...values);
+            }}
+            for (const year in bdsData) {{
+                const values = Object.values(bdsData[year]).filter(v => v !== 0 && !isNaN(v));
+                allBdsValues.push(...values);
+            }}
+            
+            const navisMin = Math.min(...allNavisValues);
+            const navisMax = Math.max(...allNavisValues);
+            const bdsMin = Math.min(...allBdsValues);
+            const bdsMax = Math.max(...allBdsValues);
+            
+            console.log('NAVIS 공통 범위:', navisMin, '-', navisMax);
+            console.log('BDS 공통 범위:', bdsMin, '-', bdsMax);
+            
+            // 전역 변수로 설정
+            window.navisMin = navisMin;
+            window.navisMax = navisMax;
+            window.bdsMin = bdsMin;
+            window.bdsMax = bdsMax;
             
             // 지역명 매핑
             const regionMapping = {{
@@ -1501,11 +1509,11 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
                 // 공통 색상 범위 설정
                 let zmin, zmax;
                 if (title.includes('NAVIS')) {{
-                    zmin = navisMin;
-                    zmax = navisMax;
+                    zmin = window.navisMin;
+                    zmax = window.navisMax;
                 }} else {{
-                    zmin = bdsMin;
-                    zmax = bdsMax;
+                    zmin = window.bdsMin;
+                    zmax = window.bdsMax;
                 }}
                 
                 const trace = {{
@@ -1549,14 +1557,16 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             }}
             
             // 연도 변경 함수
-            function changeYear(year) {{
+            function changeYear(year, event) {{
                 currentYear = year;
                 
                 // 버튼 활성화 상태 변경
                 document.querySelectorAll('.year-btn').forEach(btn => {{
                     btn.classList.remove('active');
                 }});
-                event.target.classList.add('active');
+                if (event && event.target) {{
+                    event.target.classList.add('active');
+                }}
                 
                 // 지도 업데이트
                 createMap('navisMap', navisData[year], 'NAVIS 지수', year);
@@ -1614,8 +1624,13 @@ def create_timeseries_geojson_visualization(bds_df, navis_df, geojson):
             
             // 초기 로드
             window.onload = function() {{
-                changeYear(2022);
-                document.querySelector('.year-btn:last-child').classList.add('active');
+                changeYear(2025, null);
+                // 2025년 버튼을 활성화
+                document.querySelectorAll('.year-btn').forEach(btn => {{
+                    if (btn.textContent === '2025') {{
+                        btn.classList.add('active');
+                    }}
+                }});
             }};
         </script>
     </body>
