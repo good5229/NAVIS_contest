@@ -231,6 +231,22 @@ def create_enhanced_bds_model_with_kosis():
                         # 노이즈 추가 (현실적 변동성)
                         bds_value += np.random.normal(0, 2)
                         bds_value = max(0, min(100, bds_value))  # 0-100 범위로 제한
+                    else:
+                        # GDP 데이터가 없는 경우, 이전 연도 데이터를 기반으로 추정
+                        if year > 2019:
+                            # 2019년 BDS 값을 기반으로 추정
+                            prev_year_data = navis_region_data[navis_region_data['year'] == 2019]['navis_value'].values
+                            if len(prev_year_data) > 0:
+                                base_bds = prev_year_data[0] * (1 + np.random.normal(0, 0.05))
+                                # 연도별 약간의 성장 추세 추가
+                                years_since_2019 = year - 2019
+                                growth_trend = 0.02 * years_since_2019  # 연 2% 성장 추세
+                                bds_value = base_bds * (1 + growth_trend + np.random.normal(0, 0.03))
+                            else:
+                                # 2019년 데이터도 없는 경우 기본값
+                                bds_value = 5.0 + np.random.normal(0, 1)
+                        else:
+                            bds_value = 0
                 
                 bds_results.append({
                     'region': navis_region,
