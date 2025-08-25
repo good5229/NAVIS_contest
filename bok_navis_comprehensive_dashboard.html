@@ -1283,10 +1283,10 @@
                                         경제활동인구: ${activePopValue.toLocaleString()}천명
                                     `;
                                     
-                                    // 팝업 내용 고정
+                                    // 팝업 내용 고정 (호버와 동일한 정보)
                                     layer.bindPopup(popupContent);
                                     
-                                    // 호버 시 툴팁만 표시 (색상 변경 없음)
+                                    // 호버 시 툴팁 표시 (팝업과 동일한 정보)
                                     layer.off('mouseover mouseout'); // 기존 이벤트 제거
                                     layer.on({
                                         mouseover: function(e) {
@@ -1298,10 +1298,21 @@
                                             
                                             const yearLabel = currentYear === 2025 ? `${currentYear}년 (예측)` : `${currentYear}년`;
                                             
+                                            // 인구 데이터 가져오기
+                                            let popValue = 0;
+                                            let activePopValue = 0;
+                                            
+                                            if (data.population[regionName] && data.population[regionName][currentYear.toString()]) {
+                                                popValue = data.population[regionName][currentYear.toString()];
+                                                activePopValue = data.active_population[regionName][currentYear.toString()];
+                                            }
+                                            
                                             layer.bindTooltip(`
                                                 <strong>${regionName}</strong><br>
                                                 BDS (${yearLabel}): ${bdsValue}<br>
-                                                GDP: ${gdpValue} 십억원
+                                                GDP: ${gdpValue} 십억원<br>
+                                                인구: ${popValue.toLocaleString()}천명<br>
+                                                경제활동인구: ${activePopValue.toLocaleString()}천명
                                             `, {
                                                 permanent: false,
                                                 direction: 'top',
@@ -1344,7 +1355,7 @@
                                     
                                     layer.bindPopup(popupContent);
                                     
-                                    // 호버 시 툴팁만 표시 (색상 변경 없음)
+                                    // 호버 시 툴팁 표시 (팝업과 동일한 정보)
                                     layer.off('mouseover mouseout'); // 기존 이벤트 제거
                                     layer.on({
                                         mouseover: function(e) {
@@ -1356,10 +1367,21 @@
                                             
                                             const yearLabel = currentYear === 2025 ? `${currentYear}년 (예측)` : `${currentYear}년`;
                                             
+                                            // 인구 데이터 가져오기
+                                            let popValue = 0;
+                                            let activePopValue = 0;
+                                            
+                                            if (data.population[regionName] && data.population[regionName][currentYear.toString()]) {
+                                                popValue = data.population[regionName][currentYear.toString()];
+                                                activePopValue = data.active_population[regionName][currentYear.toString()];
+                                            }
+                                            
                                             layer.bindTooltip(`
                                                 <strong>${regionName}</strong><br>
                                                 BDS (${yearLabel}): ${bdsValue}<br>
-                                                GDP: ${gdpValue} 십억원
+                                                GDP: ${gdpValue} 십억원<br>
+                                                인구: ${popValue.toLocaleString()}천명<br>
+                                                경제활동인구: ${activePopValue.toLocaleString()}천명
                                             `, {
                                                 permanent: false,
                                                 direction: 'top',
