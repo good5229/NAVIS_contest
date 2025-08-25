@@ -132,6 +132,30 @@
         .custom-tooltip::before {
             border-top-color: rgba(0, 0, 0, 0.8) !important;
         }
+        
+        /* 클릭 효과 완전 제거 */
+        .leaflet-interactive:focus {
+            outline: none !important;
+        }
+        
+        .leaflet-interactive:active {
+            outline: none !important;
+        }
+        
+        .leaflet-interactive:focus-visible {
+            outline: none !important;
+        }
+        
+        /* Leaflet 기본 클릭 효과 제거 */
+        .leaflet-interactive.leaflet-clickable:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        .leaflet-interactive.leaflet-clickable:active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
     </style>
 </head>
 <body>
@@ -841,6 +865,21 @@
                                         mouseout: function(e) {
                                             const layer = e.target;
                                             layer.closeTooltip();
+                                        },
+                                        click: function(e) {
+                                            // 클릭 시 기본 하이라이트 효과 완전 제거
+                                            const regionName = e.target.feature.properties.name;
+                                            const bdsValue = getBDSValueForYear(regionName, currentYear);
+                                            e.target.setStyle({
+                                                fillColor: colorMapping[regionName],
+                                                weight: 2,
+                                                opacity: 1,
+                                                color: 'white',
+                                                dashArray: '3',
+                                                fillOpacity: 0.7
+                                            });
+                                            // 클릭 효과를 즉시 제거
+                                            e.target.bringToBack();
                                         }
                                     });
                                 });
@@ -850,7 +889,7 @@
                     // Function to style each region (initial style)
                     function style(feature) {
                         const regionName = feature.properties.name;
-                        const bdsValue = getBDSValueForYear(regionName, 2024); // 초기값은 2024년
+                        const bdsValue = getBDSValueForYear(regionName, 2025); // 초기값은 2025년 예측값
                         return {
                             fillColor: getColor(bdsValue),
                             weight: 2,
@@ -864,12 +903,12 @@
                     // Function to handle each feature
                     function onEachFeature(feature, layer) {
                         const regionName = feature.properties.name;
-                        const bdsValue = getBDSValueForYear(regionName, 2024).toFixed(2); // 초기값은 2024년
+                        const bdsValue = getBDSValueForYear(regionName, 2025).toFixed(2); // 초기값은 2025년 예측값
                         const gdpValue = (gdpData[regionName] || 0).toLocaleString();
                         
                         layer.bindPopup(`
                             <strong>${regionName}</strong><br>
-                            BDS (2024년): ${bdsValue}<br>
+                            BDS (2025년 예측): ${bdsValue}<br>
                             GDP: ${gdpValue} 십억원
                         `);
                         
@@ -897,6 +936,18 @@
                             mouseout: function(e) {
                                 const layer = e.target;
                                 layer.closeTooltip();
+                            },
+                            click: function(e) {
+                                // 클릭 시 기본 하이라이트 효과 완전 제거
+                                e.target.setStyle({
+                                    weight: 2,
+                                    opacity: 1,
+                                    color: 'white',
+                                    dashArray: '3',
+                                    fillOpacity: 0.7
+                                });
+                                // 클릭 효과를 즉시 제거
+                                e.target.bringToBack();
                             }
                         });
                     }
@@ -935,6 +986,9 @@
                         const selectedYear = parseInt(this.value);
                         updateMapForYear(selectedYear);
                     });
+                    
+                    // 초기 로드 시 2025년 데이터로 지도 업데이트
+                    updateMapForYear(2025);
                 })
                 .catch(error => {
                     console.error('Error loading GeoJSON:', error);
