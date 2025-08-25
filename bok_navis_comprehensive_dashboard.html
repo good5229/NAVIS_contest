@@ -1016,8 +1016,8 @@
                     size: 8,
                     color: scores.map(score => {
                         if (score >= 90) return '#28a745';
-                        if (score >= 75) return '#17a2b8';
-                        if (score >= 60) return '#ffc107';
+                        if (score >= 66) return '#17a2b8';
+                        if (score >= 50) return '#ffc107';
                         return '#dc3545';
                     })
                 },
@@ -1047,19 +1047,19 @@
                     // 균형 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 75, y1: 90,
+                        x0: 1997, x1: 2025, y0: 66, y1: 90,
                         fillcolor: '#d1ecf1', opacity: 0.3, layer: 'below', line: {width: 0}
                     },
                     // 보통 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 60, y1: 75,
+                        x0: 1997, x1: 2025, y0: 50, y1: 66,
                         fillcolor: '#fff3cd', opacity: 0.3, layer: 'below', line: {width: 0}
                     },
                     // 불균형 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 0, y1: 60,
+                        x0: 1997, x1: 2025, y0: 0, y1: 50,
                         fillcolor: '#f8d7da', opacity: 0.3, layer: 'below', line: {width: 0}
                     }
                 ],
@@ -1069,15 +1069,15 @@
                         text: '매우 균형', showarrow: false, font: {size: 10, color: '#28a745'}
                     },
                     {
-                        x: 2025, y: 82, xref: 'x', yref: 'y',
+                        x: 2025, y: 78, xref: 'x', yref: 'y',
                         text: '균형', showarrow: false, font: {size: 10, color: '#17a2b8'}
                     },
                     {
-                        x: 2025, y: 67, xref: 'x', yref: 'y',
+                        x: 2025, y: 58, xref: 'x', yref: 'y',
                         text: '보통', showarrow: false, font: {size: 10, color: '#ffc107'}
                     },
                     {
-                        x: 2025, y: 30, xref: 'x', yref: 'y',
+                        x: 2025, y: 25, xref: 'x', yref: 'y',
                         text: '불균형', showarrow: false, font: {size: 10, color: '#dc3545'}
                     }
                 ]
