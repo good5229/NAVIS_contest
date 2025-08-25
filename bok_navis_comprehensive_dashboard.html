@@ -376,10 +376,11 @@
                                                  <div class="mt-3">
                                                      <strong>발전 수준 판정:</strong>
                                                      <ul class="list-unstyled mt-2">
-                                                         <li>• 90점 이상: 매우 균형</li>
-                                                         <li>• 66-89점: 균형</li>
+                                                         <li>• 81-100점: 매우 균형</li>
+                                                         <li>• 66-80점: 균형</li>
                                                          <li>• 50-65점: 보통</li>
-                                                         <li>• 50점 미만: 불균형</li>
+                                                         <li>• 25-49점: 불균형</li>
+                                                         <li>• 0-24점: 심한 불균형</li>
                                                      </ul>
                                                  </div>
                                              </div>
@@ -904,17 +905,20 @@
             // 발전 수준 판정 - 조정된 기준
             let level = '';
             let levelColor = '';
-            if (finalScore >= 90) {  // 매우 균형 기준
+            if (finalScore >= 81) {  // 매우 균형 기준을 81점으로 조정
                 level = '매우 균형';
                 levelColor = '#28a745';
-            } else if (finalScore >= 66) {  // 균형 기준을 66점으로 조정
+            } else if (finalScore >= 66) {  // 균형 기준
                 level = '균형';
                 levelColor = '#17a2b8';
-            } else if (finalScore >= 50) {  // 보통 기준을 50점으로 조정
+            } else if (finalScore >= 50) {  // 보통 기준
                 level = '보통';
                 levelColor = '#ffc107';
-            } else {
+            } else if (finalScore >= 25) {  // 불균형 기준
                 level = '불균형';
+                levelColor = '#fd7e14';
+            } else {
+                level = '심한 불균형';
                 levelColor = '#dc3545';
             }
             
@@ -1015,9 +1019,10 @@
                 marker: {
                     size: 8,
                     color: scores.map(score => {
-                        if (score >= 90) return '#28a745';
+                        if (score >= 81) return '#28a745';
                         if (score >= 66) return '#17a2b8';
                         if (score >= 50) return '#ffc107';
+                        if (score >= 25) return '#fd7e14';
                         return '#dc3545';
                     })
                 },
@@ -1041,13 +1046,13 @@
                     // 매우 균형 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 90, y1: 100,
+                        x0: 1997, x1: 2025, y0: 81, y1: 100,
                         fillcolor: '#d4edda', opacity: 0.3, layer: 'below', line: {width: 0}
                     },
                     // 균형 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 66, y1: 90,
+                        x0: 1997, x1: 2025, y0: 66, y1: 81,
                         fillcolor: '#d1ecf1', opacity: 0.3, layer: 'below', line: {width: 0}
                     },
                     // 보통 영역
@@ -1059,17 +1064,23 @@
                     // 불균형 영역
                     {
                         type: 'rect',
-                        x0: 1997, x1: 2025, y0: 0, y1: 50,
+                        x0: 1997, x1: 2025, y0: 25, y1: 50,
+                        fillcolor: '#ffe5d0', opacity: 0.3, layer: 'below', line: {width: 0}
+                    },
+                    // 심한 불균형 영역
+                    {
+                        type: 'rect',
+                        x0: 1997, x1: 2025, y0: 0, y1: 25,
                         fillcolor: '#f8d7da', opacity: 0.3, layer: 'below', line: {width: 0}
                     }
                 ],
                 annotations: [
                     {
-                        x: 2025, y: 95, xref: 'x', yref: 'y',
+                        x: 2025, y: 90, xref: 'x', yref: 'y',
                         text: '매우 균형', showarrow: false, font: {size: 10, color: '#28a745'}
                     },
                     {
-                        x: 2025, y: 78, xref: 'x', yref: 'y',
+                        x: 2025, y: 73, xref: 'x', yref: 'y',
                         text: '균형', showarrow: false, font: {size: 10, color: '#17a2b8'}
                     },
                     {
@@ -1077,8 +1088,12 @@
                         text: '보통', showarrow: false, font: {size: 10, color: '#ffc107'}
                     },
                     {
-                        x: 2025, y: 25, xref: 'x', yref: 'y',
-                        text: '불균형', showarrow: false, font: {size: 10, color: '#dc3545'}
+                        x: 2025, y: 37, xref: 'x', yref: 'y',
+                        text: '불균형', showarrow: false, font: {size: 10, color: '#fd7e14'}
+                    },
+                    {
+                        x: 2025, y: 12, xref: 'x', yref: 'y',
+                        text: '심한 불균형', showarrow: false, font: {size: 10, color: '#dc3545'}
                     }
                 ]
             };
@@ -1711,39 +1726,24 @@
                     hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f}<extra></extra>`
                 });
                 
-                // 2024년에서 2025년으로 연결하는 선 (투명하게)
+                // 2024년에서 2025년으로 연결하는 선과 2025년 예측 데이터를 하나의 trace로 통합
                 traces.push({
                     x: [2024, 2025],
                     y: [actualValues[actualValues.length - 1], predictionValue],
                     type: 'scatter',
-                    mode: 'lines',
-                    name: `${region} (연결선)`,
+                    mode: 'lines+markers',
+                    name: `${region} (예측)`,
                     line: {
                         width: 2,
                         color: getRegionColor(index),
                         dash: 'dash'
                     },
-                    showlegend: false,
-                    hoverinfo: 'skip'
-                });
-                
-                // 2025년 예측 데이터만 별도 마커로 강조
-                traces.push({
-                    x: [2025],
-                    y: [predictionValue],
-                    type: 'scatter',
-                    mode: 'markers',
-                    name: `${region} (p)`,
                     marker: {
-                        size: 10,
+                        size: [6, 10], // 2024년은 작은 마커, 2025년은 큰 마커
                         color: getRegionColor(index),
-                        line: {
-                            color: '#000000',
-                            width: 2
-                        },
-                        symbol: 'diamond' // 다이아몬드 모양으로 예측치 표시
+                        symbol: ['circle', 'diamond'] // 2024년은 원, 2025년은 다이아몬드
                     },
-                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f} (예측)<extra></extra>`,
+                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f}${'%{x}' === '2025' ? ' (예측)' : ''}<extra></extra>`,
                     showlegend: false // 범례에 표시하지 않음
                 });
             });
