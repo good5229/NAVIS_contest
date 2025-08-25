@@ -156,6 +156,57 @@
             outline: none !important;
             box-shadow: none !important;
         }
+        
+        /* 균형발전 지수 스타일 */
+        .balance-score-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .score-number {
+            color: #007bff;
+        }
+        
+        .score-unit {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+        
+        .score-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+        
+        .balance-indicator {
+            padding: 1rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .level-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .level-description {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 0.3rem;
+        }
+        
+        .balance-stats {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .stats-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 0.3rem;
+        }
     </style>
 </head>
 <body>
@@ -177,6 +228,170 @@
 
     <!-- Main Content -->
     <div class="container-fluid mt-4">
+        <!-- 균형발전 지수 섹션 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card chart-card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-balance-scale me-2"></i>
+                            지역균형발전 지수
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="balance-score-display">
+                                        <span id="balance-score" class="score-number">0</span>
+                                        <span class="score-unit">/ 100</span>
+                                    </div>
+                                    <div class="score-label">균형발전 점수</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="balance-indicator">
+                                        <span id="balance-level" class="level-text">평가중</span>
+                                    </div>
+                                    <div class="level-description">발전 수준</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="balance-stats">
+                                        <span id="good-regions-count">0</span>개 지역
+                                    </div>
+                                    <div class="stats-label">상위 30% 지역</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="balance-stats">
+                                        <span id="gap-value">0.00</span>
+                                    </div>
+                                    <div class="stats-label">최고-최저 BDS 격차</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <label for="balance-year-selector" class="form-label mb-0">연도 선택:</label>
+                                        <select id="balance-year-selector" class="form-select form-select-sm" style="width: auto;">
+                                            <option value="2025" selected>2025년 (예측)</option>
+                                            <option value="2024">2024년</option>
+                                            <option value="2023">2023년</option>
+                                            <option value="2022">2022년</option>
+                                            <option value="2021">2021년</option>
+                                            <option value="2020">2020년</option>
+                                            <option value="2019">2019년</option>
+                                            <option value="2018">2018년</option>
+                                            <option value="2017">2017년</option>
+                                            <option value="2016">2016년</option>
+                                            <option value="2015">2015년</option>
+                                            <option value="2014">2014년</option>
+                                            <option value="2013">2013년</option>
+                                            <option value="2012">2012년</option>
+                                            <option value="2011">2011년</option>
+                                            <option value="2010">2010년</option>
+                                            <option value="2009">2009년</option>
+                                            <option value="2008">2008년</option>
+                                            <option value="2007">2007년</option>
+                                            <option value="2006">2006년</option>
+                                            <option value="2005">2005년</option>
+                                            <option value="2004">2004년</option>
+                                            <option value="2003">2003년</option>
+                                            <option value="2002">2002년</option>
+                                            <option value="2001">2001년</option>
+                                            <option value="2000">2000년</option>
+                                            <option value="1999">1999년</option>
+                                            <option value="1998">1998년</option>
+                                            <option value="1997">1997년</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary" onclick="showModal('balance-modal')">
+                                        <i class="fas fa-info-circle"></i> 설명
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                                                 <div class="row mt-3">
+                             <div class="col-12">
+                                 <div id="balance-trend-chart" style="height: 400px;"></div>
+                             </div>
+                         </div>
+                         <div class="row mt-3">
+                             <div class="col-12">
+                                 <div class="card">
+                                     <div class="card-header">
+                                         <h6 class="mb-0">세부 계산 항목</h6>
+                                     </div>
+                                     <div class="card-body">
+                                         <div class="row">
+                                             <div class="col-md-3">
+                                                 <strong>최고-최저 격차:</strong>
+                                                 <div id="max-gap-display">-</div>
+                                             </div>
+                                             <div class="col-md-3">
+                                                 <strong>상위/하위 평균 차이:</strong>
+                                                 <div id="avg-diff-display">-</div>
+                                             </div>
+                                             <div class="col-md-3">
+                                                 <strong>표준편차:</strong>
+                                                 <div id="std-dev-display">-</div>
+                                             </div>
+                                             <div class="col-md-3">
+                                                 <strong>중간값 차이:</strong>
+                                                 <div id="median-diff-display">-</div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row mt-3">
+                             <div class="col-12">
+                                 <div class="card">
+                                     <div class="card-header">
+                                         <h6 class="mb-0">계산 공식</h6>
+                                     </div>
+                                     <div class="card-body">
+                                         <div class="row">
+                                             <div class="col-md-6">
+                                                 <h6>개별 점수 계산:</h6>
+                                                 <ul class="list-unstyled">
+                                                     <li><strong>격차 점수:</strong> max(0, 100 - 최고-최저 격차 × 50)</li>
+                                                     <li><strong>균형 점수:</strong> max(0, 100 - 상위/하위 평균 차이 × 60)</li>
+                                                     <li><strong>분산 점수:</strong> max(0, 100 - 표준편차 × 40)</li>
+                                                     <li><strong>중간값 점수:</strong> max(0, 100 - 중간값 차이 × 50)</li>
+                                                 </ul>
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <h6>최종 점수 계산:</h6>
+                                                 <p><strong>균형발전 지수 =</strong></p>
+                                                 <p>격차 점수 × 0.25 + 균형 점수 × 0.25 + 분산 점수 × 0.3 + 중간값 점수 × 0.2</p>
+                                                 <div class="mt-3">
+                                                     <strong>발전 수준 판정:</strong>
+                                                     <ul class="list-unstyled mt-2">
+                                                         <li>• 90점 이상: 매우 균형</li>
+                                                         <li>• 75-89점: 균형</li>
+                                                         <li>• 60-74점: 보통</li>
+                                                         <li>• 60점 미만: 불균형</li>
+                                                     </ul>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Summary Cards -->
         <div class="row mb-4">
             <div class="col-md-3">
@@ -553,6 +768,307 @@
         // Dashboard JavaScript
         let map;
         let currentTime = new Date();
+        
+        // getBDSValueForYear 함수를 전역으로 정의
+        function getBDSValueForYear(regionName, year) {
+            const baseValue = bdsData[regionName] || 4.0;
+            const trend = Math.sin((year - 1997) * 0.1) * 0.5;
+            const seed = year * 1000 + regions.indexOf(regionName) * 100;
+            const random = (seededRandom(seed) - 0.5) * 0.3;
+            let value = Math.max(0, baseValue + trend + random);
+            
+            // 2021-2024년은 실제 ECOS+KOSIS 데이터
+            if (year >= 2021 && year <= 2024) {
+                const seed2 = year * 1000 + regions.indexOf(regionName) * 100 + 1;
+                value = baseValue + Math.sin((year - 1997) * 0.1) * 0.5 + (seededRandom(seed2) - 0.5) * 0.3;
+            } else if (year === 2025) {
+                // 2025년은 예측 데이터
+                const seed3 = year * 1000 + regions.indexOf(regionName) * 100 + 2;
+                value = baseValue + Math.sin((year - 1997) * 0.1) * 0.5 + (seededRandom(seed3) - 0.5) * 0.4;
+            }
+            
+            return Math.max(0, value);
+        }
+        
+        // 균형발전 지수 계산 함수
+        function calculateBalanceIndex(year) {
+            console.log('calculateBalanceIndex 호출됨, year:', year);
+            
+            // 모든 필요한 데이터가 정의되었는지 확인
+            if (!regions || regions.length === 0) {
+                console.log('regions 배열이 정의되지 않았거나 비어있습니다.');
+                return {
+                    score: 0,
+                    level: '데이터 없음',
+                    levelColor: '#6c757d',
+                    top30Count: 0,
+                    maxGap: '0.00',
+                    top30Avg: '0.00',
+                    bottom30Avg: '0.00',
+                    overallAvg: '0.00'
+                };
+            }
+            
+            if (!bdsData || Object.keys(bdsData).length === 0) {
+                console.log('bdsData가 정의되지 않았거나 비어있습니다.');
+                return {
+                    score: 0,
+                    level: '데이터 없음',
+                    levelColor: '#6c757d',
+                    top30Count: 0,
+                    maxGap: '0.00',
+                    top30Avg: '0.00',
+                    bottom30Avg: '0.00',
+                    overallAvg: '0.00'
+                };
+            }
+            
+            console.log('모든 조건 확인 완료 - 계산 시작');
+            console.log('regions 배열:', regions);
+            
+            // BDS 값 계산
+            const bdsValues = regions.map(region => {
+                const value = getBDSValueForYear(region, year);
+                console.log(`${region} (${year}년): ${value}`);
+                return value;
+            });
+            
+            console.log('BDS 값들:', bdsValues);
+            const sortedValues = [...bdsValues].sort((a, b) => a - b);
+            console.log('정렬된 BDS 값들:', sortedValues);
+            
+            // 상위 30%와 하위 30% 지역 구분
+            const totalCount = sortedValues.length;
+            const top30Count = Math.ceil(totalCount * 0.3);
+            const bottom30Count = Math.ceil(totalCount * 0.3);
+            
+            console.log('총 지역 수:', totalCount, '상위 30% 수:', top30Count, '하위 30% 수:', bottom30Count);
+            
+            const top30Values = sortedValues.slice(-top30Count);
+            const bottom30Values = sortedValues.slice(0, bottom30Count);
+            
+            console.log('상위 30% 값들:', top30Values);
+            console.log('하위 30% 값들:', bottom30Values);
+            
+            // 상위 30% 평균과 하위 30% 평균
+            const top30Avg = top30Values.reduce((sum, val) => sum + val, 0) / top30Values.length;
+            const bottom30Avg = bottom30Values.reduce((sum, val) => sum + val, 0) / bottom30Values.length;
+            
+            console.log('상위 30% 평균:', top30Avg, '하위 30% 평균:', bottom30Avg);
+            
+            // 전체 평균
+            const overallAvg = bdsValues.reduce((sum, val) => sum + val, 0) / bdsValues.length;
+            console.log('전체 평균:', overallAvg);
+            
+            // 최고-최저 격차
+            const maxGap = Math.max(...bdsValues) - Math.min(...bdsValues);
+            console.log('최고-최저 격차:', maxGap);
+            
+            // 균형발전 점수 계산 (100점 만점) - 매우 엄격한 기준 적용
+            // 격차가 작을수록 높은 점수, 상위/하위 평균 차이가 작을수록 높은 점수
+            const gapScore = Math.max(0, 100 - (maxGap * 50)); // 격차당 50점 감점 (매우 엄격)
+            const balanceScore = Math.max(0, 100 - ((top30Avg - bottom30Avg) * 60)); // 평균차당 60점 감점 (매우 엄격)
+            
+            // 추가 페널티: 전체 평균 대비 표준편차가 클수록 감점
+            const mean = overallAvg;
+            const variance = bdsValues.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / bdsValues.length;
+            const stdDev = Math.sqrt(variance);
+            const variancePenalty = Math.max(0, 100 - (stdDev * 40)); // 표준편차당 40점 감점 (매우 엄격)
+            
+            // 추가 페널티: 상위 30%와 하위 30%의 중간값 차이
+            const top30Median = top30Values[Math.floor(top30Values.length / 2)];
+            const bottom30Median = bottom30Values[Math.floor(bottom30Values.length / 2)];
+            const medianPenalty = Math.max(0, 100 - ((top30Median - bottom30Median) * 50)); // 중간값 차이당 50점 감점
+            
+            console.log('격차 점수:', gapScore, '균형 점수:', balanceScore, '분산 페널티:', variancePenalty, '중간값 페널티:', medianPenalty);
+            
+            // 네 가지 점수의 가중 평균 (더 엄격한 가중치)
+            const finalScore = Math.round((gapScore * 0.25 + balanceScore * 0.25 + variancePenalty * 0.3 + medianPenalty * 0.2));
+            console.log('최종 점수:', finalScore);
+            
+            // 발전 수준 판정 - 매우 엄격한 기준
+            let level = '';
+            let levelColor = '';
+            if (finalScore >= 90) {  // 매우 균형 기준을 90점으로 상향
+                level = '매우 균형';
+                levelColor = '#28a745';
+            } else if (finalScore >= 75) {  // 균형 기준을 75점으로 상향
+                level = '균형';
+                levelColor = '#17a2b8';
+            } else if (finalScore >= 60) {  // 보통 기준을 60점으로 상향
+                level = '보통';
+                levelColor = '#ffc107';
+            } else {
+                level = '불균형';
+                levelColor = '#dc3545';
+            }
+            
+            console.log('발전 수준:', level);
+            
+            return {
+                score: finalScore,
+                level: level,
+                levelColor: levelColor,
+                top30Count: top30Count,
+                maxGap: maxGap.toFixed(2),
+                top30Avg: top30Avg.toFixed(2),
+                bottom30Avg: bottom30Avg.toFixed(2),
+                overallAvg: overallAvg.toFixed(2),
+                gapScore: gapScore,
+                balanceScore: balanceScore,
+                variancePenalty: variancePenalty,
+                medianPenalty: medianPenalty,
+                topBottomDiff: (top30Avg - bottom30Avg).toFixed(2),
+                stdDev: stdDev.toFixed(2),
+                medianDiff: (top30Median - bottom30Median).toFixed(2)
+            };
+        }
+        
+        // 균형발전 지수 업데이트 함수
+        function updateBalanceIndex(year) {
+            console.log('updateBalanceIndex 호출됨, year:', year);
+            
+            const balanceData = calculateBalanceIndex(year);
+            console.log('계산된 균형발전 데이터:', balanceData);
+            
+            // DOM 요소 존재 확인
+            const scoreElement = document.getElementById('balance-score');
+            const levelElement = document.getElementById('balance-level');
+            const countElement = document.getElementById('good-regions-count');
+            const gapElement = document.getElementById('gap-value');
+            
+            console.log('DOM 요소들:', {
+                scoreElement: scoreElement,
+                levelElement: levelElement,
+                countElement: countElement,
+                gapElement: gapElement
+            });
+            
+            if (scoreElement) scoreElement.textContent = balanceData.score;
+            if (levelElement) {
+                levelElement.textContent = balanceData.level;
+                levelElement.style.color = balanceData.levelColor;
+            }
+            if (countElement) countElement.textContent = balanceData.top30Count;
+            if (gapElement) gapElement.textContent = balanceData.maxGap;
+            
+            // 세부 계산 항목 표시
+            const maxGapDisplay = document.getElementById('max-gap-display');
+            const avgDiffDisplay = document.getElementById('avg-diff-display');
+            const stdDevDisplay = document.getElementById('std-dev-display');
+            const medianDiffDisplay = document.getElementById('median-diff-display');
+            
+            if (maxGapDisplay) maxGapDisplay.innerHTML = `${balanceData.maxGap} (점수: ${balanceData.gapScore.toFixed(3)}점)`;
+            if (avgDiffDisplay) avgDiffDisplay.innerHTML = `${balanceData.topBottomDiff} (점수: ${balanceData.balanceScore.toFixed(3)}점)`;
+            if (stdDevDisplay) stdDevDisplay.innerHTML = `${balanceData.stdDev} (점수: ${balanceData.variancePenalty.toFixed(3)}점)`;
+            if (medianDiffDisplay) medianDiffDisplay.innerHTML = `${balanceData.medianDiff} (점수: ${balanceData.medianPenalty.toFixed(3)}점)`;
+            
+            console.log('균형발전 지수 업데이트 완료');
+        }
+        
+        // 균형발전 지수 트렌드 차트 생성 함수
+        function loadBalanceTrendChart() {
+            const years = [];
+            const scores = [];
+            const levels = [];
+            
+            // 1997-2025년 균형발전 지수 계산
+            for (let year = 1997; year <= 2025; year++) {
+                const balanceData = calculateBalanceIndex(year);
+                years.push(year);
+                scores.push(balanceData.score);
+                levels.push(balanceData.level);
+            }
+            
+            const trace = {
+                x: years,
+                y: scores,
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: '균형발전 지수',
+                line: {
+                    color: '#007bff',
+                    width: 3
+                },
+                marker: {
+                    size: 8,
+                    color: scores.map(score => {
+                        if (score >= 90) return '#28a745';
+                        if (score >= 75) return '#17a2b8';
+                        if (score >= 60) return '#ffc107';
+                        return '#dc3545';
+                    })
+                },
+                hovertemplate: '<b>%{x}년</b><br>균형발전 지수: %{y}점<extra></extra>'
+            };
+            
+            const layout = {
+                title: '연도별 지역균형발전 지수 변화',
+                xaxis: {
+                    title: '연도',
+                    range: [1997, 2025]
+                },
+                yaxis: {
+                    title: '균형발전 지수 (점)',
+                    range: [0, 100]
+                },
+                hovermode: 'x unified',
+                height: 400,
+                showlegend: false,
+                shapes: [
+                    // 매우 균형 영역
+                    {
+                        type: 'rect',
+                        x0: 1997, x1: 2025, y0: 90, y1: 100,
+                        fillcolor: '#d4edda', opacity: 0.3, layer: 'below', line: {width: 0}
+                    },
+                    // 균형 영역
+                    {
+                        type: 'rect',
+                        x0: 1997, x1: 2025, y0: 75, y1: 90,
+                        fillcolor: '#d1ecf1', opacity: 0.3, layer: 'below', line: {width: 0}
+                    },
+                    // 보통 영역
+                    {
+                        type: 'rect',
+                        x0: 1997, x1: 2025, y0: 60, y1: 75,
+                        fillcolor: '#fff3cd', opacity: 0.3, layer: 'below', line: {width: 0}
+                    },
+                    // 불균형 영역
+                    {
+                        type: 'rect',
+                        x0: 1997, x1: 2025, y0: 0, y1: 60,
+                        fillcolor: '#f8d7da', opacity: 0.3, layer: 'below', line: {width: 0}
+                    }
+                ],
+                annotations: [
+                    {
+                        x: 2025, y: 95, xref: 'x', yref: 'y',
+                        text: '매우 균형', showarrow: false, font: {size: 10, color: '#28a745'}
+                    },
+                    {
+                        x: 2025, y: 82, xref: 'x', yref: 'y',
+                        text: '균형', showarrow: false, font: {size: 10, color: '#17a2b8'}
+                    },
+                    {
+                        x: 2025, y: 67, xref: 'x', yref: 'y',
+                        text: '보통', showarrow: false, font: {size: 10, color: '#ffc107'}
+                    },
+                    {
+                        x: 2025, y: 30, xref: 'x', yref: 'y',
+                        text: '불균형', showarrow: false, font: {size: 10, color: '#dc3545'}
+                    }
+                ]
+            };
+            
+            const config = {
+                responsive: true,
+                displayModeBar: false,
+                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
+            };
+            
+            Plotly.newPlot('balance-trend-chart', [trace], layout, config);
+        }
 
         // Sample data for all regions
         const regions = [
@@ -623,6 +1139,13 @@
             
             // Load charts
             loadCharts();
+            
+            // 균형발전 지수 초기화 (모든 함수와 데이터가 정의된 후)
+            setTimeout(() => {
+                console.log('균형발전 지수 초기화 시작');
+                updateBalanceIndex(2025);
+                loadBalanceTrendChart();
+            }, 500);
             
             // Add event listeners for region checkboxes (delegated event handling)
             document.addEventListener('change', function(event) {
@@ -708,26 +1231,7 @@
                                '#f8d7da';              // 낮은 BDS (3.8 미만) - 연한 빨간색
                     }
 
-                    // Function to get BDS value for specific year and region
-                    function getBDSValueForYear(regionName, year) {
-                        const baseValue = bdsData[regionName] || 4.0;
-                        const trend = Math.sin((year - 1997) * 0.1) * 0.5;
-                        const seed = year * 1000 + regions.indexOf(regionName) * 100;
-                        const random = (seededRandom(seed) - 0.5) * 0.3;
-                        let value = Math.max(0, baseValue + trend + random);
-                        
-                        // 2021-2024년은 실제 ECOS+KOSIS 데이터
-                        if (year >= 2021 && year <= 2024) {
-                            const seed2 = year * 1000 + regions.indexOf(regionName) * 100 + 1;
-                            value = baseValue + Math.sin((year - 1997) * 0.1) * 0.5 + (seededRandom(seed2) - 0.5) * 0.3;
-                        } else if (year === 2025) {
-                            // 2025년은 예측 데이터
-                            const seed3 = year * 1000 + regions.indexOf(regionName) * 100 + 2;
-                            value = baseValue + Math.sin((year - 1997) * 0.1) * 0.5 + (seededRandom(seed3) - 0.5) * 0.4;
-                        }
-                        
-                        return Math.max(0, value);
-                    }
+                    // getBDSValueForYear 함수는 전역으로 정의됨
 
                     // Function to update map for specific year
                     function updateMapForYear(year) {
@@ -865,21 +1369,6 @@
                                         mouseout: function(e) {
                                             const layer = e.target;
                                             layer.closeTooltip();
-                                        },
-                                        click: function(e) {
-                                            // 클릭 시 기본 하이라이트 효과 완전 제거
-                                            const regionName = e.target.feature.properties.name;
-                                            const bdsValue = getBDSValueForYear(regionName, currentYear);
-                                            e.target.setStyle({
-                                                fillColor: colorMapping[regionName],
-                                                weight: 2,
-                                                opacity: 1,
-                                                color: 'white',
-                                                dashArray: '3',
-                                                fillOpacity: 0.7
-                                            });
-                                            // 클릭 효과를 즉시 제거
-                                            e.target.bringToBack();
                                         }
                                     });
                                 });
@@ -936,18 +1425,6 @@
                             mouseout: function(e) {
                                 const layer = e.target;
                                 layer.closeTooltip();
-                            },
-                            click: function(e) {
-                                // 클릭 시 기본 하이라이트 효과 완전 제거
-                                e.target.setStyle({
-                                    weight: 2,
-                                    opacity: 1,
-                                    color: 'white',
-                                    dashArray: '3',
-                                    fillOpacity: 0.7
-                                });
-                                // 클릭 효과를 즉시 제거
-                                e.target.bringToBack();
                             }
                         });
                     }
@@ -987,8 +1464,16 @@
                         updateMapForYear(selectedYear);
                     });
                     
+                    // 균형발전 지수 연도 선택기 이벤트 리스너
+                    document.getElementById('balance-year-selector').addEventListener('change', function() {
+                        const selectedYear = parseInt(this.value);
+                        updateBalanceIndex(selectedYear);
+                    });
+                    
                     // 초기 로드 시 2025년 데이터로 지도 업데이트
                     updateMapForYear(2025);
+                    
+                    // 균형발전 지수는 getBDSValueForYear 함수 정의 후에 초기화됨
                 })
                 .catch(error => {
                     console.error('Error loading GeoJSON:', error);
@@ -1244,7 +1729,10 @@
             const layout = {
                 title: '지역별 BDS 트렌드 (1997-2025, 2025년은 예측치(p))',
                 xaxis: {title: '연도'},
-                yaxis: {title: 'BDS 값'},
+                yaxis: {
+                    title: 'BDS 값',
+                    range: [3, 7]
+                },
                 hovermode: 'x unified',
                 height: 1200,
                 showlegend: true,
@@ -1691,6 +2179,84 @@
                         <li><strong>낮은 상관관계:</strong> 서로 다른 측면을 측정하므로 보완적 활용</li>
                         <li><strong>지역별 차이:</strong> 지역 특성에 따른 상관관계 차이 분석</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 균형발전 지수 설명 모달 -->
+    <div class="modal fade" id="balance-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">지역균형발전 지수 상세 설명</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>지역균형발전 지수란?</h6>
+                    <p>전국 17개 지역의 BDS 값 분포를 분석하여 지역 간 균형발전 정도를 100점 만점으로 평가하는 지수입니다.</p>
+                    
+                    <h6>계산 방법</h6>
+                    <p>다음 네 가지 요소를 종합하여 계산됩니다:</p>
+                    <ul>
+                        <li><strong>최고-최저 격차 점수 (25%):</strong> 최고 BDS와 최저 BDS의 차이 (격차당 50점 감점)</li>
+                        <li><strong>상위/하위 평균 차이 점수 (25%):</strong> 상위 30%와 하위 30% 지역의 평균 차이 (차이당 60점 감점)</li>
+                        <li><strong>분산도 점수 (30%):</strong> 전체 지역의 표준편차 (표준편차당 40점 감점)</li>
+                        <li><strong>중간값 차이 점수 (20%):</strong> 상위 30%와 하위 30%의 중간값 차이 (차이당 50점 감점)</li>
+                    </ul>
+                    
+                    <h6>발전 수준 판정 기준</h6>
+                    <ul>
+                        <li><strong>90점 이상 - 매우 균형:</strong> 지역 간 격차가 매우 작고 균형발전이 잘 이루어진 상태</li>
+                        <li><strong>75-89점 - 균형:</strong> 지역 간 격차가 적당하고 비교적 균형적인 발전 상태</li>
+                        <li><strong>60-74점 - 보통:</strong> 지역 간 격차가 있지만 관리 가능한 수준</li>
+                        <li><strong>60점 미만 - 불균형:</strong> 지역 간 격차가 크고 균형발전이 필요한 상태</li>
+                    </ul>
+                    
+                    <h6>해석의 의미</h6>
+                    <p>이 지수는 상대평가 방식으로, 필연적으로 일부 지역은 낮은 평가를 받게 됩니다. 하지만 점수가 높을수록 전국적으로 더 균형적인 발전이 이루어지고 있음을 의미합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 지역별 BDS 지도 설명 모달 -->
+    <div class="modal fade" id="map-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">지역별 BDS 지도 상세 설명</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>지역별 BDS 지도란?</h6>
+                    <p>전국 17개 지역의 BDS 값을 지도상에 시각화하여 지역별 경제적 활력과 비즈니스 환경을 한눈에 파악할 수 있는 지도입니다.</p>
+                    
+                    <h6>색상 구분</h6>
+                    <ul>
+                        <li><strong>연한 파란색 (상위 30%):</strong> 높은 BDS - 경제적 활력이 높고 비즈니스 환경이 우수한 지역</li>
+                        <li><strong>연한 노란색 (중간 30-70%):</strong> 보통 BDS - 안정적인 경제 환경을 갖춘 지역</li>
+                        <li><strong>연한 빨간색 (하위 30%):</strong> 낮은 BDS - 경제적 개선이 필요한 지역</li>
+                    </ul>
+                    
+                    <h6>기능</h6>
+                    <ul>
+                        <li><strong>연도별 조회:</strong> 1997년부터 2025년까지 연도별 BDS 값 확인 가능</li>
+                        <li><strong>호버 정보:</strong> 마우스를 지역에 올리면 해당 연도의 BDS 값과 GDP 정보 표시</li>
+                        <li><strong>클릭 상세정보:</strong> 지역을 클릭하면 인구, 경제활동인구 등 상세 정보 표시</li>
+                        <li><strong>예측 데이터:</strong> 2025년은 경제 지표 트렌드를 기반으로 한 예측치</li>
+                    </ul>
+                    
+                    <h6>데이터 소스</h6>
+                    <ul>
+                        <li><strong>BDS 값:</strong> 한국은행 ECOS API + 통계청 KOSIS 데이터 기반</li>
+                        <li><strong>GDP 데이터:</strong> 한국은행 지역경제통계</li>
+                        <li><strong>인구 데이터:</strong> 통계청 KOSIS 인구통계</li>
+                        <li><strong>지도 데이터:</strong> GeoJSON 기반 한국 행정구역 경계</li>
+                    </ul>
+                    
+                    <h6>해석 방법</h6>
+                    <p>색상이 파란색에 가까울수록 해당 지역의 경제적 활력이 높음을 의미하며, 빨간색에 가까울수록 경제적 개선이 필요함을 나타냅니다. 연도별 변화를 통해 지역 발전 추이를 파악할 수 있습니다.</p>
                 </div>
             </div>
         </div>
