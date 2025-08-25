@@ -1187,29 +1187,9 @@
             map.setMaxBounds(southKoreaBounds);
 
             // Load GeoJSON data for South Korea regions
-            // 서버 없이도 작동하도록 간단한 한국 지도 데이터 사용
-            const geoJsonData = {
-                "type": "FeatureCollection",
-                "features": [
-                    {"type": "Feature", "properties": {"name": "서울특별시"}, "geometry": {"type": "Polygon", "coordinates": [[[126.8, 37.4], [127.2, 37.4], [127.2, 37.7], [126.8, 37.7], [126.8, 37.4]]]}},
-                    {"type": "Feature", "properties": {"name": "부산광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[128.9, 35.0], [129.3, 35.0], [129.3, 35.4], [128.9, 35.4], [128.9, 35.0]]]}},
-                    {"type": "Feature", "properties": {"name": "대구광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[128.4, 35.7], [128.8, 35.7], [128.8, 36.1], [128.4, 36.1], [128.4, 35.7]]]}},
-                    {"type": "Feature", "properties": {"name": "인천광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[126.5, 37.3], [126.9, 37.3], [126.9, 37.7], [126.5, 37.7], [126.5, 37.3]]]}},
-                    {"type": "Feature", "properties": {"name": "광주광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[126.7, 35.0], [127.1, 35.0], [127.1, 35.4], [126.7, 35.4], [126.7, 35.0]]]}},
-                    {"type": "Feature", "properties": {"name": "대전광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[127.2, 36.2], [127.6, 36.2], [127.6, 36.6], [127.2, 36.6], [127.2, 36.2]]]}},
-                    {"type": "Feature", "properties": {"name": "울산광역시"}, "geometry": {"type": "Polygon", "coordinates": [[[129.2, 35.4], [129.6, 35.4], [129.6, 35.8], [129.2, 35.8], [129.2, 35.4]]]}},
-                    {"type": "Feature", "properties": {"name": "세종특별자치시"}, "geometry": {"type": "Polygon", "coordinates": [[[127.1, 36.4], [127.5, 36.4], [127.5, 36.8], [127.1, 36.8], [127.1, 36.4]]]}},
-                    {"type": "Feature", "properties": {"name": "경기도"}, "geometry": {"type": "Polygon", "coordinates": [[[126.8, 37.0], [127.6, 37.0], [127.6, 37.8], [126.8, 37.8], [126.8, 37.0]]]}},
-                    {"type": "Feature", "properties": {"name": "강원도"}, "geometry": {"type": "Polygon", "coordinates": [[[127.5, 37.5], [128.5, 37.5], [128.5, 38.5], [127.5, 38.5], [127.5, 37.5]]]}},
-                    {"type": "Feature", "properties": {"name": "충청북도"}, "geometry": {"type": "Polygon", "coordinates": [[[127.0, 36.5], [128.0, 36.5], [128.0, 37.5], [127.0, 37.5], [127.0, 36.5]]]}},
-                    {"type": "Feature", "properties": {"name": "충청남도"}, "geometry": {"type": "Polygon", "coordinates": [[[126.0, 36.0], [127.0, 36.0], [127.0, 37.0], [126.0, 37.0], [126.0, 36.0]]]}},
-                    {"type": "Feature", "properties": {"name": "전라북도"}, "geometry": {"type": "Polygon", "coordinates": [[[126.5, 35.5], [127.5, 35.5], [127.5, 36.5], [126.5, 36.5], [126.5, 35.5]]]}},
-                    {"type": "Feature", "properties": {"name": "전라남도"}, "geometry": {"type": "Polygon", "coordinates": [[[126.0, 34.5], [127.0, 34.5], [127.0, 35.5], [126.0, 35.5], [126.0, 34.5]]]}},
-                    {"type": "Feature", "properties": {"name": "경상북도"}, "geometry": {"type": "Polygon", "coordinates": [[[128.0, 35.5], [129.0, 35.5], [129.0, 36.5], [128.0, 36.5], [128.0, 35.5]]]}},
-                    {"type": "Feature", "properties": {"name": "경상남도"}, "geometry": {"type": "Polygon", "coordinates": [[[127.5, 34.5], [128.5, 34.5], [128.5, 35.5], [127.5, 35.5], [127.5, 34.5]]]}},
-                    {"type": "Feature", "properties": {"name": "제주도"}, "geometry": {"type": "Polygon", "coordinates": [[[126.3, 33.2], [126.7, 33.2], [126.7, 33.6], [126.3, 33.6], [126.3, 33.2]]]}}
-                ]
-            };
+            fetch('navis_data/skorea-provinces-2018-geo.json')
+                .then(response => response.json())
+                .then(geoJsonData => {
                     // Function to get color based on BDS percentile (상위 30%, 30-70%, 하위 30%)
                     function getColorByPercentile(bdsValue, allValues) {
                         // 모든 BDS 값 정렬
@@ -1266,47 +1246,10 @@
                             colorMapping[region] = color;
                         });
                         
-                        // 인구 데이터 (서버 없이도 작동하도록 내장)
-                        const data = {
-                            population: {
-                                '서울특별시': {'2023': 9400, '2024': 9350, '2025': 9300},
-                                '부산광역시': {'2023': 3300, '2024': 3280, '2025': 3260},
-                                '대구광역시': {'2023': 2400, '2024': 2390, '2025': 2380},
-                                '인천광역시': {'2023': 3000, '2024': 2990, '2025': 2980},
-                                '광주광역시': {'2023': 1450, '2024': 1445, '2025': 1440},
-                                '대전광역시': {'2023': 1500, '2024': 1495, '2025': 1490},
-                                '울산광역시': {'2023': 1150, '2024': 1145, '2025': 1140},
-                                '세종특별자치시': {'2023': 380, '2024': 385, '2025': 390},
-                                '경기도': {'2023': 13800, '2024': 13850, '2025': 13900},
-                                '강원도': {'2023': 1550, '2024': 1545, '2025': 1540},
-                                '충청북도': {'2023': 1600, '2024': 1595, '2025': 1590},
-                                '충청남도': {'2023': 2100, '2024': 2095, '2025': 2090},
-                                '전라북도': {'2023': 1800, '2024': 1795, '2025': 1790},
-                                '전라남도': {'2023': 1850, '2024': 1845, '2025': 1840},
-                                '경상북도': {'2023': 2650, '2024': 2645, '2025': 2640},
-                                '경상남도': {'2023': 3300, '2024': 3295, '2025': 3290},
-                                '제주도': {'2023': 680, '2024': 685, '2025': 690}
-                            },
-                            active_population: {
-                                '서울특별시': {'2023': 4700, '2024': 4680, '2025': 4660},
-                                '부산광역시': {'2023': 1650, '2024': 1640, '2025': 1630},
-                                '대구광역시': {'2023': 1200, '2024': 1195, '2025': 1190},
-                                '인천광역시': {'2023': 1500, '2024': 1495, '2025': 1490},
-                                '광주광역시': {'2023': 725, '2024': 720, '2025': 715},
-                                '대전광역시': {'2023': 750, '2024': 745, '2025': 740},
-                                '울산광역시': {'2023': 575, '2024': 570, '2025': 565},
-                                '세종특별자치시': {'2023': 190, '2024': 195, '2025': 200},
-                                '경기도': {'2023': 6900, '2024': 6925, '2025': 6950},
-                                '강원도': {'2023': 775, '2024': 770, '2025': 765},
-                                '충청북도': {'2023': 800, '2024': 795, '2025': 790},
-                                '충청남도': {'2023': 1050, '2024': 1045, '2025': 1040},
-                                '전라북도': {'2023': 900, '2024': 895, '2025': 890},
-                                '전라남도': {'2023': 925, '2024': 920, '2025': 915},
-                                '경상북도': {'2023': 1325, '2024': 1320, '2025': 1315},
-                                '경상남도': {'2023': 1650, '2024': 1645, '2025': 1640},
-                                '제주도': {'2023': 340, '2024': 345, '2025': 350}
-                            }
-                        };
+                        // 인구 데이터 미리 로드
+                        fetch('navis_data/realistic_population_data_20250825_145817.json')
+                            .then(response => response.json())
+                            .then(data => {
                                 geojson.eachLayer(function(layer) {
                                     const regionName = layer.feature.properties.name;
                                     const bdsValue = getBDSValueForYear(regionName, year);
@@ -1341,6 +1284,64 @@
                                     `;
                                     
                                     // 팝업 내용 고정
+                                    layer.bindPopup(popupContent);
+                                    
+                                    // 호버 시 툴팁만 표시 (색상 변경 없음)
+                                    layer.off('mouseover mouseout'); // 기존 이벤트 제거
+                                    layer.on({
+                                        mouseover: function(e) {
+                                            const layer = e.target;
+                                            const regionName = layer.feature.properties.name;
+                                            const currentYear = parseInt(document.getElementById('map-year-selector').value);
+                                            const bdsValue = getBDSValueForYear(regionName, currentYear).toFixed(2);
+                                            const gdpValue = (gdpData[regionName] || 0).toLocaleString();
+                                            
+                                            const yearLabel = currentYear === 2025 ? `${currentYear}년 (예측)` : `${currentYear}년`;
+                                            
+                                            layer.bindTooltip(`
+                                                <strong>${regionName}</strong><br>
+                                                BDS (${yearLabel}): ${bdsValue}<br>
+                                                GDP: ${gdpValue} 십억원
+                                            `, {
+                                                permanent: false,
+                                                direction: 'top',
+                                                className: 'custom-tooltip'
+                                            }).openTooltip();
+                                        },
+                                        mouseout: function(e) {
+                                            const layer = e.target;
+                                            layer.closeTooltip();
+                                        }
+                                    });
+                                });
+                            })
+                            .catch(error => {
+                                console.error('Error loading population data:', error);
+                                geojson.eachLayer(function(layer) {
+                                    const regionName = layer.feature.properties.name;
+                                    const bdsValue = getBDSValueForYear(regionName, year);
+                                    
+                                    // 미리 계산된 색상 사용
+                                    layer.setStyle({
+                                        fillColor: colorMapping[regionName],
+                                        weight: 2,
+                                        opacity: 1,
+                                        color: 'white',
+                                        dashArray: '3',
+                                        fillOpacity: 0.7
+                                    });
+                                    
+                                    // 기본 팝업 내용
+                                    const gdpValue = (gdpData[regionName] || 0).toLocaleString();
+                                    const yearLabel = year === 2025 ? `${year}년 (예측)` : `${year}년`;
+                                    const popupContent = `
+                                        <strong>${regionName}</strong><br>
+                                        BDS (${yearLabel}): ${bdsValue.toFixed(2)}<br>
+                                        GDP: ${gdpValue} 십억원<br>
+                                        인구: 데이터 없음<br>
+                                        경제활동인구: 데이터 없음
+                                    `;
+                                    
                                     layer.bindPopup(popupContent);
                                     
                                     // 호버 시 툴팁만 표시 (색상 변경 없음)
