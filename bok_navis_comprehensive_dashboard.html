@@ -779,7 +779,13 @@
         
         // getBDSValueForYear 함수를 전역으로 정의
         function getBDSValueForYear(regionName, year) {
-            const baseValue = bdsData[regionName] || 4.0;
+            // 지역명 매핑 (GeoJSON과 데이터 간 차이 해결)
+            let mappedRegionName = regionName;
+            if (regionName === '제주특별자치도' || regionName === '제주시') {
+                mappedRegionName = '제주도';
+            }
+            
+            const baseValue = bdsData[mappedRegionName] || 4.0;
             const trend = Math.sin((year - 1997) * 0.1) * 0.5;
             const seed = year * 1000 + regions.indexOf(regionName) * 100;
             const random = (seededRandom(seed) - 0.5) * 0.3;
@@ -1346,7 +1352,7 @@
                                             
                                             // 지역명 매핑 (GeoJSON과 인구 데이터 간 차이 해결)
                                             let mappedRegionName = regionName;
-                                            if (regionName === '제주특별자치도') {
+                                            if (regionName === '제주특별자치도' || regionName === '제주시') {
                                                 mappedRegionName = '제주도';
                                             }
                                             
@@ -1362,7 +1368,7 @@
                                             layer.bindTooltip(`
                                                 <strong>${regionName}</strong><br>
                                                 BDS (${yearLabel}): ${bdsValue}<br>
-                                                GDP: ${gdpValue} 십억원<br>
+                                                GDP: ${(gdpData[mappedRegionName] || 0).toLocaleString()} 십억원<br>
                                                 인구: ${popValue.toLocaleString()}천명<br>
                                                 경제활동인구: ${activePopValue.toLocaleString()}천명
                                             `, {
@@ -1488,7 +1494,7 @@
                                 
                                 // 지역명 매핑 (GeoJSON과 인구 데이터 간 차이 해결)
                                 let mappedRegionName = regionName;
-                                if (regionName === '제주특별자치도') {
+                                if (regionName === '제주특별자치도' || regionName === '제주시') {
                                     mappedRegionName = '제주도';
                                 }
                                 
@@ -1504,7 +1510,7 @@
                                 layer.bindTooltip(`
                                     <strong>${regionName}</strong><br>
                                     BDS (${yearLabel}): ${bdsValue}<br>
-                                    GDP: ${gdpValue} 십억원<br>
+                                    GDP: ${(gdpData[mappedRegionName] || 0).toLocaleString()} 십억원<br>
                                     인구: ${popValue.toLocaleString()}천명<br>
                                     경제활동인구: ${activePopValue.toLocaleString()}천명
                                 `, {
