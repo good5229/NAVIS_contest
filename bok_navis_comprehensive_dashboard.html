@@ -263,6 +263,7 @@
                                         <span id="good-regions-count">0</span>개 지역
                                     </div>
                                     <div class="stats-label">상위 30% 지역</div>
+                                    <div id="top-regions-list" class="small text-muted mt-1" style="font-size: 0.7rem; line-height: 1.2;"></div>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -848,6 +849,16 @@
             
             console.log('총 지역 수:', totalCount, '상위 30% 수:', top30Count, '하위 30% 수:', bottom30Count);
             
+            // 지역별 BDS 값과 지역명을 함께 정렬
+            const regionBdsPairs = regions.map((region, index) => ({
+                region: region,
+                bdsValue: bdsValues[index]
+            })).sort((a, b) => a.bdsValue - b.bdsValue);
+            
+            // 상위 30% 지역명 추출
+            const top30Regions = regionBdsPairs.slice(-top30Count).map(pair => pair.region);
+            const bottom30Regions = regionBdsPairs.slice(0, bottom30Count).map(pair => pair.region);
+            
             const top30Values = sortedValues.slice(-top30Count);
             const bottom30Values = sortedValues.slice(0, bottom30Count);
             
@@ -914,6 +925,7 @@
                 level: level,
                 levelColor: levelColor,
                 top30Count: top30Count,
+                top30Regions: top30Regions,
                 maxGap: maxGap.toFixed(2),
                 top30Avg: top30Avg.toFixed(2),
                 bottom30Avg: bottom30Avg.toFixed(2),
@@ -955,6 +967,12 @@
             }
             if (countElement) countElement.textContent = balanceData.top30Count;
             if (gapElement) gapElement.textContent = balanceData.maxGap;
+            
+            // 상위 30% 지역명 표시
+            const topRegionsListElement = document.getElementById('top-regions-list');
+            if (topRegionsListElement && balanceData.top30Regions) {
+                topRegionsListElement.textContent = balanceData.top30Regions.join(', ');
+            }
             
             // 세부 계산 항목 표시
             const maxGapDisplay = document.getElementById('max-gap-display');
