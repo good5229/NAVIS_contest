@@ -1290,11 +1290,11 @@
                         // 해당 연도의 모든 지역 BDS 값 수집
                         const allBDSValues = regions.map(region => getBDSValueForYear(region, year));
                         
-                        // 백분위 기준 색상 매핑 미리 계산
+                        // 절대값 기준 색상 매핑 미리 계산
                         const colorMapping = {};
                         regions.forEach(region => {
                             const bdsValue = getBDSValueForYear(region, year);
-                            const color = getColorByPercentile(bdsValue, allBDSValues);
+                            const color = getColor(bdsValue);
                             colorMapping[region] = color;
                         });
                         
