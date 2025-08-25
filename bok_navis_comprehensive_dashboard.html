@@ -377,9 +377,9 @@
                                                      <strong>발전 수준 판정:</strong>
                                                      <ul class="list-unstyled mt-2">
                                                          <li>• 90점 이상: 매우 균형</li>
-                                                         <li>• 75-89점: 균형</li>
-                                                         <li>• 60-74점: 보통</li>
-                                                         <li>• 60점 미만: 불균형</li>
+                                                         <li>• 66-89점: 균형</li>
+                                                         <li>• 50-65점: 보통</li>
+                                                         <li>• 50점 미만: 불균형</li>
                                                      </ul>
                                                  </div>
                                              </div>
@@ -901,16 +901,16 @@
             const finalScore = Math.round((gapScore * 0.35 + balanceScore * 0.30 + variancePenalty * 0.20 + medianPenalty * 0.15));
             console.log('최종 점수:', finalScore);
             
-            // 발전 수준 판정 - 매우 엄격한 기준
+            // 발전 수준 판정 - 조정된 기준
             let level = '';
             let levelColor = '';
-            if (finalScore >= 90) {  // 매우 균형 기준을 90점으로 상향
+            if (finalScore >= 90) {  // 매우 균형 기준
                 level = '매우 균형';
                 levelColor = '#28a745';
-            } else if (finalScore >= 75) {  // 균형 기준을 75점으로 상향
+            } else if (finalScore >= 66) {  // 균형 기준을 66점으로 조정
                 level = '균형';
                 levelColor = '#17a2b8';
-            } else if (finalScore >= 60) {  // 보통 기준을 60점으로 상향
+            } else if (finalScore >= 50) {  // 보통 기준을 50점으로 조정
                 level = '보통';
                 levelColor = '#ffc107';
             } else {
