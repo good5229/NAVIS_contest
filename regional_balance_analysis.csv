@@ -1,6 +1,0 @@
-﻿scenario,policy_name,avg_bds,max_bds,min_bds,regional_gap,regional_variance,gini_coefficient,high_bds_count,medium_bds_count,low_bds_count,balance_score
-baseline,현재 정책 유지,8.41,8.9,8.02,0.88,0.082,0.018,17,0,0,9.12
-balanced_growth,균형 성장 정책,8.47,8.9,8.24,0.66,0.051,0.014,17,0,0,9.34
-metropolitan_focus,대도시 중심 정책,8.47,9.1,8.02,1.08,0.132,0.023,17,0,0,8.92
-regional_cluster,지역 클러스터 정책,8.6,9.0,8.27,0.73,0.057,0.015,17,0,0,9.27
-innovation_driven,혁신 주도 정책,8.65,9.05,8.32,0.73,0.059,0.015,17,0,0,9.27
