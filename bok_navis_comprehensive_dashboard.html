@@ -777,6 +777,12 @@
         let map;
         let currentTime = new Date();
         
+        // GDP 표시 함수
+        function formatGDP(gdpValue) {
+            const value = (gdpValue / 100).toFixed(3);
+            return value.replace(/\.?0+$/, '');
+        }
+        
         // getBDSValueForYear 함수를 전역으로 정의
         function getBDSValueForYear(regionName, year) {
             // 지역명 매핑 (GeoJSON과 데이터 간 차이 해결)
@@ -1336,7 +1342,7 @@
                                     const popupContent = `
                                         <strong>${regionName}</strong><br>
                                         BDS (${yearLabel}): ${bdsValue.toFixed(2)}<br>
-                                        GDP: ${((gdpData[regionName] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원<br>
+                                        GDP: ${formatGDP(gdpData[regionName] || 0)} 조원<br>
                                         인구: ${(popValue / 10).toFixed(1)}만명<br>
                                         경제활동인구: ${(activePopValue / 10).toFixed(1)}만명
                                     `;
@@ -1374,7 +1380,7 @@
                                             layer.bindTooltip(`
                                                 <strong>${regionName}</strong><br>
                                                 BDS (${yearLabel}): ${bdsValue}<br>
-                                                GDP: ${((gdpData[mappedRegionName] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원<br>
+                                                GDP: ${formatGDP(gdpData[mappedRegionName] || 0)} 조원<br>
                                                 인구: ${(popValue / 10).toFixed(1)}만명<br>
                                                 경제활동인구: ${(activePopValue / 10).toFixed(1)}만명
                                             `, {
@@ -1412,7 +1418,7 @@
                                     const popupContent = `
                                         <strong>${regionName}</strong><br>
                                         BDS (${yearLabel}): ${bdsValue.toFixed(2)}<br>
-                                        GDP: ${((gdpData[regionName] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원<br>
+                                        GDP: ${formatGDP(gdpData[regionName] || 0)} 조원<br>
                                         인구: 데이터 없음<br>
                                         경제활동인구: 데이터 없음
                                     `;
@@ -1484,7 +1490,7 @@
                         layer.bindPopup(`
                             <strong>${regionName}</strong><br>
                             BDS (2025년 예측): ${bdsValue}<br>
-                            GDP: ${((gdpData[regionName] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원
+                            GDP: ${formatGDP(gdpData[regionName] || 0)} 조원
                         `);
                         
                         // 호버 시 툴팁만 표시 (색상 변경 없음)
@@ -1516,7 +1522,7 @@
                                 layer.bindTooltip(`
                                     <strong>${regionName}</strong><br>
                                     BDS (${yearLabel}): ${bdsValue}<br>
-                                    GDP: ${((gdpData[mappedRegionName] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원<br>
+                                    GDP: ${formatGDP(gdpData[mappedRegionName] || 0)} 조원<br>
                                     인구: ${(popValue / 10).toFixed(1)}만명<br>
                                     경제활동인구: ${(activePopValue / 10).toFixed(1)}만명
                                 `, {
@@ -1629,7 +1635,7 @@
                     marker.bindPopup(`
                         <strong>${region}</strong><br>
                         BDS: ${bdsValue.toFixed(1)}<br>
-                        GDP: ${((gdpData[region] || 0) / 100).toFixed(3).replace(/\.?0+$/, '')} 조원
+                        GDP: ${formatGDP(gdpData[region] || 0)} 조원
                     `);
                 }
             });
@@ -1839,7 +1845,7 @@
                     title: 'BDS 값',
                     range: [3, 7]
                 },
-                hovermode: 'closest',
+                hovermode: 'x unified',
                 height: 1200,
                 showlegend: true,
                 legend: {
@@ -1875,69 +1881,7 @@
                 }
             };
 
-            Plotly.newPlot('bds-trend-chart', traces, layout, config).then(function() {
-                // 커스텀 툴팁 이벤트 추가
-                const chart = document.getElementById('bds-trend-chart');
-                
-                chart.on('plotly_hover', function(data) {
-                    const point = data.points[0];
-                    const x = point.x;
-                    const year = Array.isArray(x) ? x[0] : x;
-                    
-                    // 해당 연도의 모든 지역 BDS 값 수집
-                    const yearData = [];
-                    traces.forEach(trace => {
-                        if (trace.x && trace.y) {
-                            const index = trace.x.indexOf(year);
-                            if (index !== -1 && trace.y[index] !== undefined) {
-                                yearData.push({
-                                    region: trace.name,
-                                    value: trace.y[index],
-                                    color: trace.marker ? trace.marker.color : '#1f77b4'
-                                });
-                            }
-                        }
-                    });
-                    
-                    // BDS 값 기준 내림차순 정렬
-                    yearData.sort((a, b) => b.value - a.value);
-                    
-                    // 커스텀 툴팁 생성
-                    let tooltipContent = `<b>${year}년</b><br>`;
-                    yearData.forEach((item, index) => {
-                        const isPrediction = year === 2025 && traces.find(t => t.name === item.region && t.marker && t.marker.symbol === 'diamond');
-                        const suffix = isPrediction ? ' (예측)' : '';
-                        tooltipContent += `${index + 1}. ${item.region}: ${item.value.toFixed(2)}${suffix}<br>`;
-                    });
-                    
-                    // 기존 툴팁 숨기고 커스텀 툴팁 표시
-                    const tooltip = document.createElement('div');
-                    tooltip.className = 'custom-chart-tooltip';
-                    tooltip.innerHTML = tooltipContent;
-                    tooltip.style.cssText = `
-                        position: absolute;
-                        background: rgba(255, 255, 255, 0.95);
-                        border: 1px solid rgba(0, 0, 0, 0.3);
-                        border-radius: 5px;
-                        padding: 10px;
-                        font-size: 12px;
-                        z-index: 1000;
-                        pointer-events: none;
-                        left: ${data.event.clientX + 10}px;
-                        top: ${data.event.clientY - 10}px;
-                        max-width: 300px;
-                    `;
-                    
-                    document.body.appendChild(tooltip);
-                    
-                    // 마우스 아웃 시 툴팁 제거
-                    chart.once('plotly_unhover', function() {
-                        if (tooltip.parentNode) {
-                            tooltip.parentNode.removeChild(tooltip);
-                        }
-                    });
-                });
-            });
+            Plotly.newPlot('bds-trend-chart', traces, layout, config);
         }
 
 
