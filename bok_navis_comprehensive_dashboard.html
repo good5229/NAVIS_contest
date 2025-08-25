@@ -1290,11 +1290,11 @@
                         // 해당 연도의 모든 지역 BDS 값 수집
                         const allBDSValues = regions.map(region => getBDSValueForYear(region, year));
                         
-                        // 절대값 기준 색상 매핑 미리 계산
+                        // 백분위 기준 색상 매핑 미리 계산
                         const colorMapping = {};
                         regions.forEach(region => {
                             const bdsValue = getBDSValueForYear(region, year);
-                            const color = getColor(bdsValue);
+                            const color = getColorByPercentile(bdsValue, allBDSValues);
                             colorMapping[region] = color;
                         });
                         
@@ -1543,18 +1543,18 @@
                     legend.onAdd = function() {
                         const div = L.DomUtil.create('div', 'region-legend');
                         div.innerHTML = `
-                            <strong>BDS 점수</strong><br>
+                            <strong>BDS 점수 (백분위 기준)</strong><br>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #d1ecf1;"></div>
-                                높음 (4.2+)
+                                상위 30%
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #fff3cd;"></div>
-                                보통 (3.8-4.2)
+                                중간 40%
                             </div>
                             <div class="legend-item">
                                 <div class="legend-color" style="background-color: #f8d7da;"></div>
-                                낮음 (<3.8)
+                                하위 30%
                             </div>
                         `;
                         return div;
