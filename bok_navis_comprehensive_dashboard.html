@@ -1723,28 +1723,46 @@
                         size: 6,
                         color: getRegionColor(index)
                     },
-                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f}<extra></extra>`
+                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f}<extra></extra>`,
+                    legendgroup: region
                 });
                 
-                // 2024년에서 2025년으로 연결하는 선과 2025년 예측 데이터를 하나의 trace로 통합
+                // 2024년에서 2025년으로 연결하는 선 (투명하게)
                 traces.push({
                     x: [2024, 2025],
                     y: [actualValues[actualValues.length - 1], predictionValue],
                     type: 'scatter',
-                    mode: 'lines+markers',
-                    name: `${region} (예측)`,
+                    mode: 'lines',
+                    name: `${region} (연결선)`,
                     line: {
                         width: 2,
                         color: getRegionColor(index),
                         dash: 'dash'
                     },
+                    showlegend: false,
+                    hoverinfo: 'skip',
+                    legendgroup: region
+                });
+                
+                // 2025년 예측 데이터만 별도 마커로 강조
+                traces.push({
+                    x: [2025],
+                    y: [predictionValue],
+                    type: 'scatter',
+                    mode: 'markers',
+                    name: `${region} (p)`,
                     marker: {
-                        size: [6, 10], // 2024년은 작은 마커, 2025년은 큰 마커
+                        size: 10,
                         color: getRegionColor(index),
-                        symbol: ['circle', 'diamond'] // 2024년은 원, 2025년은 다이아몬드
+                        line: {
+                            color: '#000000',
+                            width: 2
+                        },
+                        symbol: 'diamond' // 다이아몬드 모양으로 예측치 표시
                     },
-                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f}${'%{x}' === '2025' ? ' (예측)' : ''}<extra></extra>`,
-                    showlegend: false // 범례에 표시하지 않음
+                    hovertemplate: `<b>%{fullData.name}</b><br>BDS: %{y:.2f} (예측)<extra></extra>`,
+                    showlegend: false, // 범례에 표시하지 않음
+                    legendgroup: region
                 });
             });
             
