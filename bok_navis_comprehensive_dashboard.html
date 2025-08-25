@@ -769,6 +769,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- html2canvas for map capture -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <script>
         // Dashboard JavaScript
@@ -1098,10 +1100,17 @@
                 ]
             };
             
-            const config = {
-                responsive: true,
-                displayModeBar: false,
-                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
+                        const config = {
+                responsive: true, 
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d'],
+                toImageButtonOptions: {
+                    format: 'png',
+                    filename: 'bds_trend_chart',
+                    height: 1200,
+                    width: 1400,
+                    scale: 2
+                }
             };
             
             Plotly.newPlot('balance-trend-chart', [trace], layout, config);
@@ -1820,8 +1829,15 @@
 
             const config = {
                 responsive: true, 
-                displayModeBar: false,
-                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d'],
+                toImageButtonOptions: {
+                    format: 'png',
+                    filename: 'balance_index_trend',
+                    height: 800,
+                    width: 1200,
+                    scale: 2
+                }
             };
 
             Plotly.newPlot('bds-trend-chart', traces, layout, config);
@@ -1942,7 +1958,18 @@
                 }
             };
 
-            Plotly.newPlot('correlation-chart', [scatterTrace, trendTrace], layout, {responsive: true, displayModeBar: false});
+            Plotly.newPlot('correlation-chart', [scatterTrace, trendTrace], layout, {
+                responsive: true, 
+                displayModeBar: true,
+                modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d'],
+                toImageButtonOptions: {
+                    format: 'png',
+                    filename: 'correlation_analysis',
+                    height: 600,
+                    width: 800,
+                    scale: 2
+                }
+            });
             
             // 연도별 상관계수 표 업데이트
             updateCorrelationTable(period);
@@ -2031,6 +2058,25 @@
         function showModal(modalId) {
             const modal = new bootstrap.Modal(document.getElementById(modalId));
             modal.show();
+        }
+
+        // 지도 캡처 함수 (향후 지도 추가 시 사용)
+        function captureMap() {
+            if (map) {
+                // html2canvas를 사용한 지도 캡처
+                html2canvas(document.getElementById('map'), {
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'bds_map.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            } else {
+                alert('지도가 로드되지 않았습니다.');
+            }
         }
 
         // Resize charts on window resize
