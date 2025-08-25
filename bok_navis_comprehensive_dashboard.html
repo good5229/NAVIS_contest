@@ -1298,6 +1298,12 @@
                             colorMapping[region] = color;
                         });
                         
+                        // 지역명 매핑을 위한 추가 색상 매핑
+                        if (colorMapping['제주도']) {
+                            colorMapping['제주특별자치도'] = colorMapping['제주도'];
+                            colorMapping['제주시'] = colorMapping['제주도'];
+                        }
+                        
                         // 인구 데이터 미리 로드
                         fetch('navis_data/realistic_population_data_20250825_145817.json')
                             .then(response => response.json())
