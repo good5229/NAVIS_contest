@@ -209,3 +209,4 @@ __marimo__/
 # HTML visualization files
 *.html
 outputs_timeseries/*.html
+~$VIS_BDS_연구보고서.docx
