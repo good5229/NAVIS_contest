@@ -71,13 +71,12 @@ class KosisFiscalDataCollector:
             
             # 재정자립도 데이터 수집
             autonomy_data = self._get_single_year_data(year, self.tbl_id_autonomy, "재정자립도")
-            if autonomy_data:
-                all_data.extend(autonomy_data)
-            
-            # 재정자주도 데이터 수집
             independence_data = self._get_single_year_data(year, self.tbl_id_independence, "재정자주도")
-            if independence_data:
-                all_data.extend(independence_data)
+            
+            # 데이터 병합
+            if autonomy_data and independence_data:
+                merged_data = self._merge_autonomy_independence_data(autonomy_data, independence_data, year)
+                all_data.extend(merged_data)
             
             # API 호출 제한 방지
             time.sleep(2)
@@ -170,6 +169,28 @@ class KosisFiscalDataCollector:
         except Exception as e:
             logging.error(f"{year}년 {data_type} 데이터 수집 중 오류: {str(e)}")
             return []
+    
+    def _merge_autonomy_independence_data(self, autonomy_data: List[Dict], independence_data: List[Dict], year: int) -> List[Dict]:
+        """재정자립도와 재정자주도 데이터 병합"""
+        merged_data = []
+        
+        # 재정자립도 데이터를 딕셔너리로 변환
+        autonomy_dict = {item['region']: item['fiscal_autonomy_ratio'] for item in autonomy_data}
+        independence_dict = {item['region']: item['fiscal_independence_ratio'] for item in independence_data}
+        
+        # 모든 지역에 대해 데이터 병합
+        all_regions = set(autonomy_dict.keys()) | set(independence_dict.keys())
+        
+        for region in all_regions:
+            merged_data.append({
+                'year': year,
+                'region': region,
+                'fiscal_autonomy_ratio': autonomy_dict.get(region, 0),
+                'fiscal_independence_ratio': independence_dict.get(region, 0),
+                'source': 'KOSIS'
+            })
+        
+        return merged_data
     
     def save_to_csv(self, df: pd.DataFrame, filename: str = "kosis_fiscal_autonomy_data.csv"):
         """데이터를 CSV 파일로 저장"""
