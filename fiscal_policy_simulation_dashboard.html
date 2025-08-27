@@ -4,80 +4,14 @@
         <head>
             <title>재정자립도 정책 시뮬레이션 결과</title>
             <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
             <style>
                 body { font-family: Arial, sans-serif; margin: 20px; }
                 .chart-container { margin: 30px 0; }
                 .summary { background-color: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0; }
-                .formula-box { 
-                    background-color: #f8f9fa; 
-                    padding: 20px; 
-                    border-radius: 10px; 
-                    margin: 15px 0; 
-                    border-left: 4px solid #e74c3c; 
-                }
-                .formula { 
-                    font-family: 'Courier New', monospace; 
-                    background-color: white; 
-                    padding: 15px; 
-                    border-radius: 8px; 
-                    border: 1px solid #ddd; 
-                    margin: 10px 0; 
-                }
-                .formula p { 
-                    margin: 8px 0; 
-                    line-height: 1.6; 
-                }
-                .formula ul { 
-                    margin: 10px 0; 
-                    padding-left: 20px; 
-                }
-                .formula li { 
-                    margin: 5px 0; 
-                }
-                .reference-box { 
-                    background-color: #f8f9fa; 
-                    padding: 20px; 
-                    border-radius: 10px; 
-                    margin: 15px 0; 
-                    border-left: 4px solid #3498db; 
-                }
-                .reference-box ul { 
-                    list-style: none; 
-                    padding: 0; 
-                }
-                .reference-box li { 
-                    background-color: white; 
-                    padding: 15px; 
-                    margin: 10px 0; 
-                    border-radius: 8px; 
-                    border: 1px solid #ddd; 
-                }
-                .reference-box em { 
-                    color: #7f8c8d; 
-                    font-size: 14px; 
-                }
-                .assumption-box { 
-                    background-color: #f8f9fa; 
-                    padding: 20px; 
-                    border-radius: 10px; 
-                    border-left: 4px solid #f39c12; 
-                }
-                .assumption-box ul { 
-                    padding-left: 20px; 
-                }
-                .assumption-box li { 
-                    margin: 8px 0; 
-                    line-height: 1.5; 
-                }
             </style>
         </head>
         <body>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1>재정자립도 정책 시뮬레이션 결과</h1>
-                <button class="btn btn-info" onclick="showSimulationInfo()">📚 시뮬레이션 정보</button>
-            </div>
+            <h1>재정자립도 정책 시뮬레이션 결과</h1>
             <div class="summary">
                 <h2>시뮬레이션 개요</h2>
                 <p><strong>분석 대상:</strong> 재정자립도 30% 미만 지역 (전라북도, 경상북도, 전라남도, 강원도)</p>
@@ -97,116 +31,6 @@
                 <div id="chart3"></div>
             </div>
             
-            <!-- 시뮬레이션 정보 모달 -->
-            <div class="modal fade" id="simulationInfoModal" tabindex="-1" aria-labelledby="simulationInfoModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="simulationInfoModalLabel">📚 시뮬레이션 방법론 및 연구 근거</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4>🔬 시뮬레이션 모델</h4>
-                                    <div class="formula-box">
-                                        <h5>재정자립도 변화 모델</h5>
-                                        <div class="formula">
-                                            <p><strong>기본 공식:</strong></p>
-                                            <p>F<sub>t</sub> = F<sub>0</sub> + Σ(ΔF<sub>i</sub> × I<sub>i</sub> × t) + S × t</p>
-                                            <p>여기서:</p>
-                                            <ul>
-                                                <li>F<sub>t</sub>: t년 후 재정자립도</li>
-                                                <li>F<sub>0</sub>: 초기 재정자립도</li>
-                                                <li>ΔF<sub>i</sub>: i번째 정책의 연간 효과 계수</li>
-                                                <li>I<sub>i</sub>: i번째 정책의 투자 강도 (0~3x)</li>
-                                                <li>S: 시너지 효과 계수</li>
-                                                <li>t: 경과 연수</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="formula-box">
-                                        <h5>정책별 효과 계수</h5>
-                                        <div class="formula">
-                                            <p><strong>인구 정책 (P):</strong></p>
-                                            <p>ΔF<sub>P</sub> = (0.03 + 0.02 + 0.025) × 0.02 = 0.0015</p>
-                                            <p><strong>산업 정책 (I):</strong></p>
-                                            <p>ΔF<sub>I</sub> = (0.04 + 0.05 + 0.035 + 0.045) × 0.03 = 0.0025</p>
-                                            <p><strong>인프라 정책 (Inf):</strong></p>
-                                            <p>ΔF<sub>Inf</sub> = (0.06 + 0.05 + 0.04) × 0.025 = 0.003</p>
-                                            <p><strong>제도 정책 (Inst):</strong></p>
-                                            <p>ΔF<sub>Inst</sub> = (0.07 + 0.055 + 0.04) × 0.015 = 0.002</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <h4>📖 연구 근거</h4>
-                                    <div class="reference-box">
-                                        <h5>국내 연구</h5>
-                                        <ul>
-                                            <li><strong>한국지방재정공제회 (2023)</strong><br>
-                                                "지방재정자립도 향상 방안 연구"<br>
-                                                <em>재정자립도와 지역경제 성장의 상관관계 분석</em></li>
-                                            <li><strong>한국개발연구원 (2022)</strong><br>
-                                                "지방자치단체 세원 다양화 정책 효과 분석"<br>
-                                                <em>세원 다양화가 재정자립도에 미치는 영향 연구</em></li>
-                                            <li><strong>국토연구원 (2021)</strong><br>
-                                                "지역균형발전을 위한 재정정책 연구"<br>
-                                                <em>재정 투자가 지역경제에 미치는 파급효과 분석</em></li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="reference-box">
-                                        <h5>해외 연구</h5>
-                                        <ul>
-                                            <li><strong>OECD (2023)</strong><br>
-                                                "Fiscal Decentralization and Regional Development"<br>
-                                                <em>재정 분권화와 지역발전의 관계성 연구</em></li>
-                                            <li><strong>World Bank (2022)</strong><br>
-                                                "Local Government Fiscal Autonomy: International Comparisons"<br>
-                                                <em>지방정부 재정자율성의 국제 비교 연구</em></li>
-                                            <li><strong>IMF (2021)</strong><br>
-                                                "Fiscal Policy and Regional Economic Growth"<br>
-                                                <em>재정정책과 지역경제 성장의 관계 분석</em></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row mt-4">
-                                <div class="col-12">
-                                    <h4>🎯 시뮬레이션 가정</h4>
-                                    <div class="assumption-box">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h5>정책 효과 가정</h5>
-                                                <ul>
-                                                    <li><strong>선형 누적 효과:</strong> 정책 효과는 시간에 따라 선형적으로 누적</li>
-                                                    <li><strong>독립성 가정:</strong> 각 정책은 독립적으로 작용하되 시너지 효과 존재</li>
-                                                    <li><strong>한계 효과:</strong> 재정자립도 상한선 95% 설정</li>
-                                                    <li><strong>지역 특성:</strong> 지역별 특성은 현재 재정자립도 수준으로 반영</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <h5>시뮬레이션 한계</h5>
-                                                <ul>
-                                                    <li><strong>외부 요인:</strong> 경제 위기, 자연재해 등 외부 충격 미반영</li>
-                                                    <li><strong>정책 지연:</strong> 정책 시행부터 효과 발현까지의 시차 미고려</li>
-                                                    <li><strong>지역 간 상호작용:</strong> 지역 간 경쟁 및 협력 효과 미반영</li>
-                                                    <li><strong>정치적 요인:</strong> 정책 지속성 및 정치적 변화 미고려</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <script>
                 {"data":[{"line":{"width":3},"mode":"lines+markers","name":"Population Support","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"ODMzMzMzwz84MzMzMzPTP9TMzMzMzNw\u002fODMzMzMz4z8GAAAAAADoPw=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"Industry Development","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"o53vp8ZLzz+wne+nxkvfP0228\u002f3UeOc\u002fvJ3vp8ZL7z+JwvUoXI\u002fzPw=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"Infrastructure Investment","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"+v\u002f\u002f\u002f\u002f\u002f\u002f1z8GAAAAAADoP\u002f7\u002f\u002f\u002f\u002f\u002f\u002f\u002fE\u002fBgAAAAAA+D\u002f7\u002f\u002f\u002f\u002f\u002f\u002f\u002f9Pw=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"Institutional Reform","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"wEfhehSuzz\u002fAR+F6FK7fP9D1KFyPwuc\u002ftEfhehSu7z\u002fSzMzMzMzzPw=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"Comprehensive Policy","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"fOtRuB6F\u002fD+I61G4HoUMQKNwPQrXYxVAiOtRuB6FHEA0MzMzM9MhQA=="},"type":"scatter"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"\uc815\ucc45\ubcc4 \uc7ac\uc815\uc790\ub9bd\ub3c4 \uac1c\uc120 \ud6a8\uacfc (\ud3c9\uade0)"},"xaxis":{"title":{"text":"\uc5f0\ub3c4"}},"yaxis":{"title":{"text":"\uc7ac\uc815\uc790\ub9bd\ub3c4 \uac1c\uc120\ud3ed (%)"}},"hovermode":"x unified"}}
                 {"data":[{"line":{"width":3},"mode":"lines+markers","name":"\uac15\uc6d0\ub3c4","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"61G4HoV7O0CkcD0K10M9QFyPwvUoDD9AC9ejcD1qQEBnZmZmZk5BQA=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"\uc804\ub77c\ub0a8\ub3c4","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"61G4HoV7OUCkcD0K10M7QFyPwvUoDD1AFa5H4XrUPkBmZmZmZk5AQA=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"\uc804\ub77c\ubd81\ub3c4","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"UbgehethOUAK16NwPSo7QML1KFyP8jxAexSuR+G6PkCamZmZmUFAQA=="},"type":"scatter"},{"line":{"width":3},"mode":"lines+markers","name":"\uacbd\uc0c1\ubd81\ub3c4","x":{"dtype":"i2","bdata":"6gfrB+wH7QfuBw=="},"y":{"dtype":"f8","bdata":"hOtRuB4VOkA+CtejcN07QPUoXI\u002fCpT1Ar0fhehRuP0AzMzMzM5tAQA=="},"type":"scatter"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"text":"\uc9c0\uc5ed\ubcc4 \uc885\ud569 \uc815\ucc45 \ud6a8\uacfc (\uc7ac\uc815\uc790\ub9bd\ub3c4 \ubcc0\ud654)"},"xaxis":{"title":{"text":"\uc5f0\ub3c4"}},"yaxis":{"title":{"text":"\uc7ac\uc815\uc790\ub9bd\ub3c4 (%)"}},"hovermode":"x unified"}}
@@ -215,12 +39,6 @@
                 Plotly.newPlot('chart1', fig1.data, fig1.layout);
                 Plotly.newPlot('chart2', fig2.data, fig2.layout);
                 Plotly.newPlot('chart3', fig3.data, fig3.layout);
-                
-                // 시뮬레이션 정보 모달 표시
-                function showSimulationInfo() {
-                    const modal = new bootstrap.Modal(document.getElementById('simulationInfoModal'));
-                    modal.show();
-                }
             </script>
         </body>
         </html>
