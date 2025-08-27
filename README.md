@@ -83,25 +83,25 @@ pip install -r requirements.txt
 ### 2. 데이터 수집
 ```bash
 # KOSIS 재정자립도 데이터 수집
-python kosis_fiscal_data_collector.py
+python scripts/kosis_fiscal_data_collector.py
 
 # 재정자립도 분석 실행
-python fiscal_autonomy_analyzer.py
+python scripts/fiscal_autonomy_analyzer.py
 ```
 
 ### 3. 정책 시뮬레이션 실행
 ```bash
 # 선형 정책 시뮬레이션
-python fiscal_policy_simulator.py
+python simulators/fiscal_policy_simulator.py
 
 # 비선형 정책 시뮬레이션
-python nonlinear_fiscal_simulator.py
+python simulators/nonlinear_fiscal_simulator.py
 
 # 정책 의사결정 시뮬레이션
-python policy_decision_simulator.py
+python simulators/policy_decision_simulator.py
 
 # 인터랙티브 정책 시뮬레이터 생성
-python interactive_policy_decision_simulator.py
+python simulators/interactive_policy_decision_simulator.py
 ```
 
 ### 4. 대시보드 실행
@@ -110,45 +110,55 @@ python interactive_policy_decision_simulator.py
 python3 -m http.server 8000
 
 # 브라우저에서 접속
-open http://localhost:8000/bok_navis_comprehensive_dashboard.html
+open http://localhost:8000/dashboards/bok_navis_comprehensive_dashboard.html
 ```
 
 ## 📁 파일 구조
 
 ```
 NAVIS_contest/
-├── bok_navis_comprehensive_dashboard.html        # 메인 종합 대시보드
-├── interactive_policy_decision_simulator.html    # 인터랙티브 정책 시뮬레이터
-├── fiscal_policy_simulation_dashboard.html       # 선형 정책 시뮬레이션 결과
-├── linear_vs_nonlinear_comparison.html           # 선형 vs 비선형 비교
-├── policy_decision_dashboard.html                # 정책 의사결정 시뮬레이션 결과
-├── interactive_fiscal_simulator.html             # 인터랙티브 재정 시뮬레이터
+├── dashboards/                                   # 대시보드 HTML 파일들
+│   ├── bok_navis_comprehensive_dashboard.html    # 메인 종합 대시보드
+│   ├── interactive_policy_decision_simulator.html # 인터랙티브 정책 시뮬레이터
+│   ├── fiscal_policy_simulation_dashboard.html   # 선형 정책 시뮬레이션 결과
+│   ├── linear_vs_nonlinear_comparison.html       # 선형 vs 비선형 비교
+│   ├── policy_decision_dashboard.html            # 정책 의사결정 시뮬레이션 결과
+│   └── interactive_fiscal_simulator.html         # 인터랙티브 재정 시뮬레이터
 │
-├── kosis_fiscal_data_collector.py               # KOSIS 데이터 수집기
-├── fiscal_autonomy_analyzer.py                   # 재정자립도 분석기
-├── fiscal_policy_simulator.py                    # 선형 정책 시뮬레이터
-├── nonlinear_fiscal_simulator.py                 # 비선형 정책 시뮬레이터
-├── policy_decision_simulator.py                  # 정책 의사결정 시뮬레이터
-├── interactive_policy_decision_simulator.py      # 인터랙티브 시뮬레이터 생성기
+├── simulators/                                   # 정책 시뮬레이션 스크립트
+│   ├── fiscal_policy_simulator.py                # 선형 정책 시뮬레이터
+│   ├── nonlinear_fiscal_simulator.py             # 비선형 정책 시뮬레이터
+│   ├── policy_decision_simulator.py              # 정책 의사결정 시뮬레이터
+│   ├── interactive_policy_decision_simulator.py  # 인터랙티브 시뮬레이터 생성기
+│   └── interactive_fiscal_simulator.py           # 인터랙티브 재정 시뮬레이터
 │
-├── kosis_fiscal_autonomy_data.csv               # KOSIS 재정자립도 데이터
-├── fiscal_gap_index_data.csv                     # 재정 격차 지수 데이터
-├── fiscal_policy_simulation_results.csv          # 선형 시뮬레이션 결과
-├── nonlinear_fiscal_simulation_results.csv       # 비선형 시뮬레이션 결과
-├── policy_decision_simulation_results.csv        # 정책 의사결정 시뮬레이션 결과
-├── fiscal_autonomy_data.db                       # 재정자립도 데이터베이스
+├── scripts/                                      # 데이터 처리 스크립트
+│   ├── kosis_fiscal_data_collector.py            # KOSIS 데이터 수집기
+│   └── fiscal_autonomy_analyzer.py               # 재정자립도 분석기
 │
-├── 재정자립도_정책_제안서.md                      # 재정자립도 정책 제안서
-├── 재정자립도_낮은_지역_원인분석_연구.md           # 재정자립도 원인 분석
-├── 시뮬레이션_선형성_분석_및_개선방안.md           # 시뮬레이션 개선 방안
-├── 정책수립_목적_시뮬레이션_개선방안.md            # 정책 수립 시뮬레이션 개선
-├── fiscal_autonomy_analysis_report.md            # 재정자립도 분석 보고서
+├── data/                                         # 데이터 파일들
+│   ├── fiscal_autonomy/                          # 재정자립도 관련 데이터
+│   │   ├── kosis_fiscal_autonomy_data.csv        # KOSIS 재정자립도 데이터
+│   │   ├── fiscal_gap_index_data.csv             # 재정 격차 지수 데이터
+│   │   ├── fiscal_autonomy_data.db               # 재정자립도 데이터베이스
+│   │   └── kosis_fiscal_autonomy_data.json       # KOSIS JSON 데이터
+│   ├── simulation_results/                       # 시뮬레이션 결과 데이터
+│   │   ├── fiscal_policy_simulation_results.csv  # 선형 시뮬레이션 결과
+│   │   ├── nonlinear_fiscal_simulation_results.csv # 비선형 시뮬레이션 결과
+│   │   └── policy_decision_simulation_results.csv # 정책 의사결정 시뮬레이션 결과
+│   ├── navis/                                    # NAVIS 원본 데이터
+│   │   ├── 1_2. 시계열자료(사이트게재)_지역발전지수_2021년.xlsx
+│   │   └── skorea-provinces-2018-geo.json       # 한국 지도 Geojson
+│   └── kosis/                                    # KOSIS 데이터
+│       └── 2025년_1분기_실질_지역내총생산(잠정).xlsx
 │
-├── navis_data/                                   # NAVIS 원본 데이터
-│   ├── 1_2. 시계열자료(사이트게재)_지역발전지수_2021년.xlsx
-│   └── skorea-provinces-2018-geo.json           # 한국 지도 Geojson
-├── kosis_data/                                   # KOSIS 데이터
-├── outputs_timeseries/                           # 시계열 분석 결과
+├── docs/                                         # 문서 파일들
+│   ├── 재정자립도_정책_제안서.md                  # 재정자립도 정책 제안서
+│   ├── 재정자립도_낮은_지역_원인분석_연구.md       # 재정자립도 원인 분석
+│   ├── 시뮬레이션_선형성_분석_및_개선방안.md       # 시뮬레이션 개선 방안
+│   ├── 정책수립_목적_시뮬레이션_개선방안.md        # 정책 수립 시뮬레이션 개선
+│   └── fiscal_autonomy_analysis_report.md        # 재정자립도 분석 보고서
+│
 ├── screenshots/                                  # 대시보드 스크린샷
 ├── requirements.txt                              # Python 의존성
 ├── .gitignore                                    # Git 제외 파일

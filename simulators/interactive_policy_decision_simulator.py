@@ -104,7 +104,7 @@ class InteractivePolicyDecisionSimulator:
     def load_current_data(self) -> pd.DataFrame:
         """현재 재정자립도 데이터 로드"""
         try:
-            data = pd.read_csv('kosis_fiscal_autonomy_data.csv')
+            data = pd.read_csv('data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv')
             return data[data['year'] == 2025][['region', 'fiscal_autonomy']]
         except:
             # 기본 데이터 (KOSIS 2025년 기준)

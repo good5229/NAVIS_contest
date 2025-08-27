@@ -51,7 +51,7 @@ class InteractiveFiscalSimulator:
     def load_current_data(self):
         """현재 재정자립도 데이터 로드"""
         try:
-            df = pd.read_csv('kosis_fiscal_autonomy_data.csv')
+            df = pd.read_csv('data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv')
             current_data = df[df['year'] == self.current_year].copy()
             target_data = current_data[current_data['region'].isin(self.target_regions)].copy()
             return target_data

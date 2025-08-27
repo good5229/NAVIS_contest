@@ -1,58 +1,9 @@
 {
   "2001": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.7440000000000001,
-      "fiscal_independence_ratio": 0.8320000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.764,
       "fiscal_independence_ratio": 0.902,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.395,
-      "fiscal_independence_ratio": 0.802,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.305,
-      "fiscal_independence_ratio": 0.7609999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.298,
-      "fiscal_independence_ratio": 0.8390000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.5760000000000001,
-      "fiscal_independence_ratio": 0.8440000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.22,
-      "fiscal_independence_ratio": 0.737,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.636,
-      "fiscal_independence_ratio": 0.77,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -64,6 +15,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.298,
+      "fiscal_independence_ratio": 0.8390000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.27699999999999997,
       "fiscal_independence_ratio": 0.773,
@@ -71,16 +29,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.313,
-      "fiscal_independence_ratio": 0.816,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.336,
+      "fiscal_independence_ratio": 0.698,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.78,
-      "fiscal_independence_ratio": 0.895,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.22,
+      "fiscal_independence_ratio": 0.737,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.395,
+      "fiscal_independence_ratio": 0.802,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.777,
+      "fiscal_independence_ratio": 0.858,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.7440000000000001,
+      "fiscal_independence_ratio": 0.8320000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -99,6 +78,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.5760000000000001,
+      "fiscal_independence_ratio": 0.8440000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.313,
+      "fiscal_independence_ratio": 0.816,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.636,
+      "fiscal_independence_ratio": 0.77,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.305,
+      "fiscal_independence_ratio": 0.7609999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.7490000000000001,
       "fiscal_independence_ratio": 0.8590000000000001,
@@ -106,74 +113,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.777,
-      "fiscal_independence_ratio": 0.858,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.336,
-      "fiscal_independence_ratio": 0.698,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.78,
+      "fiscal_independence_ratio": 0.895,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2002": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.6970000000000001,
-      "fiscal_independence_ratio": 0.7929999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.6709999999999999,
       "fiscal_independence_ratio": 0.894,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.363,
-      "fiscal_independence_ratio": 0.795,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.284,
-      "fiscal_independence_ratio": 0.7709999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.28,
-      "fiscal_independence_ratio": 0.831,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.5479999999999999,
-      "fiscal_independence_ratio": 0.841,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.20800000000000002,
-      "fiscal_independence_ratio": 0.728,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.616,
-      "fiscal_independence_ratio": 0.767,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -185,6 +136,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.28,
+      "fiscal_independence_ratio": 0.831,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.263,
       "fiscal_independence_ratio": 0.797,
@@ -192,16 +150,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.301,
-      "fiscal_independence_ratio": 0.825,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.366,
+      "fiscal_independence_ratio": 0.765,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.765,
-      "fiscal_independence_ratio": 0.9079999999999999,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.20800000000000002,
+      "fiscal_independence_ratio": 0.728,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.363,
+      "fiscal_independence_ratio": 0.795,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.7440000000000001,
+      "fiscal_independence_ratio": 0.8390000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.6970000000000001,
+      "fiscal_independence_ratio": 0.7929999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -220,6 +199,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.5479999999999999,
+      "fiscal_independence_ratio": 0.841,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.301,
+      "fiscal_independence_ratio": 0.825,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.616,
+      "fiscal_independence_ratio": 0.767,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.284,
+      "fiscal_independence_ratio": 0.7709999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.736,
       "fiscal_independence_ratio": 0.847,
@@ -227,74 +234,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.7440000000000001,
-      "fiscal_independence_ratio": 0.8390000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.366,
-      "fiscal_independence_ratio": 0.765,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.765,
+      "fiscal_independence_ratio": 0.9079999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2003": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.7490000000000001,
-      "fiscal_independence_ratio": 0.8320000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.716,
       "fiscal_independence_ratio": 0.9059999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.37200000000000005,
-      "fiscal_independence_ratio": 0.802,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.298,
-      "fiscal_independence_ratio": 0.763,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.267,
-      "fiscal_independence_ratio": 0.8170000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.563,
-      "fiscal_independence_ratio": 0.8490000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.21,
-      "fiscal_independence_ratio": 0.736,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.63,
-      "fiscal_independence_ratio": 0.7809999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -306,6 +257,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.267,
+      "fiscal_independence_ratio": 0.8170000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.256,
       "fiscal_independence_ratio": 0.7929999999999999,
@@ -313,16 +271,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.292,
-      "fiscal_independence_ratio": 0.818,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.374,
+      "fiscal_independence_ratio": 0.805,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.78,
-      "fiscal_independence_ratio": 0.9079999999999999,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.21,
+      "fiscal_independence_ratio": 0.736,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.37200000000000005,
+      "fiscal_independence_ratio": 0.802,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.746,
+      "fiscal_independence_ratio": 0.8390000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.7490000000000001,
+      "fiscal_independence_ratio": 0.8320000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -341,6 +320,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.563,
+      "fiscal_independence_ratio": 0.8490000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.292,
+      "fiscal_independence_ratio": 0.818,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.63,
+      "fiscal_independence_ratio": 0.7809999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.298,
+      "fiscal_independence_ratio": 0.763,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.736,
       "fiscal_independence_ratio": 0.853,
@@ -348,74 +355,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.746,
-      "fiscal_independence_ratio": 0.8390000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.374,
-      "fiscal_independence_ratio": 0.805,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.78,
+      "fiscal_independence_ratio": 0.9079999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2004": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.7559999999999999,
-      "fiscal_independence_ratio": 0.836,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.696,
       "fiscal_independence_ratio": 0.868,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.38299999999999995,
-      "fiscal_independence_ratio": 0.807,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.305,
-      "fiscal_independence_ratio": 0.7809999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.289,
-      "fiscal_independence_ratio": 0.826,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.5720000000000001,
-      "fiscal_independence_ratio": 0.8490000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.21100000000000002,
-      "fiscal_independence_ratio": 0.75,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.598,
-      "fiscal_independence_ratio": 0.7490000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -427,6 +378,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.289,
+      "fiscal_independence_ratio": 0.826,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.259,
       "fiscal_independence_ratio": 0.778,
@@ -434,16 +392,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.294,
-      "fiscal_independence_ratio": 0.815,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.34700000000000003,
+      "fiscal_independence_ratio": 0.763,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.7879999999999999,
-      "fiscal_independence_ratio": 0.904,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.21100000000000002,
+      "fiscal_independence_ratio": 0.75,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.38299999999999995,
+      "fiscal_independence_ratio": 0.807,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.759,
+      "fiscal_independence_ratio": 0.846,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.7559999999999999,
+      "fiscal_independence_ratio": 0.836,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -462,6 +441,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.5720000000000001,
+      "fiscal_independence_ratio": 0.8490000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.294,
+      "fiscal_independence_ratio": 0.815,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.598,
+      "fiscal_independence_ratio": 0.7490000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.305,
+      "fiscal_independence_ratio": 0.7809999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.7440000000000001,
       "fiscal_independence_ratio": 0.848,
@@ -469,74 +476,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.759,
-      "fiscal_independence_ratio": 0.846,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.34700000000000003,
-      "fiscal_independence_ratio": 0.763,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.7879999999999999,
+      "fiscal_independence_ratio": 0.904,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2005": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.7340000000000001,
-      "fiscal_independence_ratio": 0.813,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.6990000000000001,
       "fiscal_independence_ratio": 0.8170000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.375,
-      "fiscal_independence_ratio": 0.7609999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.327,
-      "fiscal_independence_ratio": 0.752,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.275,
-      "fiscal_independence_ratio": 0.759,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.562,
-      "fiscal_independence_ratio": 0.816,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.19899999999999998,
-      "fiscal_independence_ratio": 0.696,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.606,
-      "fiscal_independence_ratio": 0.7709999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -548,6 +499,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.275,
+      "fiscal_independence_ratio": 0.759,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.251,
       "fiscal_independence_ratio": 0.721,
@@ -555,16 +513,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.29600000000000004,
-      "fiscal_independence_ratio": 0.775,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.39299999999999996,
+      "fiscal_independence_ratio": 0.76,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.762,
-      "fiscal_independence_ratio": 0.861,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.19899999999999998,
+      "fiscal_independence_ratio": 0.696,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.375,
+      "fiscal_independence_ratio": 0.7609999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.7,
+      "fiscal_independence_ratio": 0.77,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.7340000000000001,
+      "fiscal_independence_ratio": 0.813,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -583,6 +562,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.562,
+      "fiscal_independence_ratio": 0.816,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.29600000000000004,
+      "fiscal_independence_ratio": 0.775,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.606,
+      "fiscal_independence_ratio": 0.7709999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.327,
+      "fiscal_independence_ratio": 0.752,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.75,
       "fiscal_independence_ratio": 0.866,
@@ -590,74 +597,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.7,
-      "fiscal_independence_ratio": 0.77,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.39299999999999996,
-      "fiscal_independence_ratio": 0.76,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.762,
+      "fiscal_independence_ratio": 0.861,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2006": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.7020000000000001,
-      "fiscal_independence_ratio": 0.807,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.657,
       "fiscal_independence_ratio": 0.826,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.38799999999999996,
-      "fiscal_independence_ratio": 0.75,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.353,
-      "fiscal_independence_ratio": 0.741,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.267,
-      "fiscal_independence_ratio": 0.753,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.544,
-      "fiscal_independence_ratio": 0.802,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.20199999999999999,
-      "fiscal_independence_ratio": 0.6779999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.575,
-      "fiscal_independence_ratio": 0.7509999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -669,6 +620,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.267,
+      "fiscal_independence_ratio": 0.753,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.239,
       "fiscal_independence_ratio": 0.701,
@@ -676,16 +634,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.278,
-      "fiscal_independence_ratio": 0.762,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.33799999999999997,
+      "fiscal_independence_ratio": 0.7290000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.752,
-      "fiscal_independence_ratio": 0.857,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.20199999999999999,
+      "fiscal_independence_ratio": 0.6779999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.38799999999999996,
+      "fiscal_independence_ratio": 0.75,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.6920000000000001,
+      "fiscal_independence_ratio": 0.765,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.7020000000000001,
+      "fiscal_independence_ratio": 0.807,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -704,6 +683,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.544,
+      "fiscal_independence_ratio": 0.802,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.278,
+      "fiscal_independence_ratio": 0.762,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.575,
+      "fiscal_independence_ratio": 0.7509999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.353,
+      "fiscal_independence_ratio": 0.741,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.728,
       "fiscal_independence_ratio": 0.8390000000000001,
@@ -711,74 +718,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.6920000000000001,
-      "fiscal_independence_ratio": 0.765,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.33799999999999997,
-      "fiscal_independence_ratio": 0.7290000000000001,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.752,
+      "fiscal_independence_ratio": 0.857,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2007": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.629,
-      "fiscal_independence_ratio": 0.769,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.684,
       "fiscal_independence_ratio": 0.846,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.391,
-      "fiscal_independence_ratio": 0.748,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.369,
-      "fiscal_independence_ratio": 0.733,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.28300000000000003,
-      "fiscal_independence_ratio": 0.758,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.536,
-      "fiscal_independence_ratio": 0.795,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.201,
-      "fiscal_independence_ratio": 0.67,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.542,
-      "fiscal_independence_ratio": 0.759,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -790,6 +741,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.28300000000000003,
+      "fiscal_independence_ratio": 0.758,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.235,
       "fiscal_independence_ratio": 0.698,
@@ -797,16 +755,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.289,
-      "fiscal_independence_ratio": 0.759,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.264,
+      "fiscal_independence_ratio": 0.637,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.7490000000000001,
-      "fiscal_independence_ratio": 0.851,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.201,
+      "fiscal_independence_ratio": 0.67,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.391,
+      "fiscal_independence_ratio": 0.748,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.698,
+      "fiscal_independence_ratio": 0.797,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.629,
+      "fiscal_independence_ratio": 0.769,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -825,6 +804,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.536,
+      "fiscal_independence_ratio": 0.795,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.289,
+      "fiscal_independence_ratio": 0.759,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.542,
+      "fiscal_independence_ratio": 0.759,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.369,
+      "fiscal_independence_ratio": 0.733,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.721,
       "fiscal_independence_ratio": 0.831,
@@ -832,74 +839,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.698,
-      "fiscal_independence_ratio": 0.797,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.264,
-      "fiscal_independence_ratio": 0.637,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.7490000000000001,
+      "fiscal_independence_ratio": 0.851,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2008": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.605,
-      "fiscal_independence_ratio": 0.754,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.6990000000000001,
       "fiscal_independence_ratio": 0.826,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.39399999999999996,
-      "fiscal_independence_ratio": 0.745,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.37799999999999995,
-      "fiscal_independence_ratio": 0.735,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.282,
-      "fiscal_independence_ratio": 0.758,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.539,
-      "fiscal_independence_ratio": 0.795,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.214,
-      "fiscal_independence_ratio": 0.695,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.526,
-      "fiscal_independence_ratio": 0.742,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -911,6 +862,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.282,
+      "fiscal_independence_ratio": 0.758,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.226,
       "fiscal_independence_ratio": 0.701,
@@ -918,16 +876,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.287,
-      "fiscal_independence_ratio": 0.7509999999999999,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.263,
+      "fiscal_independence_ratio": 0.674,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.763,
-      "fiscal_independence_ratio": 0.852,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.214,
+      "fiscal_independence_ratio": 0.695,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.39399999999999996,
+      "fiscal_independence_ratio": 0.745,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.71,
+      "fiscal_independence_ratio": 0.8029999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.605,
+      "fiscal_independence_ratio": 0.754,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -946,6 +925,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.539,
+      "fiscal_independence_ratio": 0.795,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.287,
+      "fiscal_independence_ratio": 0.7509999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.526,
+      "fiscal_independence_ratio": 0.742,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.37799999999999995,
+      "fiscal_independence_ratio": 0.735,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.664,
       "fiscal_independence_ratio": 0.8009999999999999,
@@ -953,74 +960,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.71,
-      "fiscal_independence_ratio": 0.8029999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.263,
-      "fiscal_independence_ratio": 0.674,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.763,
+      "fiscal_independence_ratio": 0.852,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2009": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.583,
-      "fiscal_independence_ratio": 0.74,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.677,
       "fiscal_independence_ratio": 0.802,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.39399999999999996,
-      "fiscal_independence_ratio": 0.75,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.366,
-      "fiscal_independence_ratio": 0.7240000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.28,
-      "fiscal_independence_ratio": 0.754,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.536,
-      "fiscal_independence_ratio": 0.789,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.19399999999999998,
-      "fiscal_independence_ratio": 0.679,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.483,
-      "fiscal_independence_ratio": 0.736,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1032,6 +983,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.28,
+      "fiscal_independence_ratio": 0.754,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.23600000000000002,
       "fiscal_independence_ratio": 0.7170000000000001,
@@ -1039,16 +997,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.27699999999999997,
-      "fiscal_independence_ratio": 0.746,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.252,
+      "fiscal_independence_ratio": 0.65,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.759,
-      "fiscal_independence_ratio": 0.8440000000000001,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.19399999999999998,
+      "fiscal_independence_ratio": 0.679,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.39399999999999996,
+      "fiscal_independence_ratio": 0.75,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.742,
+      "fiscal_independence_ratio": 0.82,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.583,
+      "fiscal_independence_ratio": 0.74,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1067,6 +1046,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.536,
+      "fiscal_independence_ratio": 0.789,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.27699999999999997,
+      "fiscal_independence_ratio": 0.746,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.483,
+      "fiscal_independence_ratio": 0.736,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.366,
+      "fiscal_independence_ratio": 0.7240000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.593,
       "fiscal_independence_ratio": 0.745,
@@ -1074,74 +1081,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.742,
-      "fiscal_independence_ratio": 0.82,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.252,
-      "fiscal_independence_ratio": 0.65,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.759,
+      "fiscal_independence_ratio": 0.8440000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2010": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.5760000000000001,
-      "fiscal_independence_ratio": 0.725,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.672,
       "fiscal_independence_ratio": 0.7879999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.429,
-      "fiscal_independence_ratio": 0.733,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.366,
-      "fiscal_independence_ratio": 0.7170000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.271,
-      "fiscal_independence_ratio": 0.7170000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.522,
-      "fiscal_independence_ratio": 0.757,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.20600000000000002,
-      "fiscal_independence_ratio": 0.644,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.475,
-      "fiscal_independence_ratio": 0.6920000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1153,6 +1104,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.271,
+      "fiscal_independence_ratio": 0.7170000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.24600000000000002,
       "fiscal_independence_ratio": 0.6890000000000001,
@@ -1160,16 +1118,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.293,
-      "fiscal_independence_ratio": 0.73,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.261,
+      "fiscal_independence_ratio": 0.621,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.728,
-      "fiscal_independence_ratio": 0.815,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.20600000000000002,
+      "fiscal_independence_ratio": 0.644,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.429,
+      "fiscal_independence_ratio": 0.733,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.7040000000000001,
+      "fiscal_independence_ratio": 0.8009999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.5760000000000001,
+      "fiscal_independence_ratio": 0.725,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1188,6 +1167,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.522,
+      "fiscal_independence_ratio": 0.757,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.293,
+      "fiscal_independence_ratio": 0.73,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.475,
+      "fiscal_independence_ratio": 0.6920000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.366,
+      "fiscal_independence_ratio": 0.7170000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.563,
       "fiscal_independence_ratio": 0.7190000000000001,
@@ -1195,74 +1202,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.7040000000000001,
-      "fiscal_independence_ratio": 0.8009999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.261,
-      "fiscal_independence_ratio": 0.621,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.728,
+      "fiscal_independence_ratio": 0.815,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2011": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.564,
-      "fiscal_independence_ratio": 0.743,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.691,
       "fiscal_independence_ratio": 0.81,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.426,
-      "fiscal_independence_ratio": 0.742,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.354,
-      "fiscal_independence_ratio": 0.711,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.275,
-      "fiscal_independence_ratio": 0.733,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.519,
-      "fiscal_independence_ratio": 0.767,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.207,
-      "fiscal_independence_ratio": 0.652,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.475,
-      "fiscal_independence_ratio": 0.6990000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1274,6 +1225,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.275,
+      "fiscal_independence_ratio": 0.733,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.245,
       "fiscal_independence_ratio": 0.6779999999999999,
@@ -1281,16 +1239,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.281,
-      "fiscal_independence_ratio": 0.736,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.251,
+      "fiscal_independence_ratio": 0.639,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.725,
-      "fiscal_independence_ratio": 0.818,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.207,
+      "fiscal_independence_ratio": 0.652,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.426,
+      "fiscal_independence_ratio": 0.742,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.693,
+      "fiscal_independence_ratio": 0.794,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.564,
+      "fiscal_independence_ratio": 0.743,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1309,6 +1288,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.519,
+      "fiscal_independence_ratio": 0.767,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.281,
+      "fiscal_independence_ratio": 0.736,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.475,
+      "fiscal_independence_ratio": 0.6990000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.354,
+      "fiscal_independence_ratio": 0.711,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.5720000000000001,
       "fiscal_independence_ratio": 0.7490000000000001,
@@ -1316,74 +1323,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.693,
-      "fiscal_independence_ratio": 0.794,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.251,
-      "fiscal_independence_ratio": 0.639,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.725,
+      "fiscal_independence_ratio": 0.818,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2012": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.574,
-      "fiscal_independence_ratio": 0.757,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.7120000000000001,
       "fiscal_independence_ratio": 0.809,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.433,
-      "fiscal_independence_ratio": 0.745,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.355,
-      "fiscal_independence_ratio": 0.71,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.26899999999999996,
-      "fiscal_independence_ratio": 0.741,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.523,
-      "fiscal_independence_ratio": 0.772,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.214,
-      "fiscal_independence_ratio": 0.6679999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.466,
-      "fiscal_independence_ratio": 0.6990000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1395,6 +1346,13 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.26899999999999996,
+      "fiscal_independence_ratio": 0.741,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.26,
       "fiscal_independence_ratio": 0.693,
@@ -1402,16 +1360,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.28300000000000003,
-      "fiscal_independence_ratio": 0.731,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.285,
+      "fiscal_independence_ratio": 0.6809999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.726,
-      "fiscal_independence_ratio": 0.8170000000000001,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.214,
+      "fiscal_independence_ratio": 0.6679999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.433,
+      "fiscal_independence_ratio": 0.745,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.71,
+      "fiscal_independence_ratio": 0.8059999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.574,
+      "fiscal_independence_ratio": 0.757,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1430,6 +1409,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.523,
+      "fiscal_independence_ratio": 0.772,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.28300000000000003,
+      "fiscal_independence_ratio": 0.731,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.466,
+      "fiscal_independence_ratio": 0.6990000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.355,
+      "fiscal_independence_ratio": 0.71,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.583,
       "fiscal_independence_ratio": 0.762,
@@ -1437,81 +1444,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.71,
-      "fiscal_independence_ratio": 0.8059999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.285,
-      "fiscal_independence_ratio": 0.6809999999999999,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.726,
+      "fiscal_independence_ratio": 0.8170000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2013": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.5660000000000001,
-      "fiscal_independence_ratio": 0.741,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.7070000000000001,
       "fiscal_independence_ratio": 0.8,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.41700000000000004,
-      "fiscal_independence_ratio": 0.7340000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.36,
-      "fiscal_independence_ratio": 0.718,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.266,
-      "fiscal_independence_ratio": 0.741,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.511,
-      "fiscal_independence_ratio": 0.7659999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.217,
-      "fiscal_independence_ratio": 0.685,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.38799999999999996,
-      "fiscal_independence_ratio": 0.777,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.45399999999999996,
-      "fiscal_independence_ratio": 0.6759999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1523,6 +1467,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.266,
+      "fiscal_independence_ratio": 0.741,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.38799999999999996,
+      "fiscal_independence_ratio": 0.777,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.257,
       "fiscal_independence_ratio": 0.691,
@@ -1530,16 +1488,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.28,
-      "fiscal_independence_ratio": 0.732,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.306,
+      "fiscal_independence_ratio": 0.706,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.716,
-      "fiscal_independence_ratio": 0.8140000000000001,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.217,
+      "fiscal_independence_ratio": 0.685,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.41700000000000004,
+      "fiscal_independence_ratio": 0.7340000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.6729999999999999,
+      "fiscal_independence_ratio": 0.773,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.5660000000000001,
+      "fiscal_independence_ratio": 0.741,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1558,6 +1537,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.511,
+      "fiscal_independence_ratio": 0.7659999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.28,
+      "fiscal_independence_ratio": 0.732,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.45399999999999996,
+      "fiscal_independence_ratio": 0.6759999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.36,
+      "fiscal_independence_ratio": 0.718,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.575,
       "fiscal_independence_ratio": 0.754,
@@ -1565,81 +1572,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.6729999999999999,
-      "fiscal_independence_ratio": 0.773,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.306,
-      "fiscal_independence_ratio": 0.706,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.716,
+      "fiscal_independence_ratio": 0.8140000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2014": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.514,
-      "fiscal_independence_ratio": 0.6659999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.614,
       "fiscal_independence_ratio": 0.6940000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.36,
-      "fiscal_independence_ratio": 0.665,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.302,
-      "fiscal_independence_ratio": 0.659,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.222,
-      "fiscal_independence_ratio": 0.6829999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.44799999999999995,
-      "fiscal_independence_ratio": 0.6920000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.174,
-      "fiscal_independence_ratio": 0.624,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.47600000000000003,
-      "fiscal_independence_ratio": 0.773,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.419,
-      "fiscal_independence_ratio": 0.625,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1651,6 +1595,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.222,
+      "fiscal_independence_ratio": 0.6829999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.47600000000000003,
+      "fiscal_independence_ratio": 0.773,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.228,
       "fiscal_independence_ratio": 0.631,
@@ -1658,16 +1616,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.22699999999999998,
-      "fiscal_independence_ratio": 0.6609999999999999,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.301,
+      "fiscal_independence_ratio": 0.669,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.612,
-      "fiscal_independence_ratio": 0.715,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.174,
+      "fiscal_independence_ratio": 0.624,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.36,
+      "fiscal_independence_ratio": 0.665,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.626,
+      "fiscal_independence_ratio": 0.718,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.514,
+      "fiscal_independence_ratio": 0.6659999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1686,6 +1665,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.44799999999999995,
+      "fiscal_independence_ratio": 0.6920000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.22699999999999998,
+      "fiscal_independence_ratio": 0.6609999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.419,
+      "fiscal_independence_ratio": 0.625,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.302,
+      "fiscal_independence_ratio": 0.659,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.494,
       "fiscal_independence_ratio": 0.6659999999999999,
@@ -1693,81 +1700,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.626,
-      "fiscal_independence_ratio": 0.718,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.301,
-      "fiscal_independence_ratio": 0.669,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.612,
+      "fiscal_independence_ratio": 0.715,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2015": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.51,
-      "fiscal_independence_ratio": 0.6509999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.636,
       "fiscal_independence_ratio": 0.711,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.374,
-      "fiscal_independence_ratio": 0.6609999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.304,
-      "fiscal_independence_ratio": 0.655,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.215,
-      "fiscal_independence_ratio": 0.6459999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.451,
-      "fiscal_independence_ratio": 0.68,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.17800000000000002,
-      "fiscal_independence_ratio": 0.605,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.44,
-      "fiscal_independence_ratio": 0.672,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.442,
-      "fiscal_independence_ratio": 0.62,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1779,6 +1723,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.215,
+      "fiscal_independence_ratio": 0.6459999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.44,
+      "fiscal_independence_ratio": 0.672,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.221,
       "fiscal_independence_ratio": 0.611,
@@ -1786,16 +1744,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.243,
-      "fiscal_independence_ratio": 0.654,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.303,
+      "fiscal_independence_ratio": 0.634,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.607,
-      "fiscal_independence_ratio": 0.7,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.17800000000000002,
+      "fiscal_independence_ratio": 0.605,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.374,
+      "fiscal_independence_ratio": 0.6609999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.591,
+      "fiscal_independence_ratio": 0.684,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.51,
+      "fiscal_independence_ratio": 0.6509999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1814,6 +1793,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.451,
+      "fiscal_independence_ratio": 0.68,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.243,
+      "fiscal_independence_ratio": 0.654,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.442,
+      "fiscal_independence_ratio": 0.62,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.304,
+      "fiscal_independence_ratio": 0.655,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.493,
       "fiscal_independence_ratio": 0.662,
@@ -1821,81 +1828,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.591,
-      "fiscal_independence_ratio": 0.684,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.303,
-      "fiscal_independence_ratio": 0.634,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.607,
+      "fiscal_independence_ratio": 0.7,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2016": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.509,
-      "fiscal_independence_ratio": 0.625,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.623,
       "fiscal_independence_ratio": 0.706,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.366,
-      "fiscal_independence_ratio": 0.655,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.335,
-      "fiscal_independence_ratio": 0.6659999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.22399999999999998,
-      "fiscal_independence_ratio": 0.6409999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.466,
-      "fiscal_independence_ratio": 0.684,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.193,
-      "fiscal_independence_ratio": 0.611,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.442,
-      "fiscal_independence_ratio": 0.612,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.467,
-      "fiscal_independence_ratio": 0.65,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1907,6 +1851,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.22399999999999998,
+      "fiscal_independence_ratio": 0.6409999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.442,
+      "fiscal_independence_ratio": 0.612,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.23600000000000002,
       "fiscal_independence_ratio": 0.616,
@@ -1914,16 +1872,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.261,
-      "fiscal_independence_ratio": 0.635,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.315,
+      "fiscal_independence_ratio": 0.634,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.616,
-      "fiscal_independence_ratio": 0.711,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.193,
+      "fiscal_independence_ratio": 0.611,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.366,
+      "fiscal_independence_ratio": 0.655,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.625,
+      "fiscal_independence_ratio": 0.7290000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.509,
+      "fiscal_independence_ratio": 0.625,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -1942,6 +1921,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.466,
+      "fiscal_independence_ratio": 0.684,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.261,
+      "fiscal_independence_ratio": 0.635,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.467,
+      "fiscal_independence_ratio": 0.65,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.335,
+      "fiscal_independence_ratio": 0.6659999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.503,
       "fiscal_independence_ratio": 0.6729999999999999,
@@ -1949,81 +1956,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.625,
-      "fiscal_independence_ratio": 0.7290000000000001,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.315,
-      "fiscal_independence_ratio": 0.634,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.616,
+      "fiscal_independence_ratio": 0.711,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2017": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.529,
-      "fiscal_independence_ratio": 0.628,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.602,
       "fiscal_independence_ratio": 0.688,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.387,
-      "fiscal_independence_ratio": 0.6629999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.34299999999999997,
-      "fiscal_independence_ratio": 0.6729999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.24100000000000002,
-      "fiscal_independence_ratio": 0.68,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.47200000000000003,
-      "fiscal_independence_ratio": 0.684,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.2,
-      "fiscal_independence_ratio": 0.609,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.58,
-      "fiscal_independence_ratio": 0.6759999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.44799999999999995,
-      "fiscal_independence_ratio": 0.644,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2035,6 +1979,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.24100000000000002,
+      "fiscal_independence_ratio": 0.68,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.58,
+      "fiscal_independence_ratio": 0.6759999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.223,
       "fiscal_independence_ratio": 0.618,
@@ -2042,16 +2000,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.262,
-      "fiscal_independence_ratio": 0.6409999999999999,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.337,
+      "fiscal_independence_ratio": 0.659,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.613,
-      "fiscal_independence_ratio": 0.696,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.2,
+      "fiscal_independence_ratio": 0.609,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.387,
+      "fiscal_independence_ratio": 0.6629999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.605,
+      "fiscal_independence_ratio": 0.71,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.529,
+      "fiscal_independence_ratio": 0.628,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2070,6 +2049,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.47200000000000003,
+      "fiscal_independence_ratio": 0.684,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.262,
+      "fiscal_independence_ratio": 0.6409999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.44799999999999995,
+      "fiscal_independence_ratio": 0.644,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.34299999999999997,
+      "fiscal_independence_ratio": 0.6729999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.509,
       "fiscal_independence_ratio": 0.6809999999999999,
@@ -2077,81 +2084,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.605,
-      "fiscal_independence_ratio": 0.71,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.337,
-      "fiscal_independence_ratio": 0.659,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.613,
+      "fiscal_independence_ratio": 0.696,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2018": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.523,
-      "fiscal_independence_ratio": 0.619,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.599,
       "fiscal_independence_ratio": 0.7,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.377,
-      "fiscal_independence_ratio": 0.664,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.345,
-      "fiscal_independence_ratio": 0.6779999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.235,
-      "fiscal_independence_ratio": 0.711,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.46799999999999997,
-      "fiscal_independence_ratio": 0.687,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.198,
-      "fiscal_independence_ratio": 0.612,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.5710000000000001,
-      "fiscal_independence_ratio": 0.608,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.43799999999999994,
-      "fiscal_independence_ratio": 0.636,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2163,6 +2107,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.235,
+      "fiscal_independence_ratio": 0.711,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.5710000000000001,
+      "fiscal_independence_ratio": 0.608,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.215,
       "fiscal_independence_ratio": 0.628,
@@ -2170,16 +2128,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.262,
-      "fiscal_independence_ratio": 0.652,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.345,
+      "fiscal_independence_ratio": 0.669,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.619,
-      "fiscal_independence_ratio": 0.708,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.198,
+      "fiscal_independence_ratio": 0.612,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.377,
+      "fiscal_independence_ratio": 0.664,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.603,
+      "fiscal_independence_ratio": 0.706,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.523,
+      "fiscal_independence_ratio": 0.619,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2198,6 +2177,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.46799999999999997,
+      "fiscal_independence_ratio": 0.687,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.262,
+      "fiscal_independence_ratio": 0.652,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.43799999999999994,
+      "fiscal_independence_ratio": 0.636,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.345,
+      "fiscal_independence_ratio": 0.6779999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.47100000000000003,
       "fiscal_independence_ratio": 0.6559999999999999,
@@ -2205,81 +2212,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.603,
-      "fiscal_independence_ratio": 0.706,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.345,
-      "fiscal_independence_ratio": 0.669,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.619,
+      "fiscal_independence_ratio": 0.708,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2019": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.5,
-      "fiscal_independence_ratio": 0.614,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.537,
       "fiscal_independence_ratio": 0.6829999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.33399999999999996,
-      "fiscal_independence_ratio": 0.644,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.33,
-      "fiscal_independence_ratio": 0.6729999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.235,
-      "fiscal_independence_ratio": 0.708,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.449,
-      "fiscal_independence_ratio": 0.6779999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.191,
-      "fiscal_independence_ratio": 0.616,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.621,
-      "fiscal_independence_ratio": 0.6579999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.408,
-      "fiscal_independence_ratio": 0.628,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2291,6 +2235,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.235,
+      "fiscal_independence_ratio": 0.708,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.621,
+      "fiscal_independence_ratio": 0.6579999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.204,
       "fiscal_independence_ratio": 0.631,
@@ -2298,16 +2256,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.249,
-      "fiscal_independence_ratio": 0.649,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.33,
+      "fiscal_independence_ratio": 0.674,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.605,
-      "fiscal_independence_ratio": 0.6940000000000001,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.191,
+      "fiscal_independence_ratio": 0.616,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.33399999999999996,
+      "fiscal_independence_ratio": 0.644,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.5770000000000001,
+      "fiscal_independence_ratio": 0.687,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.5,
+      "fiscal_independence_ratio": 0.614,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2326,6 +2305,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.449,
+      "fiscal_independence_ratio": 0.6779999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.249,
+      "fiscal_independence_ratio": 0.649,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.408,
+      "fiscal_independence_ratio": 0.628,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.33,
+      "fiscal_independence_ratio": 0.6729999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.439,
       "fiscal_independence_ratio": 0.6659999999999999,
@@ -2333,81 +2340,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.5770000000000001,
-      "fiscal_independence_ratio": 0.687,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.33,
-      "fiscal_independence_ratio": 0.674,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.605,
+      "fiscal_independence_ratio": 0.6940000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2020": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.49200000000000005,
-      "fiscal_independence_ratio": 0.61,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.516,
       "fiscal_independence_ratio": 0.675,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.34299999999999997,
-      "fiscal_independence_ratio": 0.657,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.344,
-      "fiscal_independence_ratio": 0.698,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.258,
-      "fiscal_independence_ratio": 0.731,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.452,
-      "fiscal_independence_ratio": 0.687,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.233,
-      "fiscal_independence_ratio": 0.667,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.593,
-      "fiscal_independence_ratio": 0.652,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.41100000000000003,
-      "fiscal_independence_ratio": 0.624,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2419,6 +2363,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.258,
+      "fiscal_independence_ratio": 0.731,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.593,
+      "fiscal_independence_ratio": 0.652,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.249,
       "fiscal_independence_ratio": 0.6659999999999999,
@@ -2426,16 +2384,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.271,
-      "fiscal_independence_ratio": 0.6890000000000001,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.32899999999999996,
+      "fiscal_independence_ratio": 0.631,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.586,
-      "fiscal_independence_ratio": 0.693,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.233,
+      "fiscal_independence_ratio": 0.667,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.34299999999999997,
+      "fiscal_independence_ratio": 0.657,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.54,
+      "fiscal_independence_ratio": 0.6629999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.49200000000000005,
+      "fiscal_independence_ratio": 0.61,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2454,6 +2433,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.452,
+      "fiscal_independence_ratio": 0.687,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.271,
+      "fiscal_independence_ratio": 0.6890000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.41100000000000003,
+      "fiscal_independence_ratio": 0.624,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.344,
+      "fiscal_independence_ratio": 0.698,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.414,
       "fiscal_independence_ratio": 0.631,
@@ -2461,81 +2468,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.54,
-      "fiscal_independence_ratio": 0.6629999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.32899999999999996,
-      "fiscal_independence_ratio": 0.631,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.586,
+      "fiscal_independence_ratio": 0.693,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2021": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.461,
-      "fiscal_independence_ratio": 0.584,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.496,
       "fiscal_independence_ratio": 0.652,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.335,
-      "fiscal_independence_ratio": 0.629,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.32299999999999995,
-      "fiscal_independence_ratio": 0.644,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.245,
-      "fiscal_independence_ratio": 0.675,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.436,
-      "fiscal_independence_ratio": 0.657,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.222,
-      "fiscal_independence_ratio": 0.631,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.588,
-      "fiscal_independence_ratio": 0.6579999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.408,
-      "fiscal_independence_ratio": 0.607,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2547,6 +2491,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.245,
+      "fiscal_independence_ratio": 0.675,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.588,
+      "fiscal_independence_ratio": 0.6579999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.231,
       "fiscal_independence_ratio": 0.608,
@@ -2554,16 +2512,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.249,
-      "fiscal_independence_ratio": 0.6409999999999999,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.327,
+      "fiscal_independence_ratio": 0.625,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.573,
-      "fiscal_independence_ratio": 0.672,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.222,
+      "fiscal_independence_ratio": 0.631,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.335,
+      "fiscal_independence_ratio": 0.629,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.503,
+      "fiscal_independence_ratio": 0.627,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.461,
+      "fiscal_independence_ratio": 0.584,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2582,6 +2561,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.436,
+      "fiscal_independence_ratio": 0.657,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.249,
+      "fiscal_independence_ratio": 0.6409999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.408,
+      "fiscal_independence_ratio": 0.607,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.32299999999999995,
+      "fiscal_independence_ratio": 0.644,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.39899999999999997,
       "fiscal_independence_ratio": 0.601,
@@ -2589,81 +2596,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.503,
-      "fiscal_independence_ratio": 0.627,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.327,
-      "fiscal_independence_ratio": 0.625,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.573,
+      "fiscal_independence_ratio": 0.672,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2022": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.469,
-      "fiscal_independence_ratio": 0.596,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.48700000000000004,
       "fiscal_independence_ratio": 0.667,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.32799999999999996,
-      "fiscal_independence_ratio": 0.6509999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.331,
-      "fiscal_independence_ratio": 0.6709999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.247,
-      "fiscal_independence_ratio": 0.716,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.45299999999999996,
-      "fiscal_independence_ratio": 0.688,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.242,
-      "fiscal_independence_ratio": 0.675,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.569,
-      "fiscal_independence_ratio": 0.634,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.41100000000000003,
-      "fiscal_independence_ratio": 0.624,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2675,6 +2619,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.247,
+      "fiscal_independence_ratio": 0.716,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.569,
+      "fiscal_independence_ratio": 0.634,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.23800000000000002,
       "fiscal_independence_ratio": 0.655,
@@ -2682,16 +2640,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.256,
-      "fiscal_independence_ratio": 0.691,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.327,
+      "fiscal_independence_ratio": 0.6609999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.616,
-      "fiscal_independence_ratio": 0.7070000000000001,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.242,
+      "fiscal_independence_ratio": 0.675,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.32799999999999996,
+      "fiscal_independence_ratio": 0.6509999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.528,
+      "fiscal_independence_ratio": 0.665,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.469,
+      "fiscal_independence_ratio": 0.596,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2710,6 +2689,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.45299999999999996,
+      "fiscal_independence_ratio": 0.688,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.256,
+      "fiscal_independence_ratio": 0.691,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.41100000000000003,
+      "fiscal_independence_ratio": 0.624,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.331,
+      "fiscal_independence_ratio": 0.6709999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.424,
       "fiscal_independence_ratio": 0.64,
@@ -2717,81 +2724,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.528,
-      "fiscal_independence_ratio": 0.665,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.327,
-      "fiscal_independence_ratio": 0.6609999999999999,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.616,
+      "fiscal_independence_ratio": 0.7070000000000001,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2023": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.46,
-      "fiscal_independence_ratio": 0.585,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.498,
       "fiscal_independence_ratio": 0.68,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.337,
-      "fiscal_independence_ratio": 0.6709999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.336,
-      "fiscal_independence_ratio": 0.6829999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.254,
-      "fiscal_independence_ratio": 0.728,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.45,
-      "fiscal_independence_ratio": 0.69,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.239,
-      "fiscal_independence_ratio": 0.677,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.5720000000000001,
-      "fiscal_independence_ratio": 0.635,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.423,
-      "fiscal_independence_ratio": 0.6509999999999999,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2803,6 +2747,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.254,
+      "fiscal_independence_ratio": 0.728,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.5720000000000001,
+      "fiscal_independence_ratio": 0.635,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.23800000000000002,
       "fiscal_independence_ratio": 0.6709999999999999,
@@ -2810,16 +2768,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.253,
-      "fiscal_independence_ratio": 0.7070000000000001,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.33299999999999996,
+      "fiscal_independence_ratio": 0.701,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.605,
-      "fiscal_independence_ratio": 0.691,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.239,
+      "fiscal_independence_ratio": 0.677,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.337,
+      "fiscal_independence_ratio": 0.6709999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.524,
+      "fiscal_independence_ratio": 0.65,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.46,
+      "fiscal_independence_ratio": 0.585,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2838,6 +2817,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.45,
+      "fiscal_independence_ratio": 0.69,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.253,
+      "fiscal_independence_ratio": 0.7070000000000001,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.423,
+      "fiscal_independence_ratio": 0.6509999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.336,
+      "fiscal_independence_ratio": 0.6829999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.423,
       "fiscal_independence_ratio": 0.6459999999999999,
@@ -2845,81 +2852,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.524,
-      "fiscal_independence_ratio": 0.65,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.33299999999999996,
-      "fiscal_independence_ratio": 0.701,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.605,
+      "fiscal_independence_ratio": 0.691,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2024": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.451,
-      "fiscal_independence_ratio": 0.569,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.46299999999999997,
       "fiscal_independence_ratio": 0.6729999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.336,
-      "fiscal_independence_ratio": 0.657,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.324,
-      "fiscal_independence_ratio": 0.654,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.252,
-      "fiscal_independence_ratio": 0.701,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.433,
-      "fiscal_independence_ratio": 0.657,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.244,
-      "fiscal_independence_ratio": 0.662,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.575,
-      "fiscal_independence_ratio": 0.6579999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.40700000000000003,
-      "fiscal_independence_ratio": 0.607,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2931,6 +2875,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.252,
+      "fiscal_independence_ratio": 0.701,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.575,
+      "fiscal_independence_ratio": 0.6579999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.235,
       "fiscal_independence_ratio": 0.637,
@@ -2938,16 +2896,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.24600000000000002,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.34,
+      "fiscal_independence_ratio": 0.67,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.244,
       "fiscal_independence_ratio": 0.662,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.551,
-      "fiscal_independence_ratio": 0.632,
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.336,
+      "fiscal_independence_ratio": 0.657,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.496,
+      "fiscal_independence_ratio": 0.611,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.451,
+      "fiscal_independence_ratio": 0.569,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -2966,6 +2945,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.433,
+      "fiscal_independence_ratio": 0.657,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.24600000000000002,
+      "fiscal_independence_ratio": 0.662,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.40700000000000003,
+      "fiscal_independence_ratio": 0.607,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.324,
+      "fiscal_independence_ratio": 0.654,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.41700000000000004,
       "fiscal_independence_ratio": 0.604,
@@ -2973,81 +2980,18 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.496,
-      "fiscal_independence_ratio": 0.611,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.34,
-      "fiscal_independence_ratio": 0.67,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.551,
+      "fiscal_independence_ratio": 0.632,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
   ],
   "2025": [
     {
-      "region": "부산광역시",
-      "fiscal_autonomy_ratio": 0.42700000000000005,
-      "fiscal_independence_ratio": 0.555,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
       "region": "울산광역시",
       "fiscal_autonomy_ratio": 0.461,
       "fiscal_independence_ratio": 0.662,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "경상남도",
-      "fiscal_autonomy_ratio": 0.34299999999999997,
-      "fiscal_independence_ratio": 0.6579999999999999,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "충청남도",
-      "fiscal_autonomy_ratio": 0.322,
-      "fiscal_independence_ratio": 0.637,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "강원도",
-      "fiscal_autonomy_ratio": 0.257,
-      "fiscal_independence_ratio": 0.706,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전국",
-      "fiscal_autonomy_ratio": 0.43200000000000005,
-      "fiscal_independence_ratio": 0.649,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "전라남도",
-      "fiscal_autonomy_ratio": 0.237,
-      "fiscal_independence_ratio": 0.648,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "세종특별자치시",
-      "fiscal_autonomy_ratio": 0.5429999999999999,
-      "fiscal_independence_ratio": 0.623,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "광주광역시",
-      "fiscal_autonomy_ratio": 0.39799999999999996,
-      "fiscal_independence_ratio": 0.583,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -3059,6 +3003,20 @@
       "total_revenue": 0
     },
     {
+      "region": "강원도",
+      "fiscal_autonomy_ratio": 0.257,
+      "fiscal_independence_ratio": 0.706,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "세종특별자치시",
+      "fiscal_autonomy_ratio": 0.5429999999999999,
+      "fiscal_independence_ratio": 0.623,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "전라북도",
       "fiscal_autonomy_ratio": 0.23600000000000002,
       "fiscal_independence_ratio": 0.619,
@@ -3066,16 +3024,37 @@
       "total_revenue": 0
     },
     {
-      "region": "경상북도",
-      "fiscal_autonomy_ratio": 0.243,
-      "fiscal_independence_ratio": 0.6559999999999999,
+      "region": "제주특별자치도",
+      "fiscal_autonomy_ratio": 0.331,
+      "fiscal_independence_ratio": 0.644,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
     {
-      "region": "경기도",
-      "fiscal_autonomy_ratio": 0.557,
-      "fiscal_independence_ratio": 0.632,
+      "region": "전라남도",
+      "fiscal_autonomy_ratio": 0.237,
+      "fiscal_independence_ratio": 0.648,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상남도",
+      "fiscal_autonomy_ratio": 0.34299999999999997,
+      "fiscal_independence_ratio": 0.6579999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "인천광역시",
+      "fiscal_autonomy_ratio": 0.49200000000000005,
+      "fiscal_independence_ratio": 0.603,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "부산광역시",
+      "fiscal_autonomy_ratio": 0.42700000000000005,
+      "fiscal_independence_ratio": 0.555,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     },
@@ -3094,6 +3073,34 @@
       "total_revenue": 0
     },
     {
+      "region": "전국",
+      "fiscal_autonomy_ratio": 0.43200000000000005,
+      "fiscal_independence_ratio": 0.649,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "경상북도",
+      "fiscal_autonomy_ratio": 0.243,
+      "fiscal_independence_ratio": 0.6559999999999999,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "광주광역시",
+      "fiscal_autonomy_ratio": 0.39799999999999996,
+      "fiscal_independence_ratio": 0.583,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
+      "region": "충청남도",
+      "fiscal_autonomy_ratio": 0.322,
+      "fiscal_independence_ratio": 0.637,
+      "per_capita_local_tax": 0,
+      "total_revenue": 0
+    },
+    {
       "region": "대전광역시",
       "fiscal_autonomy_ratio": 0.41100000000000003,
       "fiscal_independence_ratio": 0.598,
@@ -3101,16 +3108,9 @@
       "total_revenue": 0
     },
     {
-      "region": "인천광역시",
-      "fiscal_autonomy_ratio": 0.49200000000000005,
-      "fiscal_independence_ratio": 0.603,
-      "per_capita_local_tax": 0,
-      "total_revenue": 0
-    },
-    {
-      "region": "제주특별자치도",
-      "fiscal_autonomy_ratio": 0.331,
-      "fiscal_independence_ratio": 0.644,
+      "region": "경기도",
+      "fiscal_autonomy_ratio": 0.557,
+      "fiscal_independence_ratio": 0.632,
       "per_capita_local_tax": 0,
       "total_revenue": 0
     }
