@@ -28,7 +28,7 @@ logging.basicConfig(
 
 class FiscalPolicySimulator:
     def __init__(self):
-        self.db_path = 'fiscal_autonomy_data.db'
+        self.db_path = 'data/fiscal_autonomy/fiscal_autonomy_data.db'
         self.target_regions = ['전라북도', '경상북도', '전라남도', '강원도']  # 30% 미만 지역
         self.current_year = 2025
         self.simulation_years = 5  # 2025-2030년
@@ -61,7 +61,7 @@ class FiscalPolicySimulator:
     def load_current_data(self):
         """현재 재정자립도 데이터 로드"""
         try:
-            df = pd.read_csv('kosis_fiscal_autonomy_data.csv')
+            df = pd.read_csv('data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv')
             current_data = df[df['year'] == self.current_year].copy()
             
             # 대상 지역 데이터 추출
@@ -283,7 +283,7 @@ class FiscalPolicySimulator:
         combined_results = pd.concat(all_results, ignore_index=True)
         
         # 결과 저장
-        combined_results.to_csv('fiscal_policy_simulation_results.csv', index=False, encoding='utf-8')
+        combined_results.to_csv('data/simulation_results/fiscal_policy_simulation_results.csv', index=False, encoding='utf-8')
         
         logging.info(f"시뮬레이션 완료: {len(combined_results)}개 결과 생성")
         return combined_results
@@ -451,7 +451,7 @@ def main():
             avg_improvement = policy_final['improvement'].mean() * 100
             print(f"  {policy_type.replace('_', ' ').title()}: +{avg_improvement:.1f}%")
         
-        print(f"\n시뮬레이션 결과가 'fiscal_policy_simulation_results.csv'에 저장되었습니다.")
+        print(f"\n시뮬레이션 결과가 'data/simulation_results/fiscal_policy_simulation_results.csv'에 저장되었습니다.")
         print(f"대시보드는 'fiscal_policy_simulation_dashboard.html'에서 확인할 수 있습니다.")
 
 if __name__ == "__main__":

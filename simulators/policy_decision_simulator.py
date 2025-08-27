@@ -141,7 +141,7 @@ class PolicyDecisionSimulator:
     def load_current_data(self):
         """현재 재정자립도 데이터 로드"""
         try:
-            df = pd.read_csv('kosis_fiscal_autonomy_data.csv')
+            df = pd.read_csv('data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv')
             current_data = df[df['year'] == self.current_year].copy()
             target_data = current_data[current_data['region'].isin(self.target_regions)].copy()
             return target_data
@@ -841,8 +841,8 @@ def main():
                 }
                 results_df = pd.concat([results_df, pd.DataFrame([row])], ignore_index=True)
         
-        results_df.to_csv('policy_decision_simulation_results.csv', index=False, encoding='utf-8')
-        print("정책 의사결정 시뮬레이션 결과가 'policy_decision_simulation_results.csv'에 저장되었습니다.")
+        results_df.to_csv('data/simulation_results/policy_decision_simulation_results.csv', index=False, encoding='utf-8')
+        print("정책 의사결정 시뮬레이션 결과가 'data/simulation_results/policy_decision_simulation_results.csv'에 저장되었습니다.")
         
         # 의사결정 대시보드 생성
         simulator.create_policy_decision_dashboard(results)

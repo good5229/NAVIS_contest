@@ -192,7 +192,7 @@ class KosisFiscalDataCollector:
         
         return merged_data
     
-    def save_to_csv(self, df: pd.DataFrame, filename: str = "kosis_fiscal_autonomy_data.csv"):
+    def save_to_csv(self, df: pd.DataFrame, filename: str = "data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv"):
         """데이터를 CSV 파일로 저장"""
         df.to_csv(filename, index=False, encoding='utf-8-sig')
         logging.info(f"데이터 저장 완료: {filename}")
