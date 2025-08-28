@@ -1,0 +1,41 @@
+{
+  "apiKey": "<YOUR_KOSIS_API_KEY>",
+  "indicators": [
+    {
+      "name": "kosis_unemployment_rate",
+      "orgId": "101",
+      "tblId": "DT_1DA7002S",
+      "itmId": "T1",
+      "objL1": "11 21 22 23 24 25 26 29 31 32 33 34 35 36 37 38 39",
+      "startYear": 2019,
+      "endYear": 2023
+    },
+    {
+      "name": "kosis_employment_level",
+      "orgId": "101",
+      "tblId": "DT_1DA7001S",
+      "itmId": "T1",
+      "objL1": "11 21 22 23 24 25 26 29 31 32 33 34 35 36 37 38 39",
+      "startYear": 2019,
+      "endYear": 2023
+    },
+    {
+      "name": "kosis_cpi",
+      "orgId": "101",
+      "tblId": "DT_1J20001",
+      "itmId": "T1",
+      "objL1": "11 21 22 23 24 25 26 29 31 32 33 34 35 36 37 38 39",
+      "startYear": 2019,
+      "endYear": 2023
+    },
+    {
+      "name": "kosis_industrial_production_index",
+      "orgId": "101",
+      "tblId": "DT_1GG001",
+      "itmId": "T1",
+      "objL1": "11 21 22 23 24 25 26 29 31 32 33 34 35 36 37 38 39",
+      "startYear": 2019,
+      "endYear": 2023
+    }
+  ]
+}
