@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import requests
+import os
 import pandas as pd
 
 
@@ -35,6 +36,22 @@ def load_config(path: Path) -> Optional[Dict[str, Any]]:
         return None
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
+def load_dotenv(dotenv_path: Path) -> None:
+    if not dotenv_path.exists():
+        return
+    try:
+        for line in dotenv_path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if not line or line.startswith('#') or '=' not in line:
+                continue
+            k, v = line.split('=', 1)
+            k = k.strip()
+            v = v.strip()
+            if k and v and k not in os.environ:
+                os.environ[k] = v
+    except Exception:
+        pass
+
 
 
 def safe_get(d: Dict[str, Any], *keys: str, default: Any = None) -> Any:
@@ -126,6 +143,8 @@ def save_indicator_csv(df: pd.DataFrame, name: str) -> Path:
 
 def main() -> None:
     config_path = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_CONFIG
+    # Load .env from repo root (gitignored)
+    load_dotenv(PROJECT_ROOT / '.env')
     cfg = load_config(config_path)
     api_key = os.environ.get('ECOS_API_KEY', '').strip()
 

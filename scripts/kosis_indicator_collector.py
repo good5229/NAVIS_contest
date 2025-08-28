@@ -82,6 +82,20 @@ def save_csv(name: str, rows: List[Dict[str, Any]]) -> Path:
 
 
 def main() -> None:
+    # Load .env if present (gitignored)
+    dotenv_path = PROJECT_ROOT / '.env'
+    if dotenv_path.exists():
+        try:
+            for line in dotenv_path.read_text(encoding='utf-8').splitlines():
+                line = line.strip()
+                if not line or line.startswith('#') or '=' not in line:
+                    continue
+                k, v = line.split('=', 1)
+                k = k.strip(); v = v.strip()
+                if k and v and k not in os.environ:
+                    os.environ[k] = v
+        except Exception:
+            pass
     cfg = load_config(CONFIG_PATH)
     api_key = cfg.get('apiKey', '').strip() or os.environ.get('KOSIS_API_KEY', '').strip()
     if not api_key:
