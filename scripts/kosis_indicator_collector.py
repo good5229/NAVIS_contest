@@ -19,6 +19,7 @@ from typing import Any, Dict, List
 
 import requests
 import pandas as pd
+import os
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -82,7 +83,7 @@ def save_csv(name: str, rows: List[Dict[str, Any]]) -> Path:
 
 def main() -> None:
     cfg = load_config(CONFIG_PATH)
-    api_key = cfg.get('apiKey', '').strip()
+    api_key = cfg.get('apiKey', '').strip() or os.environ.get('KOSIS_API_KEY', '').strip()
     if not api_key:
         print('[kosis_collector] Missing apiKey in config.json')
         return
