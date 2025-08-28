@@ -26,7 +26,8 @@ logging.basicConfig(
 class KosisFiscalDataCollector:
     def __init__(self):
         # KOSIS OpenAPI 설정
-        self.api_key = "MTU4Mzg3MGY5OTU4OTFlZmU0ZjJmMTZmODU5NGJlNjI="
+        import os
+        self.api_key = os.environ.get("KOSIS_API_KEY", "")
         self.base_url = "https://kosis.kr/openapi/statApi.do"
         
         # 재정자립도 통계 테이블 정보 (수정된 버전)
