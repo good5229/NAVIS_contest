@@ -2,7 +2,19 @@
 # -*- coding: utf-8 -*-
 """
 지역간 재정 자립도 격차 분석기
-재정 자립도 = 지방세 수입 / 총 재정수입 × 100
+
+재정자립도 공식 (행정안전부 기준):
+재정자립도 = (자체수입 / 일반회계총수입) × 100
+  - 자체수입 = 지방세 + 세외수입
+  - 일반회계총수입 = 자체수입 + 의존수입
+  - 의존수입 = 지방교부세 + 국고보조금 + 지방양여금
+
+재정자주도 공식:
+재정자주도 = ((자체수입 + 자주재원) / 일반회계총수입) × 100
+  - 자주재원 = 지방교부세 + 조정교부금
+
+지니계수 계산: G = (n+1-2Σ(n+1-i)yi) / (n×Σyi)
+변이계수: CV = σ/μ (표준편차/평균)
 """
 
 import requests
@@ -43,34 +55,50 @@ class FiscalAutonomyAnalyzer:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # 재정 자립도 데이터 테이블
+        # 재정 자립도 데이터 테이블 (구성항목 분해 포함)
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS fiscal_autonomy (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 region TEXT NOT NULL,
                 year INTEGER NOT NULL,
-                local_tax_revenue REAL,
-                total_revenue REAL,
-                fiscal_autonomy_ratio REAL,
-                fiscal_power_index REAL,
-                per_capita_local_tax REAL,
-                transfer_dependency_ratio REAL,
-                local_debt_amount REAL,
+                -- 수입 구성 항목
+                local_tax_revenue REAL,           -- 지방세
+                non_tax_revenue REAL,             -- 세외수입
+                own_revenue REAL,                 -- 자체수입 (지방세 + 세외수입)
+                local_share_tax REAL,             -- 지방교부세
+                national_subsidy REAL,            -- 국고보조금
+                local_transfer REAL,              -- 지방양여금
+                dependent_revenue REAL,           -- 의존수입
+                total_revenue REAL,               -- 총 재정수입
+                -- 비율 지표
+                fiscal_autonomy_ratio REAL,       -- 재정자립도
+                fiscal_independence_ratio REAL,   -- 재정자주도
+                transfer_dependency_ratio REAL,   -- 의존수입 비율
+                -- 기타 지표
+                fiscal_power_index REAL,          -- 재정력지수
+                per_capita_local_tax REAL,        -- 1인당 지방세
+                local_debt_amount REAL,           -- 지방채 잔액
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(region, year)
             )
         ''')
         
-        # 재정 격차 지수 테이블
+        # 재정 격차 지수 테이블 (확장된 통계 지표 포함)
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS fiscal_gap_index (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 year INTEGER NOT NULL,
-                max_min_gap REAL,
-                standard_deviation REAL,
-                gini_coefficient REAL,
-                top_bottom_ratio REAL,
-                fiscal_balance_score REAL,
+                max_min_gap REAL,                    -- 최고-최저 격차
+                standard_deviation REAL,            -- 표준편차
+                gini_coefficient REAL,              -- 지니계수
+                coefficient_of_variation REAL,      -- 변이계수
+                top_bottom_ratio REAL,              -- 상위/하위 비율
+                fiscal_balance_score REAL,          -- 재정 균형 점수
+                mean_ratio REAL,                    -- 평균 재정자립도
+                median_ratio REAL,                  -- 중위값 재정자립도
+                q1_ratio REAL,                      -- 1사분위수
+                q3_ratio REAL,                      -- 3사분위수
+                iqr_ratio REAL,                     -- 사분위수 범위
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(year)
             )
@@ -113,24 +141,50 @@ class FiscalAutonomyAnalyzer:
             population = self.get_region_population(region, year)
             local_tax_revenue = per_capita_tax * population * autonomy_ratio
             
-            # 총 재정수입 계산 (지방세 + 이전지원금 + 기타)
-            total_revenue = local_tax_revenue / autonomy_ratio
+            # 재정 구성 항목 분해 (행정안전부 기준)
+            # 자체수입 = 지방세 + 세외수입
+            local_tax = local_tax_revenue  # 지방세
+            non_tax_revenue = local_tax * (0.15 + np.random.normal(0, 0.05))  # 세외수입 (지방세의 15% 내외)
+            own_revenue = local_tax + non_tax_revenue  # 자체수입
+            
+            # 의존수입 = 지방교부세 + 국고보조금 + 지방양여금
+            local_share_tax = own_revenue * ((1 - autonomy_ratio) / autonomy_ratio) * 0.6  # 지방교부세
+            national_subsidy = own_revenue * ((1 - autonomy_ratio) / autonomy_ratio) * 0.3  # 국고보조금
+            local_transfer = own_revenue * ((1 - autonomy_ratio) / autonomy_ratio) * 0.1   # 지방양여금
+            dependent_revenue = local_share_tax + national_subsidy + local_transfer  # 의존수입
+            
+            # 총 재정수입 = 자체수입 + 의존수입
+            total_revenue = own_revenue + dependent_revenue
+            
+            # 재정자주도 = (자체수입 + 자주재원) / 일반회계총수입
+            autonomous_resource = local_share_tax * 0.8  # 지방교부세의 80%를 자주재원으로 간주
+            fiscal_independence_ratio = (own_revenue + autonomous_resource) / total_revenue
             
             # 기타 지표 계산
             fiscal_power_index = autonomy_ratio * 100 + np.random.normal(0, 5)
-            transfer_dependency = (1 - autonomy_ratio) * 100
+            transfer_dependency = dependent_revenue / total_revenue * 100  # 의존수입 비율
             local_debt = total_revenue * (0.3 + np.random.normal(0, 0.1))
             
             fiscal_data.append({
                 'region': region,
                 'year': year,
-                'local_tax_revenue': local_tax_revenue,
-                'total_revenue': total_revenue,
-                'fiscal_autonomy_ratio': autonomy_ratio,
-                'fiscal_power_index': fiscal_power_index,
-                'per_capita_local_tax': per_capita_tax,
-                'transfer_dependency_ratio': transfer_dependency,
-                'local_debt_amount': local_debt
+                # 수입 구성 항목
+                'local_tax_revenue': local_tax,                    # 지방세
+                'non_tax_revenue': non_tax_revenue,                # 세외수입
+                'own_revenue': own_revenue,                        # 자체수입
+                'local_share_tax': local_share_tax,                # 지방교부세
+                'national_subsidy': national_subsidy,              # 국고보조금
+                'local_transfer': local_transfer,                  # 지방양여금
+                'dependent_revenue': dependent_revenue,            # 의존수입
+                'total_revenue': total_revenue,                    # 총 재정수입
+                # 비율 지표
+                'fiscal_autonomy_ratio': autonomy_ratio,           # 재정자립도
+                'fiscal_independence_ratio': fiscal_independence_ratio,  # 재정자주도
+                'transfer_dependency_ratio': transfer_dependency,  # 의존수입 비율
+                # 기타 지표
+                'fiscal_power_index': fiscal_power_index,          # 재정력지수
+                'per_capita_local_tax': per_capita_tax,            # 1인당 지방세
+                'local_debt_amount': local_debt                    # 지방채 잔액
             })
         
         return fiscal_data
@@ -164,27 +218,42 @@ class FiscalAutonomyAnalyzer:
         return int(base_pop * year_factor)
     
     def calculate_fiscal_gap_index(self, year: int, fiscal_data: List[Dict]):
-        """재정 격차 지수 계산"""
+        """
+        재정 격차 지수 계산
+        
+        계산 지표:
+        1. 최고-최저 격차 (Range): max - min
+        2. 표준편차 (Standard Deviation): σ = √(Σ(xi-μ)²/n)
+        3. 지니계수 (Gini Coefficient): G = (n+1-2Σ(n+1-i)yi) / (n×Σyi)
+        4. 변이계수 (Coefficient of Variation): CV = σ/μ
+        5. 상위/하위 비율 (Top/Bottom Ratio)
+        6. 재정 균형 점수 (Balance Score)
+        """
         autonomy_ratios = [data['fiscal_autonomy_ratio'] for data in fiscal_data]
         
-        # 최고-최저 격차
+        # 1. 최고-최저 격차 (Range)
         max_min_gap = max(autonomy_ratios) - min(autonomy_ratios)
         
-        # 표준편차
-        standard_deviation = np.std(autonomy_ratios)
+        # 2. 표준편차 (Standard Deviation)
+        standard_deviation = np.std(autonomy_ratios, ddof=0)  # 모집단 표준편차
         
-        # 지니계수 (불평등도)
+        # 3. 지니계수 (Gini Coefficient) - 정확한 공식 적용
         sorted_ratios = sorted(autonomy_ratios)
         n = len(sorted_ratios)
-        cumsum = np.cumsum(sorted_ratios)
-        gini_coefficient = (n + 1 - 2 * np.sum(cumsum) / cumsum[-1]) / n
+        index = np.arange(1, n + 1)  # 1, 2, ..., n
+        gini_coefficient = (2 * np.sum(index * sorted_ratios)) / (n * np.sum(sorted_ratios)) - (n + 1) / n
         
-        # 상위/하위 평균 비율
+        # 4. 변이계수 (Coefficient of Variation)
+        mean_ratio = np.mean(autonomy_ratios)
+        coefficient_of_variation = standard_deviation / mean_ratio if mean_ratio > 0 else 0
+        
+        # 5. 상위/하위 평균 비율 (Top/Bottom Ratio)
         top_third = np.mean(sorted_ratios[-6:])  # 상위 1/3
         bottom_third = np.mean(sorted_ratios[:6])  # 하위 1/3
         top_bottom_ratio = top_third / bottom_third if bottom_third > 0 else 0
         
-        # 재정 균형 점수 (높을수록 균형)
+        # 6. 재정 균형 점수 (Balance Score) - 0~100점 척도
+        # 격차가 클수록, 표준편차가 클수록 점수 감소
         fiscal_balance_score = max(0, 100 - max_min_gap * 200 - standard_deviation * 100)
         
         return {
@@ -192,8 +261,14 @@ class FiscalAutonomyAnalyzer:
             'max_min_gap': max_min_gap,
             'standard_deviation': standard_deviation,
             'gini_coefficient': gini_coefficient,
+            'coefficient_of_variation': coefficient_of_variation,
             'top_bottom_ratio': top_bottom_ratio,
-            'fiscal_balance_score': fiscal_balance_score
+            'fiscal_balance_score': fiscal_balance_score,
+            'mean_ratio': mean_ratio,
+            'median_ratio': np.median(autonomy_ratios),
+            'q1_ratio': np.percentile(autonomy_ratios, 25),
+            'q3_ratio': np.percentile(autonomy_ratios, 75),
+            'iqr_ratio': np.percentile(autonomy_ratios, 75) - np.percentile(autonomy_ratios, 25)
         }
     
     def save_to_db(self, fiscal_data: List[Dict], gap_index: Dict):
