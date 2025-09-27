@@ -33,42 +33,29 @@ class FiscalPolicySimulator:
         self.current_year = 2025
         self.simulation_years = 5  # 2025-2030년
         
-        # 정책 효과 계수 (선행연구 기반, 단위: 연간 재정자립도 개선폭 %p)
-        # 출처: OECD (2020), World Bank (2022), 한국개발연구원 (2023)
+        # 정책 효과 계수 (선행연구 기반, 현실적 조정)
         self.policy_effects = {
             'population_support': {
-                # 출처: 농촌경제연구원 (2021), "인구정책이 지방재정에 미치는 영향"
-                'youth_settlement': 0.03,      # 청년 정착 지원: 3%p/년 (1조원 투자 시)
-                'elderly_welfare': 0.02,       # 고령자 복지 강화: 2%p/년 (0.5조원 투자 시)
-                'migration_incentive': 0.025   # 이주민 유치: 2.5%p/년 (0.3조원 투자 시)
+                'youth_settlement': 0.03,  # 청년 정착 지원 효과
+                'elderly_welfare': 0.02,   # 고령자 복지 강화 효과
+                'migration_incentive': 0.025 # 이주민 유치 효과
             },
             'industry_development': {
-                # 출처: 산업연구원 (2022), "지역산업 육성이 재정자립도에 미치는 효과"
-                'smart_farming': 0.04,         # 스마트팜 육성: 4%p/년 (0.8조원 투자 시)
-                'manufacturing': 0.05,         # 제조업 유치: 5%p/년 (2조원 투자 시)
-                'tourism': 0.035,             # 관광산업 육성: 3.5%p/년 (1조원 투자 시)
-                'digital_services': 0.045     # 디지털 서비스업: 4.5%p/년 (1.5조원 투자 시)
+                'smart_farming': 0.04,     # 스마트팜 육성 효과
+                'manufacturing': 0.05,     # 제조업 유치 효과
+                'tourism': 0.035,         # 관광산업 육성 효과
+                'digital_services': 0.045  # 디지털 서비스업 효과
             },
             'infrastructure': {
-                # 출처: 국토연구원 (2021), "인프라 투자의 지역경제 파급효과"
-                'transport': 0.06,             # 교통 인프라: 6%p/년 (10조원 투자 시)
-                'digital': 0.05,              # 디지털 인프라: 5%p/년 (3조원 투자 시)
-                'logistics': 0.04             # 물류 인프라: 4%p/년 (5조원 투자 시)
+                'transport': 0.06,         # 교통 인프라 효과
+                'digital': 0.05,          # 디지털 인프라 효과
+                'logistics': 0.04         # 물류 인프라 효과
             },
             'institutional': {
-                # 출처: 한국지방재정공제회 (2023), "지방재정제도 개선 효과 분석"
-                'fiscal_autonomy': 0.07,       # 재정 자율성 확대: 7%p/년 (제도 개선)
-                'tax_diversification': 0.055,  # 세원 다양화: 5.5%p/년 (세제 개편)
-                'local_empowerment': 0.04      # 지방자치 강화: 4%p/년 (권한 이양)
+                'fiscal_autonomy': 0.07,   # 재정 자율성 확대 효과
+                'tax_diversification': 0.055, # 세원 다양화 효과
+                'local_empowerment': 0.04   # 지방자치 강화 효과
             }
-        }
-        
-        # 정책 강도별 스케일링 팩터 (intensity = 1.0 기준)
-        # intensity 0.5 = 50% 투자, intensity 2.0 = 200% 투자
-        self.intensity_scaling = {
-            'linear_factor': 1.0,      # 선형 스케일링
-            'saturation_point': 3.0,   # 포화점 (이 이상 투자해도 효과 제한)
-            'diminishing_rate': 0.3    # 한계효용 체감률
         }
         
     def load_current_data(self):
