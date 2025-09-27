@@ -31,6 +31,30 @@
             border-radius: 15px;
             margin-bottom: 30px;
             text-align: center;
+            position: relative;
+        }
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .home-btn:hover {
+            background: white;
+            color: #667eea;
+            transform: scale(1.1);
+            text-decoration: none;
         }
         .nav-breadcrumb {
             background: rgba(255, 255, 255, 0.9);
@@ -156,6 +180,11 @@
         </div>
 
         <div class="header">
+            <!-- 홈 버튼 -->
+            <a href="index.html" class="home-btn" title="메인 페이지로 돌아가기">
+                <i class="fas fa-home"></i>
+            </a>
+            
             <h1><i class="fas fa-link"></i> 통합 시뮬레이터</h1>
             <p>BDS와 재정자립도를 통합한 종합 정책 효과 분석 시스템</p>
         </div>
