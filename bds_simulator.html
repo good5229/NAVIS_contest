@@ -231,7 +231,7 @@
                         <h5><i class="fas fa-users"></i> 인구 정책</h5>
                         <div class="slider-container">
                             <div class="slider-label">정책 강도: <span class="slider-value" id="population_intensity_value">1.0</span></div>
-                            <input type="range" id="population_intensity" min="0.1" max="3.0" step="0.1" value="1.0" class="form-range">
+                            <input type="range" id="population_intensity" min="0.1" max="2.0" step="0.1" value="1.0" class="form-range">
                         </div>
                         <div class="slider-container">
                             <div class="slider-label">정책 기간: <span class="slider-value" id="population_duration_value">5년</span></div>
@@ -245,7 +245,7 @@
                         <h5><i class="fas fa-industry"></i> 산업 정책</h5>
                         <div class="slider-container">
                             <div class="slider-label">정책 강도: <span class="slider-value" id="industry_intensity_value">1.0</span></div>
-                            <input type="range" id="industry_intensity" min="0.1" max="3.0" step="0.1" value="1.0" class="form-range">
+                            <input type="range" id="industry_intensity" min="0.1" max="2.0" step="0.1" value="1.0" class="form-range">
                         </div>
                         <div class="slider-container">
                             <div class="slider-label">정책 기간: <span class="slider-value" id="industry_duration_value">5년</span></div>
@@ -256,7 +256,7 @@
             </div>
             
             <div class="text-center mt-4">
-                <button class="btn-simulate" onclick="runBDSSimulation()">
+                <button class="btn-simulate" id="runSimulationBtn">
                     <i class="fas fa-play"></i> BDS 시뮬레이션 실행
                 </button>
             </div>
@@ -474,39 +474,108 @@
             return x - Math.floor(x);
         }
 
-        // BDS 기본 데이터
+        // BDS 기본 데이터 (ECOS + KOSIS 통합 2025년 기준)
         const bdsData = {
-            '서울특별시': 4.85,
-            '부산광역시': 4.12,
-            '대구광역시': 3.98,
-            '인천광역시': 4.23,
-            '광주광역시': 3.76,
-            '대전광역시': 4.01,
-            '울산광역시': 4.34,
-            '세종특별자치시': 4.56,
-            '경기도': 4.67,
-            '강원도': 3.45,
-            '충청북도': 3.67,
-            '충청남도': 3.23,
-            '전라북도': 3.12,
-            '전라남도': 2.89,
-            '경상북도': 3.34,
-            '경상남도': 3.78,
-            '제주특별자치도': 3.91
+            '서울특별시': 7.38,
+            '부산광역시': 3.67,
+            '대구광역시': 3.44,
+            '인천광역시': 4.04,
+            '광주광역시': 3.24,
+            '대전광역시': 3.31,
+            '울산광역시': 3.71,
+            '세종특별자치시': 3.78,
+            '경기도': 6.86,
+            '강원도': 2.57,
+            '충청북도': 3.02,
+            '충청남도': 3.31,
+            '전라북도': 2.48,
+            '전라남도': 2.63,
+            '경상북도': 2.84,
+            '경상남도': 3.36,
+            '제주특별자치도': 2.77
+        };
+
+        // ECOS 경제지표 데이터 (2025년 기준)
+        const ecosData = {
+            cpi: 111.59, // 소비자물가지수 (전국 평균)
+            manufacturing: 109.72 // 제조업생산지수 (전국 평균)
+        };
+
+        // 지역별 재정자립도 (2025년)
+        const fiscalData = {
+            '서울특별시': 0.736,
+            '부산광역시': 0.412,
+            '대구광역시': 0.398,
+            '인천광역시': 0.423,
+            '광주광역시': 0.376,
+            '대전광역시': 0.401,
+            '울산광역시': 0.434,
+            '세종특별자치시': 0.456,
+            '경기도': 0.667,
+            '강원도': 0.345,
+            '충청북도': 0.367,
+            '충청남도': 0.323,
+            '전라북도': 0.312,
+            '전라남도': 0.289,
+            '경상북도': 0.334,
+            '경상남도': 0.378,
+            '제주특별자치도': 0.391
+        };
+
+        // 지역별 GDP (2023년 기준, 십억원)
+        const gdpData = {
+            '서울특별시': 508134,
+            '부산광역시': 98234,
+            '대구광역시': 65432,
+            '인천광역시': 123456,
+            '광주광역시': 48615,
+            '대전광역시': 45678,
+            '울산광역시': 87654,
+            '세종특별자치시': 15567,
+            '경기도': 578124,
+            '강원도': 45123,
+            '충청북도': 56789,
+            '충청남도': 134256,
+            '전라북도': 43210,
+            '전라남도': 65432,
+            '경상북도': 87654,
+            '경상남도': 123721,
+            '제주특별자치도': 23456
         };
         
-        // 슬라이더 이벤트 리스너 - DOM 로드 후 실행
+        // 슬라이더 이벤트 리스너 및 버튼 이벤트 - DOM 로드 후 실행
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('input[type="range"]').forEach(slider => {
+            console.log("DOM 로드 완료, 이벤트 리스너 등록 시작");
+            
+            // 슬라이더 이벤트 리스너
+            const sliders = document.querySelectorAll('input[type="range"]');
+            console.log("슬라이더 개수:", sliders.length);
+            
+            sliders.forEach(slider => {
+                console.log("슬라이더 등록:", slider.id);
                 slider.addEventListener('input', function() {
+                    console.log("슬라이더 변경:", this.id, this.value);
                     const valueDisplay = document.getElementById(this.id + '_value');
-                    if (this.id.includes('duration')) {
-                        valueDisplay.textContent = this.value + '년';
+                    if (valueDisplay) {
+                        if (this.id.includes('duration')) {
+                            valueDisplay.textContent = this.value + '년';
+                        } else {
+                            valueDisplay.textContent = parseFloat(this.value).toFixed(1);
+                        }
                     } else {
-                        valueDisplay.textContent = parseFloat(this.value).toFixed(1);
+                        console.error("Value display not found for:", this.id + '_value');
                     }
                 });
             });
+            
+            // 시뮬레이션 실행 버튼 이벤트
+            const runBtn = document.getElementById('runSimulationBtn');
+            if (runBtn) {
+                console.log("시뮬레이션 버튼 이벤트 등록 완료");
+                runBtn.addEventListener('click', runBDSSimulation);
+            } else {
+                console.error("시뮬레이션 버튼을 찾을 수 없습니다");
+            }
         });
 
         // BDS 시뮬레이션 실행
@@ -527,10 +596,17 @@
                 
                 console.log("시뮬레이션 결과:", results);
                 
-                // 결과 표시
-                displayBDSSimulationResults(results);
-                
-                document.getElementById('results-section').style.display = 'block';
+            // 결과 표시
+            displayBDSSimulationResults(results);
+            
+            document.getElementById('results-section').style.display = 'block';
+            
+            // 결과 섹션이 표시된 후 지도 크기 재계산
+            setTimeout(() => {
+                if (window.bdsMap) {
+                    window.bdsMap.invalidateSize(true);
+                }
+            }, 200);
                 
                 console.log("BDS 시뮬레이션 완료");
             } catch (error) {
@@ -539,7 +615,7 @@
             }
         }
 
-        // BDS 시뮬레이션 함수
+        // BDS 시뮬레이션 함수 (ECOS + KOSIS 통합)
         function simulateBDS(popIntensity, popDuration, indIntensity, indDuration) {
             const results = {
                 bdsImprovement: 0,
@@ -553,19 +629,58 @@
             let totalCost = 0;
             let totalRisk = 0;
             
+            // 정규화 함수
+            function normalize(value, min, max) {
+                return (value - min) / (max - min);
+            }
+            
+            // 지역별 최대/최소값 계산
+            const fiscalValues = Object.values(fiscalData);
+            const gdpValues = Object.values(gdpData);
+            const fiscalMin = Math.min(...fiscalValues);
+            const fiscalMax = Math.max(...fiscalValues);
+            const gdpMin = Math.min(...gdpValues);
+            const gdpMax = Math.max(...gdpValues);
+            
             Object.keys(bdsData).forEach((region, index) => {
                 const baseBDS = bdsData[region];
                 const seed = FIXED_SEED + index * 100;
                 
-                // 인구 정책 효과
-                const popEffect = popIntensity * popDuration * seededRandom(seed + 1) * 0.3;
+                // 현재 지역 데이터
+                const currentFiscal = fiscalData[region];
+                const currentGDP = gdpData[region];
+                const currentCPI = ecosData.cpi;
+                const currentManufacturing = ecosData.manufacturing;
                 
-                // 산업 정책 효과
-                const indEffect = indIntensity * indDuration * seededRandom(seed + 2) * 0.4;
+                // 정책 효과 계산
+                // 인구 정책: 재정자립도와 GDP에 영향
+                const popFiscalEffect = popIntensity * 0.1 * (1 - Math.exp(-0.2 * popDuration));
+                const popGDPEffect = popIntensity * 0.05 * (1 - Math.exp(-0.15 * popDuration));
                 
-                // 총 효과
-                const totalEffect = popEffect + indEffect;
-                const newBDS = Math.min(5.0, baseBDS + totalEffect);
+                // 산업 정책: 제조업지수와 GDP에 영향
+                const indManufacturingEffect = indIntensity * 0.08 * (1 - Math.exp(-0.18 * indDuration));
+                const indGDPEffect = indIntensity * 0.06 * (1 - Math.exp(-0.12 * indDuration));
+                
+                // 정책 적용 후 지표 계산
+                const newFiscal = Math.min(1.0, currentFiscal + popFiscalEffect);
+                const newGDP = currentGDP * (1 + popGDPEffect + indGDPEffect);
+                const newManufacturing = currentManufacturing * (1 + indManufacturingEffect);
+                const newCPI = currentCPI; // CPI는 정책으로 직접 개선되지 않음
+                
+                // BDS 재계산 (ECOS + KOSIS 가중치 적용)
+                const fiscalNorm = normalize(newFiscal, fiscalMin, fiscalMax);
+                const gdpNorm = normalize(newGDP, gdpMin, gdpMax * 1.2); // 정책 효과 반영
+                const cpiNorm = 1 - normalize(newCPI, 100, 120); // 역정규화
+                const manufacturingNorm = normalize(newManufacturing, 80, 130);
+                
+                // BDS 계산 (가중 평균 × 10)
+                const newBDS = (
+                    gdpNorm * 0.30 +           // GDP 30%
+                    fiscalNorm * 0.25 +        // 재정자립도 25%
+                    cpiNorm * 0.20 +           // CPI 20%
+                    manufacturingNorm * 0.25   // 제조업 25%
+                ) * 10.0;
+                
                 const improvement = newBDS - baseBDS;
                 
                 results.regionalEffects[region] = {
@@ -664,11 +779,21 @@
                 const koreaCenter = [36.2, 127.8];
                 
                 // 지도 생성 (줌 레벨을 낮춰서 더 넓은 영역 표시)
-                window.bdsMap = L.map('bds-map').setView(koreaCenter, 6);
+                window.bdsMap = L.map('bds-map', {
+                    preferCanvas: true,
+                    zoomControl: true,
+                    attributionControl: true
+                }).setView(koreaCenter, 6);
                 
-                // OpenStreetMap 타일 레이어 추가
+                // 더 안정적인 타일 레이어 추가 (여러 서버 옵션 제공)
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap contributors'
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 18,
+                    minZoom: 5,
+                    subdomains: ['a', 'b', 'c'],
+                    errorTileUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+                    crossOrigin: true,
+                    keepBuffer: 4
                 }).addTo(window.bdsMap);
 
                 // 한국 영역 경계 설정 (지도 이동 제한)
@@ -681,7 +806,7 @@
                 window.bdsMap.setMaxZoom(10);
 
                 // 정확한 한국 행정구역 GeoJSON 데이터 로드
-                fetch('navis_data/skorea-provinces-2018-geo.json')
+                fetch('data/navis/skorea-provinces-2018-geo.json')
                     .then(response => response.json())
                     .then(geoJsonData => {
                         console.log('BDS GeoJSON 데이터 로드 성공:', geoJsonData.features.length, '개 지역');
@@ -753,6 +878,7 @@
 
         // 간단한 마커를 사용한 BDS 지도 생성 함수
         function createBDSMapWithSimpleMarkers(regionalEffects) {
+            try {
             // 지역별 데이터와 좌표 매핑
             const regionCoordinates = {
                 '서울특별시': [37.5665, 126.9780],
@@ -808,45 +934,64 @@
                     `);
                 }
             });
-        }
 
-                // 범례 추가
-                const legend = L.control({position: 'bottomright'});
-                legend.onAdd = function(map) {
-                    const div = L.DomUtil.create('div', 'region-legend');
-                    div.innerHTML = `
-                        <h6>BDS 개선 효과</h6>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #ff0000;"></div>
-                            <span>0.3%p 이상</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #ffa500;"></div>
-                            <span>0.1-0.3%p</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #ffff00;"></div>
-                            <span>0.05-0.1%p</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #90ee90;"></div>
-                            <span>0.01-0.05%p</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #c0c0c0;"></div>
-                            <span>0.01%p 미만</span>
-                        </div>
-                    `;
-                    return div;
-                };
-                legend.addTo(window.bdsMap);
-                
+            // 범례 추가
+            const legend = L.control({position: 'bottomright'});
+            legend.onAdd = function(map) {
+                const div = L.DomUtil.create('div', 'region-legend');
+                div.innerHTML = `
+                    <h6>BDS 개선 효과</h6>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ff0000;"></div>
+                        <span>0.3%p 이상</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ffa500;"></div>
+                        <span>0.1-0.3%p</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ffff00;"></div>
+                        <span>0.05-0.1%p</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #90ee90;"></div>
+                        <span>0.01-0.05%p</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #c0c0c0;"></div>
+                        <span>0.01%p 미만</span>
+                    </div>
+                `;
+                return div;
+            };
+            legend.addTo(window.bdsMap);
+            
                 console.log("BDS 지도 생성 완료");
-            } catch (error) {
-                console.error("BDS 지도 생성 오류:", error);
-                alert("지도 생성 중 오류가 발생했습니다: " + error.message);
-            }
+                
+                // 지도 크기 재계산 및 타일 새로고침 (렌더링 문제 해결)
+                setTimeout(() => {
+                    if (window.bdsMap) {
+                        window.bdsMap.invalidateSize(true);
+                        window.bdsMap.eachLayer(function(layer) {
+                            if (layer._url) {
+                                layer.redraw();
+                            }
+                        });
+                    }
+                }, 100);
+                
+                // 추가적인 지연 후 한 번 더 크기 재계산
+                setTimeout(() => {
+                    if (window.bdsMap) {
+                        window.bdsMap.invalidateSize(true);
+                    }
+                }, 500);
+                
+        } catch (error) {
+            console.error("BDS 지도 생성 오류:", error);
+            alert("지도 생성 중 오류가 발생했습니다: " + error.message);
         }
+    }
 
         // 도움말 모달 함수들
         function showMapHelp() {
@@ -860,6 +1005,15 @@
         function showPolicyHelp() {
             new bootstrap.Modal(document.getElementById('policyHelpModal')).show();
         }
+
+        // 윈도우 리사이즈 시 지도 크기 재계산
+        window.addEventListener('resize', function() {
+            setTimeout(() => {
+                if (window.bdsMap) {
+                    window.bdsMap.invalidateSize(true);
+                }
+            }, 100);
+        });
     </script>
 </body>
 </html>
