@@ -1,0 +1,66 @@
+{
+  "indicators": [
+    {
+      "name": "ecos_unemployment_rate",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/024Y002/DD/2000/2025/",
+      "common_params": {},
+      "year_range": { "start": 2015, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "서울특별시", "params": { "C1": "11000" } },
+        { "region": "부산광역시", "params": { "C1": "26000" } }
+      ]
+    },
+    {
+      "name": "ecos_employment_level",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/024Y001/DD/2000/2025/",
+      "common_params": {},
+      "year_range": { "start": 2015, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "서울특별시", "params": { "C1": "11000" } },
+        { "region": "부산광역시", "params": { "C1": "26000" } }
+      ]
+    },
+    {
+      "name": "ecos_cpi",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/021Y125/MM/2015/2025/",
+      "common_params": {},
+      "year_range": { "start": 2015, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "서울특별시", "params": { "C1": "11000" } },
+        { "region": "부산광역시", "params": { "C1": "26000" } }
+      ]
+    },
+    {
+      "name": "ecos_industrial_production_index",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/021Y085/MM/2015/2025/",
+      "common_params": {},
+      "year_range": { "start": 2015, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "서울특별시", "params": { "C1": "11000" } },
+        { "region": "부산광역시", "params": { "C1": "26000" } }
+      ]
+    }
+  ]
+}
+
+

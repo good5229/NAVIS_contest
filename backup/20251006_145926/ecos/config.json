@@ -1,0 +1,32 @@
+{
+  "indicators": [
+    {
+      "name": "ecos_cpi_national",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/901Y009/M/202001/202412/0",
+      "common_params": {},
+      "year_range": { "start": 2020, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "전국", "params": {} }
+      ]
+    },
+    {
+      "name": "ecos_manufacturing_production_index",
+      "base_url": "https://ecos.bok.or.kr/api/StatisticSearch/json/kr/1/1000/901Y034/M/202001/202412/IIICA",
+      "common_params": {},
+      "year_range": { "start": 2020, "end": 2024 },
+      "response_mapping": {
+        "items_path": "StatisticSearch.row",
+        "year_field": "TIME",
+        "value_field": "DATA_VALUE"
+      },
+      "regions": [
+        { "region": "제조업전체", "params": {} }
+      ]
+    }
+  ]
+}
