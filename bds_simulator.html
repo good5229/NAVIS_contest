@@ -372,12 +372,12 @@
 
                     <h6>📈 시뮬레이션 모델</h6>
                     <div class="assumption-box">
-                        <strong>BDS 개선 효과 계산:</strong><br>
-                        지역별 BDS 개선 = Σ(정책강도 × 정책기간 × 지역특성계수 × 정책효과계수)<br><br>
-                        <strong>지역특성계수:</strong><br>
-                        • 수도권: 0.8 (높은 기반으로 인한 한계효용 체감)<br>
-                        • 비수도권: 1.2 (낮은 기반으로 인한 높은 한계효용)<br>
-                        • 도서지역: 1.5 (특수한 지역적 특성 반영)
+                        <strong>BDS 개선 효과 계산 (EU RCI 방식):</strong><br>
+                        지역별 BDS 개선 = Σ(정책강도 × 정책기간 × 지역별차등가중치 × 정책효과계수)<br><br>
+                        <strong>EU RCI 방식 차등 가중치:</strong><br>
+                        • 고소득 지역 (≥40,000천원): 균등 가중치 (25% 각)<br>
+                        • 중소득 지역 (25,000-40,000천원): GRDP/재정 중심 (35%, 30%)<br>
+                        • 저소득 지역 (<25,000천원): 기초 경제력 중심 (40%, 35%)
                     </div>
                 </div>
             </div>
@@ -629,6 +629,27 @@
             let totalCost = 0;
             let totalRisk = 0;
             
+            // EU RCI 방식 지역별 가중치 정의
+            const regionalWeights = {
+                '서울특별시': {category: '고소득', weights: {grdp: 0.25, fiscal: 0.25, manufacturing: 0.25, service: 0.25}},
+                '울산광역시': {category: '고소득', weights: {grdp: 0.25, fiscal: 0.25, manufacturing: 0.25, service: 0.25}},
+                '세종특별자치시': {category: '고소득', weights: {grdp: 0.25, fiscal: 0.25, manufacturing: 0.25, service: 0.25}},
+                '충청남도': {category: '고소득', weights: {grdp: 0.25, fiscal: 0.25, manufacturing: 0.25, service: 0.25}},
+                '인천광역시': {category: '고소득', weights: {grdp: 0.25, fiscal: 0.25, manufacturing: 0.25, service: 0.25}},
+                '경기도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '부산광역시': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '경상남도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '대구광역시': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '충청북도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '대전광역시': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '전라남도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '경상북도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '제주특별자치도': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '광주광역시': {category: '중소득', weights: {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15}},
+                '강원도': {category: '저소득', weights: {grdp: 0.40, fiscal: 0.35, manufacturing: 0.15, service: 0.10}},
+                '전라북도': {category: '저소득', weights: {grdp: 0.40, fiscal: 0.35, manufacturing: 0.15, service: 0.10}}
+            };
+            
             // 정규화 함수
             function normalize(value, min, max) {
                 return (value - min) / (max - min);
@@ -667,18 +688,21 @@
                 const newManufacturing = currentManufacturing * (1 + indManufacturingEffect);
                 const newCPI = currentCPI; // CPI는 정책으로 직접 개선되지 않음
                 
-                // BDS 재계산 (ECOS + KOSIS 가중치 적용)
+                // BDS 재계산 (EU RCI 방식 차등 가중치 적용)
                 const fiscalNorm = normalize(newFiscal, fiscalMin, fiscalMax);
                 const gdpNorm = normalize(newGDP, gdpMin, gdpMax * 1.2); // 정책 효과 반영
                 const cpiNorm = 1 - normalize(newCPI, 100, 120); // 역정규화
                 const manufacturingNorm = normalize(newManufacturing, 80, 130);
                 
-                // BDS 계산 (가중 평균 × 10)
+                // 지역별 차등 가중치 적용
+                const weights = regionalWeights[region]?.weights || {grdp: 0.35, fiscal: 0.30, manufacturing: 0.20, service: 0.15};
+                
+                // BDS 계산 (EU RCI 방식 차등 가중치 × 10)
                 const newBDS = (
-                    gdpNorm * 0.30 +           // GDP 30%
-                    fiscalNorm * 0.25 +        // 재정자립도 25%
-                    cpiNorm * 0.20 +           // CPI 20%
-                    manufacturingNorm * 0.25   // 제조업 25%
+                    gdpNorm * weights.grdp +           // GRDP (지역별 차등)
+                    fiscalNorm * weights.fiscal +      // 재정자립도 (지역별 차등)
+                    manufacturingNorm * weights.manufacturing +  // 제조업 (지역별 차등)
+                    cpiNorm * weights.service          // 서비스업 대용 (지역별 차등)
                 ) * 10.0;
                 
                 const improvement = newBDS - baseBDS;
