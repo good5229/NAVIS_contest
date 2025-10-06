@@ -1,0 +1,309 @@
+{
+  "methodology": "EU RCI 방식 + 한국형 지역균형발전 가중치",
+  "calculation_date": "2025-10-06 14:59:00",
+  "data_source": "KOSIS 시도별 1인당 GRDP (2023년 기준)",
+  "weight_categories": {
+    "high_income": "고소득 지역 (≥40,000천원): 균등 가중치 - 모든 지표 균형 발전",
+    "middle_income": "중소득 지역 (25,000-40,000천원): GRDP/재정 중심 - 경제 기반 강화",
+    "low_income": "저소득 지역 (<25,000천원): 기초 경제력 중심 - 재정 지원 확대"
+  },
+  "classification_thresholds": {
+    "high_income_threshold": 40000,
+    "middle_income_threshold": 25000,
+    "unit": "천원"
+  },
+  "regional_weights": {
+    "서울특별시": {
+      "category": "고소득",
+      "per_capita_grdp": 46491,
+      "weights": {
+        "grdp": 0.25,
+        "fiscal": 0.25,
+        "manufacturing": 0.25,
+        "service": 0.25
+      }
+    },
+    "경기도": {
+      "category": "고소득",
+      "per_capita_grdp": 34762,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "부산광역시": {
+      "category": "중소득",
+      "per_capita_grdp": 29127,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "대구광역시": {
+      "category": "중소득",
+      "per_capita_grdp": 26842,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "인천광역시": {
+      "category": "고소득",
+      "per_capita_grdp": 40271,
+      "weights": {
+        "grdp": 0.25,
+        "fiscal": 0.25,
+        "manufacturing": 0.25,
+        "service": 0.25
+      }
+    },
+    "광주광역시": {
+      "category": "중소득",
+      "per_capita_grdp": 25543,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "대전광역시": {
+      "category": "중소득",
+      "per_capita_grdp": 31456,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "울산광역시": {
+      "category": "고소득",
+      "per_capita_grdp": 58255,
+      "weights": {
+        "grdp": 0.25,
+        "fiscal": 0.25,
+        "manufacturing": 0.25,
+        "service": 0.25
+      }
+    },
+    "세종특별자치시": {
+      "category": "고소득",
+      "per_capita_grdp": 45045,
+      "weights": {
+        "grdp": 0.25,
+        "fiscal": 0.25,
+        "manufacturing": 0.25,
+        "service": 0.25
+      }
+    },
+    "강원도": {
+      "category": "저소득",
+      "per_capita_grdp": 24891,
+      "weights": {
+        "grdp": 0.40,
+        "fiscal": 0.35,
+        "manufacturing": 0.15,
+        "service": 0.10
+      }
+    },
+    "충청북도": {
+      "category": "중소득",
+      "per_capita_grdp": 32156,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "충청남도": {
+      "category": "고소득",
+      "per_capita_grdp": 42378,
+      "weights": {
+        "grdp": 0.25,
+        "fiscal": 0.25,
+        "manufacturing": 0.25,
+        "service": 0.25
+      }
+    },
+    "전라북도": {
+      "category": "저소득",
+      "per_capita_grdp": 23891,
+      "weights": {
+        "grdp": 0.40,
+        "fiscal": 0.35,
+        "manufacturing": 0.15,
+        "service": 0.10
+      }
+    },
+    "전라남도": {
+      "category": "중소득",
+      "per_capita_grdp": 31245,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "경상북도": {
+      "category": "중소득",
+      "per_capita_grdp": 28934,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "경상남도": {
+      "category": "중소득",
+      "per_capita_grdp": 33567,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    },
+    "제주특별자치도": {
+      "category": "중소득",
+      "per_capita_grdp": 27834,
+      "weights": {
+        "grdp": 0.35,
+        "fiscal": 0.30,
+        "manufacturing": 0.20,
+        "service": 0.15
+      }
+    }
+  },
+  "bds_results": {
+    "서울특별시": {
+      "existing_bds": 7.38,
+      "weighted_bds": 7.85,
+      "change": 0.47,
+      "explanation": "고소득 지역으로 균등 가중치 적용, 모든 지표 균형 발전으로 소폭 상승"
+    },
+    "경기도": {
+      "existing_bds": 6.86,
+      "weighted_bds": 7.12,
+      "change": 0.26,
+      "explanation": "중고소득 경계 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "울산광역시": {
+      "existing_bds": 3.71,
+      "weighted_bds": 4.95,
+      "change": 1.24,
+      "explanation": "1인당 GRDP 최고 지역(58,255천원)으로 균등 가중치 적용 시 큰 상승"
+    },
+    "세종특별자치시": {
+      "existing_bds": 3.78,
+      "weighted_bds": 4.68,
+      "change": 0.90,
+      "explanation": "고소득 지역으로 균등 가중치 적용, 상당한 상승"
+    },
+    "충청남도": {
+      "existing_bds": 3.31,
+      "weighted_bds": 4.42,
+      "change": 1.11,
+      "explanation": "고소득 지역으로 재분류되어 균등 가중치 적용, 큰 상승"
+    },
+    "인천광역시": {
+      "existing_bds": 4.04,
+      "weighted_bds": 4.38,
+      "change": 0.34,
+      "explanation": "고소득 지역으로 균등 가중치 적용, 소폭 상승"
+    },
+    "부산광역시": {
+      "existing_bds": 3.67,
+      "weighted_bds": 3.89,
+      "change": 0.22,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "경상남도": {
+      "existing_bds": 3.36,
+      "weighted_bds": 3.78,
+      "change": 0.42,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "대구광역시": {
+      "existing_bds": 3.44,
+      "weighted_bds": 3.65,
+      "change": 0.21,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "충청북도": {
+      "existing_bds": 3.02,
+      "weighted_bds": 3.45,
+      "change": 0.43,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "대전광역시": {
+      "existing_bds": 3.31,
+      "weighted_bds": 3.42,
+      "change": 0.11,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "전라남도": {
+      "existing_bds": 2.63,
+      "weighted_bds": 3.15,
+      "change": 0.52,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "경상북도": {
+      "existing_bds": 2.84,
+      "weighted_bds": 3.12,
+      "change": 0.28,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "제주특별자치도": {
+      "existing_bds": 2.77,
+      "weighted_bds": 3.08,
+      "change": 0.31,
+      "explanation": "중소득 지역으로 GRDP/재정 중심 가중치 적용"
+    },
+    "광주광역시": {
+      "existing_bds": 3.24,
+      "weighted_bds": 3.05,
+      "change": -0.19,
+      "explanation": "중소득 경계 지역으로 GRDP/재정 중심 가중치 적용, 소폭 하락"
+    },
+    "강원도": {
+      "existing_bds": 2.57,
+      "weighted_bds": 2.89,
+      "change": 0.32,
+      "explanation": "저소득 지역으로 기초 경제력(GRDP/재정) 중심 가중치 적용"
+    },
+    "전라북도": {
+      "existing_bds": 2.48,
+      "weighted_bds": 2.78,
+      "change": 0.30,
+      "explanation": "저소득 지역으로 기초 경제력(GRDP/재정) 중심 가중치 적용"
+    }
+  },
+  "summary_statistics": {
+    "total_regions": 17,
+    "classification_distribution": {
+      "high_income": 5,
+      "middle_income": 10,
+      "low_income": 2
+    },
+    "average_change": 0.42,
+    "max_increase": 1.24,
+    "max_decrease": -0.19,
+    "regions_improved": 16,
+    "regions_declined": 1
+  },
+  "policy_implications": {
+    "high_income_regions": "균등 가중치로 모든 지표 균형 발전 추진",
+    "middle_income_regions": "GRDP와 재정자립도 중심으로 경제 기반 강화",
+    "low_income_regions": "기초 경제력과 재정 지원 확대로 격차 해소"
+  }
+}
