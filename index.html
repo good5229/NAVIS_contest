@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDS + 재정자립도 통합 정책 시뮬레이터</title>
+    <title>BDS 정책 시뮬레이터</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -105,18 +105,18 @@
 <body>
     <div class="main-container">
         <div class="header">
-            <h1><i class="fas fa-chart-line"></i> BDS + 재정자립도 통합 정책 시뮬레이터</h1>
-            <p class="lead">지역균형발전지수(BDS)와 재정자립도를 통합한 종합 정책 효과 시뮬레이션 시스템</p>
+            <h1><i class="fas fa-chart-line"></i> BDS 정책 시뮬레이터</h1>
+            <p class="lead">지역균형발전지수(BDS) 기반 정책 효과 시뮬레이션 시스템</p>
         </div>
 
         <div class="description-box">
             <h4><i class="fas fa-info-circle"></i> 시스템 개요</h4>
-            <p>본 시뮬레이터는 지역균형발전지수(BDS)와 재정자립도를 통합하여 정책 효과를 분석하는 종합 시스템입니다. 
-            각 시뮬레이션은 학술적 근거를 바탕으로 하며, 실제 정책 수립에 활용할 수 있는 정량적 분석 결과를 제공합니다.</p>
+            <p>본 시뮬레이터는 지역균형발전지수(BDS)를 기반으로 정책 효과를 분석하는 시스템입니다. 
+            EU RCI 방법론과 시스템 다이나믹스 이론을 바탕으로 하며, 실제 정책 수립에 활용할 수 있는 정량적 분석 결과를 제공합니다.</p>
         </div>
 
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 <div class="simulator-card text-center">
                     <div class="simulator-icon">
                         <i class="fas fa-chart-area"></i>
@@ -125,104 +125,39 @@
                     <p>지역균형발전지수(BDS) 기반 정책 효과 분석</p>
                     <div class="feature-list">
                         <div class="feature-item">
-                            <i class="fas fa-map feature-icon"></i>
-                            <span>지역별 BDS 변화 지도</span>
+                            <i class="fas fa-cogs feature-icon"></i>
+                            <span>9가지 정책 시나리오 시뮬레이션</span>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-chart-line feature-icon"></i>
-                            <span>BDS 트렌드 변화 분석</span>
+                            <i class="fas fa-chart-bar feature-icon"></i>
+                            <span>지역별 BDS 개선 효과 차트</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-chart-pie feature-icon"></i>
-                            <span>정책별 효과 분석</span>
+                            <span>정책 카테고리별 효과 분석</span>
                         </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-6">
-                            <a href="bds_simulator.html" class="btn-simulator w-100">
-                                <i class="fas fa-play"></i> 시뮬레이션
-                            </a>
-                        </div>
                         <div class="col-6">
                             <a href="bds_enhanced_dashboard.html" class="btn-simulator w-100" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
                                 <i class="fas fa-chart-bar"></i> 대시보드
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="simulator-card text-center">
-                    <div class="simulator-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>재정자립도 시뮬레이션</h3>
-                    <p>재정자립도 기반 정책 효과 분석</p>
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <i class="fas fa-map feature-icon"></i>
-                            <span>지역별 재정자립도 변화 지도</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-chart-bar feature-icon"></i>
-                            <span>정책별 재정 효과 분석</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-calculator feature-icon"></i>
-                            <span>비용-효과 분석</span>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
                         <div class="col-6">
-                            <a href="fiscal_simulator.html" class="btn-simulator w-100">
+                            <a href="bds_simulator.html" class="btn-simulator w-100">
                                 <i class="fas fa-play"></i> 시뮬레이션
                             </a>
                         </div>
-                        <div class="col-6">
-                            <a href="fiscal_enhanced_dashboard.html" class="btn-simulator w-100" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
-                                <i class="fas fa-chart-bar"></i> 대시보드
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="simulator-card text-center">
-                    <div class="simulator-icon">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3>통합 시뮬레이션</h3>
-                    <p>BDS와 재정자립도 통합 정책 효과 분석</p>
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <i class="fas fa-dice feature-icon"></i>
-                            <span>몬테카를로 시뮬레이션</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-chart-line feature-icon"></i>
-                            <span>통합 효과 분석</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-exclamation-triangle feature-icon"></i>
-                            <span>리스크 분석</span>
-                        </div>
-                    </div>
-                    <div class="text-center mt-3">
-                        <a href="integrated_simulator.html" class="btn-simulator">
-                            <i class="fas fa-play"></i> 통합 시뮬레이션 시작
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="description-box">
-            <h4><i class="fas fa-chart-line"></i> 주요 대시보드</h4>
-            <p>시뮬레이션과 별도로 제공되는 종합 분석 대시보드들입니다.</p>
+            <h4><i class="fas fa-chart-line"></i> BDS 대시보드</h4>
+            <p>지역균형발전지수(BDS) 데이터를 종합적으로 분석하는 대시보드입니다.</p>
             <div class="row mt-3">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="feature-item">
                         <i class="fas fa-chart-area feature-icon"></i>
                         <a href="bds_enhanced_dashboard.html" style="text-decoration: none; color: inherit;">
@@ -230,27 +165,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="feature-item">
-                        <i class="fas fa-dollar-sign feature-icon"></i>
-                        <a href="fiscal_enhanced_dashboard.html" style="text-decoration: none; color: inherit;">
-                            <span>재정자립도 대시보드</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-item">
-                        <i class="fas fa-cogs feature-icon"></i>
-                        <a href="interactive_policy_decision_simulator.html" style="text-decoration: none; color: inherit;">
-                            <span>정책 의사결정 시뮬레이터</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="feature-item">
-                        <i class="fas fa-balance-scale feature-icon"></i>
-                        <a href="linear_vs_nonlinear_comparison.html" style="text-decoration: none; color: inherit;">
-                            <span>선형 vs 비선형 비교</span>
+                        <i class="fas fa-play feature-icon"></i>
+                        <a href="bds_simulator.html" style="text-decoration: none; color: inherit;">
+                            <span>BDS 시뮬레이터</span>
                         </a>
                     </div>
                 </div>
@@ -261,11 +180,11 @@
             <h4><i class="fas fa-graduation-cap"></i> 학술적 근거</h4>
             <p>본 시뮬레이터는 다음과 같은 학술 연구를 기반으로 개발되었습니다:</p>
             <ul>
-                <li><strong>한국개발연구원 (2023)</strong>: "지역균형발전지수 개발 및 활용 방안"</li>
-                <li><strong>국토연구원 (2022)</strong>: "지역별 발전 수준 측정을 위한 종합지표 연구"</li>
+                <li><strong>EU RCI (Regional Competitiveness Index)</strong>: 유럽연합 지역경쟁력 지수 방법론</li>
+                <li><strong>System Dynamics (Sterman, Forrester)</strong>: 시스템 다이나믹스 모델링 이론</li>
                 <li><strong>OECD (2023)</strong>: "Regional Policy Effectiveness: Spatial Analysis"</li>
                 <li><strong>World Bank (2022)</strong>: "Local Development Policy Impact Assessment"</li>
-                <li><strong>IMF (2021)</strong>: "Fiscal Decentralization and Regional Growth"</li>
+                <li><strong>Solow Growth Model</strong>: 한계효용 체감 이론 적용</li>
             </ul>
         </div>
 
@@ -275,26 +194,26 @@
                 <div class="col-md-6">
                     <h5><i class="fas fa-chart-line"></i> 시각화 기능</h5>
                     <ul>
-                        <li>인터랙티브 지도 시각화</li>
-                        <li>실시간 차트 업데이트</li>
-                        <li>다양한 차트 유형 지원</li>
-                        <li>반응형 디자인</li>
+                        <li>BDS 분포 히스토그램 및 박스플롯</li>
+                        <li>지역별 BDS 변화 추이 차트</li>
+                        <li>정책 카테고리별 효과 차트</li>
+                        <li>반응형 대시보드 디자인</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h5><i class="fas fa-calculator"></i> 분석 기능</h5>
+                    <h5><i class="fas fa-calculator"></i> 시뮬레이션 기능</h5>
                     <ul>
-                        <li>정량적 정책 효과 분석</li>
-                        <li>지역별 차별화 분석</li>
-                        <li>시계열 예측 모델링</li>
-                        <li>불확실성 정량화</li>
+                        <li>9가지 정책 시나리오 시뮬레이션</li>
+                        <li>지역별 특성 기반 차별화 분석</li>
+                        <li>정책 효과 계수 기반 계산</li>
+                        <li>3년 후 BDS 예측 모델링</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p><small>© 2025 BDS + 재정자립도 통합 정책 시뮬레이터</small></p>
+            <p><small>© 2025 BDS 정책 시뮬레이터</small></p>
         </div>
     </div>
 </body>
