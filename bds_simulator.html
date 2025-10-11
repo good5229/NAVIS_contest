@@ -372,9 +372,9 @@
 
                     <h6>📈 시뮬레이션 모델</h6>
                     <div class="assumption-box">
-                        <strong>BDS 개선 효과 계산 (EU RCI 방식):</strong><br>
+                        <strong>BDS 개선 효과 계산:</strong><br>
                         지역별 BDS 개선 = Σ(정책강도 × 정책기간 × 지역별차등가중치 × 정책효과계수)<br><br>
-                        <strong>EU RCI 방식 차등 가중치:</strong><br>
+                        <strong>지역별 차등 가중치(국내 지표 기반):</strong><br>
                         • 고소득 지역 (≥40,000천원): 균등 가중치 (25% 각)<br>
                         • 중소득 지역 (25,000-40,000천원): GRDP/재정 중심 (35%, 30%)<br>
                         • 저소득 지역 (<25,000천원): 기초 경제력 중심 (40%, 35%)
@@ -830,7 +830,7 @@
                 window.bdsMap.setMaxZoom(10);
 
                 // 정확한 한국 행정구역 GeoJSON 데이터 로드
-                fetch('data/navis/skorea-provinces-2018-geo.json')
+                fetch('data/nabis/skorea-provinces-2018-geo.json')
                     .then(response => response.json())
                     .then(geoJsonData => {
                         console.log('BDS GeoJSON 데이터 로드 성공:', geoJsonData.features.length, '개 지역');
