@@ -1,8 +1,8 @@
-# NAVIS 지역발전지수 종합 분석 대시보드
+# NABIS 지역발전지수 종합 분석 대시보드
 
 ## 📋 프로젝트 개요
 
-이 프로젝트는 NAVIS 지역발전지수와 BDS(Better Development Score)를 통합하여 지역 균형발전을 종합적으로 분석하는 웹 대시보드입니다. 한국은행 ECOS API와 KOSIS 데이터를 활용하여 실시간 경제지표를 수집하고, 재정자립도 분석과 정책 시뮬레이션을 통해 지역별 균형발전 정도를 시각화하여 정책적 시사점을 도출합니다.
+이 프로젝트는 NABIS 지역발전지수와 BDS(Better Development Score)를 통합하여 지역 균형발전을 종합적으로 분석하는 웹 대시보드입니다. 한국은행 ECOS API와 KOSIS 데이터를 활용하여 실시간 경제지표를 수집하고, 재정자립도 분석과 정책 시뮬레이션을 통해 지역별 균형발전 정도를 시각화하여 정책적 시사점을 도출합니다.
 
 ## 🎯 주요 기능
 
@@ -47,8 +47,8 @@
 - **범례 클릭 기능**: 범례에서 지역을 클릭하면 해당 지역의 모든 데이터(실제+예측) 완전히 숨김
 - **Y축 범위 최적화**: 3-7 범위로 설정하여 가독성 향상
 
-### 5. NAVIS vs BDS 상관관계 분석
-- **연도별 상관관계**: 1997-2020년 NAVIS와 BDS 간 상관관계 변화
+### 5. NABIS vs BDS 상관관계 분석
+- **연도별 상관관계**: 1997-2020년 NABIS와 BDS 간 상관관계 변화
 - **점진적 개선**: 상관관계가 시간이 지남에 따라 향상되는 패턴 확인
 - **통계적 검증**: Pearson 상관계수를 통한 정량적 분석
 
@@ -116,7 +116,7 @@ open http://localhost:8000/dashboards/bok_navis_comprehensive_dashboard.html
 ## 📁 파일 구조
 
 ```
-NAVIS_contest/
+NABIS_contest/
 ├── dashboards/                                   # 대시보드 HTML 파일들
 │   ├── bok_navis_comprehensive_dashboard.html    # 메인 종합 대시보드
 │   ├── interactive_policy_decision_simulator.html # 인터랙티브 정책 시뮬레이터
@@ -146,7 +146,7 @@ NAVIS_contest/
 │   │   ├── fiscal_policy_simulation_results.csv  # 선형 시뮬레이션 결과
 │   │   ├── nonlinear_fiscal_simulation_results.csv # 비선형 시뮬레이션 결과
 │   │   └── policy_decision_simulation_results.csv # 정책 의사결정 시뮬레이션 결과
-│   ├── navis/                                    # NAVIS 원본 데이터
+│   ├── navis/                                    # NABIS 원본 데이터
 │   │   ├── 1_2. 시계열자료(사이트게재)_지역발전지수_2021년.xlsx
 │   │   └── skorea-provinces-2018-geo.json       # 한국 지도 Geojson
 │   └── kosis/                                    # KOSIS 데이터
@@ -211,7 +211,7 @@ NAVIS_contest/
 ```
 
 ### BDS 모델 특징
-- **데이터 소스**: ECOS + KOSIS (NAVIS 제외)
+- **데이터 소스**: ECOS + KOSIS (NABIS 제외)
   - KOSIS: 지역내총생산(30%), 재정자립도(25%)
   - ECOS: 소비자물가지수(20%), 제조업생산지수(25%)
 - **분석 기간**: 2001-2025년 (25년간 시계열 분석)
@@ -253,7 +253,7 @@ NAVIS_contest/
 - **지역균형발전지수 확인**: 페이지 상단의 균형발전지수 카드에서 현재 점수와 수준 확인
 - **재정자립도 분석**: 재정자립도 섹션에서 지역별 현황 및 격차 확인
 - **BDS 트렌드 분석**: 체크박스를 통해 관심 지역 선택
-- **상관관계 분석**: NAVIS vs BDS 상관관계 차트에서 연도별 변화 확인
+- **상관관계 분석**: NABIS vs BDS 상관관계 차트에서 연도별 변화 확인
 - **지역별 지도 분석**: 지도에서 지역별 BDS 값 확인
 
 ### 2. 정책 시뮬레이터

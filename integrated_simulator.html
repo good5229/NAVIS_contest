@@ -409,7 +409,7 @@
 
         function loadBdsMeasuredData() {
             if (bdsDataPromise) return bdsDataPromise;
-            // NAVIS는 검증용으로 유지하고, 계산은 공식 데이터에서 산출한 BDS를 사용
+            // NABIS는 검증용으로 유지하고, 계산은 공식 데이터에서 산출한 BDS를 사용
             bdsDataPromise = fetch('data/bds/bds_baseline.json')
                 .then(resp => {
                     if (!resp.ok) throw new Error('BDS JSON 로드 실패');
