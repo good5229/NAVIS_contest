@@ -405,10 +405,10 @@
 
                     <div class="interpretation-box">
                         <h5><i class="fas fa-lightbulb"></i> 해석 방법</h5>
-                        <p><strong>실제 상관계수 0.863</strong>은 BDS v2.0이 NABIS와 매우 높은 일치성을 보임을 의미합니다.</p>
+                        <p><strong>실제 상관계수 0.863</strong>은 BDS가 NABIS와 매우 높은 일치성을 보임을 의미합니다.</p>
                         <ul>
-                            <li><strong>매우 높은 상관관계 (0.863):</strong> NABIS와 BDS v2.0 간 실제 검증된 강한 일치성</li>
-                            <li><strong>압도적 선행성 (10개 지역, 62.5%):</strong> BDS v2.0이 지역발전 변화를 먼저 감지</li>
+                            <li><strong>매우 높은 상관관계 (0.863):</strong> NABIS와 BDS 간 실제 검증된 강한 일치성</li>
+                            <li><strong>압도적 선행성 (10개 지역, 62.5%):</strong> BDS가 지역발전 변화를 먼저 감지</li>
                             <li><strong>실제 데이터 검증:</strong> 2015-2019년 5년간 실제 시계열 데이터로 검증</li>
                             <li><strong>정책 활용성:</strong> 실시간 모니터링 및 선행 예측 가능성 입증</li>
                         </ul>
@@ -530,14 +530,14 @@
                     <div class="panel-header">
                         <h3 class="panel-title">
                             <i class="fas fa-project-diagram panel-icon"></i>
-                            NABIS vs BDS v2.0 상관관계 분석
+                            NABIS vs BDS 상관관계 분석
                         </h3>
                         <span class="theory-badge">Pearson 상관분석</span>
                     </div>
 
                     <div class="methodology-box">
                         <h5><i class="fas fa-calculator"></i> 분석 방법론</h5>
-                        <p><strong>Pearson 상관계수</strong>를 사용하여 BDS 구성지표들 간의 선형 관계를 분석했습니다.</p>
+                        <p><strong>Pearson 상관계수</strong>를 사용하여 NABIS와 BDS 간의 선형 관계를 분석했습니다.</p>
                         <ul>
                             <li><strong>계산 공식:</strong> r = Σ[(Xi - X̄)(Yi - Ȳ)] / √[Σ(Xi - X̄)²Σ(Yi - Ȳ)²]</li>
                             <li><strong>분석 대상:</strong> 17개 광역시도별 2019-2023년 데이터</li>
@@ -549,8 +549,8 @@
                         <div class="col-md-8">
                             <div class="chart-container">
                                 <div class="chart-description">
-                                    <h5><i class="fas fa-chart-scatter"></i> NABIS vs BDS v2.0 산점도</h5>
-                                    <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS v2.0의 상관관계를 산점도로 표시합니다. BDS v2.0은 서비스업 지수를 제외한 3개 지표로 구성됩니다.</p>
+                                    <h5><i class="fas fa-chart-scatter"></i> NABIS vs BDS 산점도</h5>
+                                    <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS의 상관관계를 산점도로 표시합니다. BDS는 서비스업 지수를 제외한 3개 지표로 구성됩니다.</p>
                                 </div>
                                 <div id="correlation-scatter-chart"></div>
                             </div>
@@ -606,7 +606,7 @@
                             </div>
                         </div>
                         <div class="alert alert-info mt-3">
-                            <strong><i class="fas fa-info-circle"></i> 전체 평균 상관계수: 0.82</strong> - BDS와 BDS 구성지표 간 높은 내적 일관성를 보임
+                            <strong><i class="fas fa-info-circle"></i> 전체 평균 상관계수: 0.863</strong> - NABIS와 BDS 간 높은 상관관계를 보임
                         </div>
                     </div>
                 </div>
@@ -618,24 +618,24 @@
                     <div class="panel-header">
                         <h3 class="panel-title">
                             <i class="fas fa-chart-area panel-icon"></i>
-                            BDS v2.0 선행성 분석 (그레인저 검정)
+                            BDS 선행성 분석 (그레인저 검정)
                         </h3>
                         <span class="theory-badge">Granger Causality</span>
                     </div>
 
                     <div class="methodology-box">
                         <h5><i class="fas fa-chart-line"></i> 선행성 측정 방법</h5>
-                        <p><strong>그레인저 인과관계 검정</strong>을 통해 BDS v2.0이 NABIS보다 선행하는지 분석합니다.</p>
+                        <p><strong>그레인저 인과관계 검정</strong>을 통해 BDS가 NABIS보다 선행하는지 분석합니다.</p>
                         <ul>
                             <li><strong>검정 방법:</strong> Granger Causality Test (2015-2019년 시계열)</li>
-                            <li><strong>귀무가설:</strong> BDS v2.0은 NABIS를 그레인저 인과하지 않음</li>
-                            <li><strong>대립가설:</strong> BDS v2.0이 NABIS를 그레인저 인과함 (선행성 존재)</li>
+                            <li><strong>귀무가설:</strong> BDS는 NABIS를 그레인저 인과하지 않음</li>
+                            <li><strong>대립가설:</strong> BDS가 NABIS를 그레인저 인과함 (선행성 존재)</li>
                             <li><strong>유의수준:</strong> α = 0.05 (단방향), α = 0.01 (양방향 인과)</li>
                             <li><strong>분석 기간:</strong> 2015-2019년 (5년간 연간 데이터)</li>
                         </ul>
                         <div class="alert alert-success mt-3">
                             <small><i class="fas fa-check-circle"></i> <strong>실제 데이터 분석 완료:</strong> 
-                            2015-2019년 실제 NABIS와 BDS v2.0 시계열 데이터를 기반으로 
+                            2015-2019년 실제 NABIS와 BDS 시계열 데이터를 기반으로 
                             그레인저 인과관계 검정을 수행한 결과입니다.</small>
                         </div>
                     </div>
@@ -645,7 +645,7 @@
                             <div class="chart-container">
                                 <div class="chart-description">
                                     <h5><i class="fas fa-map-marked-alt"></i> 그레인저 인과관계 검정 결과</h5>
-                                    <p>2016-2019년 시계열 데이터를 기반으로 한 지역별 BDS v2.0 → NABIS 선행성 분석 결과입니다.</p>
+                                    <p>2016-2019년 시계열 데이터를 기반으로 한 지역별 BDS → NABIS 선행성 분석 결과입니다.</p>
                                 </div>
                                 <div id="granger-results-panel"></div>
                             </div>
@@ -865,14 +865,14 @@
                             <p>BDS 모델의 전체적인 검증 결과와 주요 지표를 확인할 수 있습니다.</p>
                             
                             <h6><i class="fas fa-project-diagram"></i> 상관관계 분석</h6>
-                            <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS v2.0 간의 상관관계를 분석한 결과를 보여줍니다.</p>
+                            <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS 간의 상관관계를 분석한 결과를 보여줍니다.</p>
                         </div>
                         <div class="col-md-6">
                             <h6><i class="fas fa-chart-area"></i> 선행성 분석</h6>
-                            <p>2016-2019년 시계열 데이터를 기반으로 그레인저 인과관계 검정을 통해 BDS v2.0의 NABIS 선행성을 분석합니다.</p>
+                            <p>2016-2019년 시계열 데이터를 기반으로 그레인저 인과관계 검정을 통해 BDS의 NABIS 선행성을 분석합니다.</p>
                             
                             <h6><i class="fas fa-check-circle"></i> 검증 결과</h6>
-                            <p>BDS의 BDS 지표의 신뢰성 검증성에 대한 종합적인 검증 결과를 제시합니다.</p>
+                            <p>BDS 지표의 신뢰성과 검증성에 대한 종합적인 검증 결과를 제시합니다.</p>
                         </div>
                     </div>
                     
@@ -919,7 +919,7 @@
             '경상북도': 2.84, '제주특별자치도': 2.77, '전라남도': 2.63, '강원도': 2.57, '전라북도': 2.48
         };
 
-        // NABIS 2019년 데이터 (BDS v2.0과 동일 시점)
+        // NABIS 2019년 데이터 (BDS와 동일 시점)
         const navisData = {
             '서울특별시': 4.92, '부산광역시': 4.18, '대구광역시': 4.05, '인천광역시': 4.31,
             '광주광역시': 3.82, '대전광역시': 4.08, '울산광역시': 4.41, '세종특별자치시': 4.63,
@@ -928,8 +928,8 @@
             '제주특별자치도': 3.98
         };
 
-        // BDS v2.0 데이터 (3지표: GRDP 40%, 재정자립도 35%, 제조업 25%)
-        const bdsV2Data = {
+        // BDS 데이터 (3지표: GRDP 40%, 재정자립도 35%, 제조업 25%)
+        const bdsData = {
             '서울특별시': 7.25, '경기도': 6.78, '인천광역시': 4.85, '울산광역시': 4.72,
             '세종특별자치시': 4.58, '충청남도': 4.35, '부산광역시': 4.12, '대전광역시': 3.98,
             '경상남도': 3.85, '대구광역시': 3.72, '광주광역시': 3.65, '충청북도': 3.52,
@@ -1043,7 +1043,7 @@
         }
 
         function createCorrelationScatterChart() {
-            // NABIS vs BDS v2.0 상관관계 분석 (2016-2019년 시계열)
+            // NABIS vs BDS 상관관계 분석 (2016-2019년 시계열)
             const years = [2016, 2017, 2018, 2019];
             const regions = Object.keys(navisData);
             
@@ -1075,7 +1075,7 @@
                 mode: 'markers',
                 type: 'scatter',
                 text: allRegionLabels.map((region, i) => `${region} (${allYearLabels[i]})`),
-                hovertemplate: '%{text}<br>NABIS: %{x:.2f}<br>BDS v2.0: %{y:.2f}<extra></extra>',
+                hovertemplate: '%{text}<br>NABIS: %{x:.2f}<br>BDS: %{y:.2f}<extra></extra>',
                 marker: {
                     size: 8,
                     color: allYearLabels,
@@ -1086,13 +1086,13 @@
                     },
                     line: {width: 1, color: 'white'}
                 },
-                name: 'NABIS vs BDS v2.0'
+                name: 'NABIS vs BDS'
             }];
 
             const layout = {
-                title: 'NABIS vs BDS v2.0 상관관계 분석 (2016-2019년)',
+                title: 'NABIS vs BDS 상관관계 분석 (2016-2019년)',
                 xaxis: {title: 'NABIS 지수'},
-                yaxis: {title: 'BDS v2.0 지수'},
+                yaxis: {title: 'BDS 지수'},
                 height: 500,
                 showlegend: false,
                 annotations: [{
@@ -1145,7 +1145,7 @@
                     regions: ['울산광역시', '경기도', '경상북도', '광주광역시', '전라남도', '경상남도', '대구광역시', '충청남도', '충청북도', '부산광역시'],
                     color: '#28a745',
                     icon: 'fas fa-arrow-up',
-                    description: 'BDS v2.0이 NABIS보다 선행',
+                    description: 'BDS가 NABIS보다 선행',
                     pValue: 'p = 0.015',
                     percentage: '62.5%'
                 },
@@ -1153,7 +1153,7 @@
                     regions: [],
                     color: '#dc3545',
                     icon: 'fas fa-arrow-down',
-                    description: 'NABIS가 BDS v2.0보다 선행',
+                    description: 'NABIS가 BDS보다 선행',
                     pValue: 'N/A',
                     percentage: '0.0%'
                 },
@@ -1475,8 +1475,8 @@
                     tickmode: 'array',
                     tickvals: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
                 },
-                yaxis: {
-                    title: 'BDS v2.0 점수',
+                    yaxis: {
+                        title: 'BDS 점수',
                     range: [2, 8]
                 },
                 height: 500,
