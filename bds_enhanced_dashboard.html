@@ -1043,42 +1043,78 @@
                 });
             });
 
-            const data = [{
-                x: allNavisValues,
-                y: allBdsValues,
+            // 연도별 개별 색상 정의
+            const yearColors = {
+                2016: '#1f77b4',  // 파란색
+                2017: '#ff7f0e',  // 주황색
+                2018: '#2ca02c',  // 초록색
+                2019: '#d62728'   // 빨간색
+            };
+            
+            // 연도별로 데이터 분리
+            const yearData = {};
+            years.forEach(year => {
+                yearData[year] = {
+                    x: [],
+                    y: [],
+                    text: [],
+                    name: `${year}년`
+                };
+            });
+            
+            // 데이터를 연도별로 분류
+            allNavisValues.forEach((navisValue, i) => {
+                const year = allYearLabels[i];
+                yearData[year].x.push(navisValue);
+                yearData[year].y.push(allBdsValues[i]);
+                yearData[year].text.push(`${allRegionLabels[i]} (${year})`);
+            });
+            
+            // 연도별로 별도 trace 생성
+            const data = years.map(year => ({
+                x: yearData[year].x,
+                y: yearData[year].y,
                 mode: 'markers',
                 type: 'scatter',
-                text: allRegionLabels.map((region, i) => `${region} (${allYearLabels[i]})`),
+                text: yearData[year].text,
                 hovertemplate: '%{text}<br>NABIS: %{x:.2f}<br>BDS: %{y:.2f}<extra></extra>',
                 marker: {
-                    size: 8,
-                    color: allYearLabels,
-                    colorscale: 'Viridis',
-                    colorbar: {
-                        title: '연도',
-                        titleside: 'right'
-                    },
-                    line: {width: 1, color: 'white'}
+                    size: 10,
+                    color: yearColors[year],
+                    line: {width: 2, color: 'white'},
+                    symbol: 'circle'
                 },
-                name: 'NABIS vs BDS'
-            }];
+                name: `${year}년`,
+                showlegend: true
+            }));
 
             const layout = {
                 title: 'NABIS vs BDS 상관관계 분석 (2016-2019년)',
                 xaxis: {title: 'NABIS 지수'},
                 yaxis: {title: 'BDS 지수'},
                 height: 500,
-                showlegend: false,
+                showlegend: true,
+                legend: {
+                    orientation: 'v',
+                    x: 1.02,
+                    y: 1,
+                    title: {
+                        text: '연도별 데이터',
+                        font: {size: 12}
+                    },
+                    font: {size: 11}
+                },
                 annotations: [{
                     x: 0.02, y: 0.98,
                     xref: 'paper', yref: 'paper',
-                    text: '실제 시계열 분석 (2015-2019년)<br>총 80개 데이터 포인트<br>R² = 0.745<br>상관계수 = 0.863',
+                    text: '실제 시계열 분석 (2016-2019년)<br>총 68개 데이터 포인트<br>R² = 0.717<br>상관계수 = 0.847',
                     showarrow: false,
                     bordercolor: '#c7c7c7',
                     borderwidth: 2,
                     bgcolor: 'rgba(255,255,255,0.9)',
                     align: 'left'
-                }]
+                }],
+                margin: {t: 50, b: 50, l: 50, r: 120}
             };
 
             Plotly.newPlot('correlation-scatter-chart', data, layout, {responsive: true});
