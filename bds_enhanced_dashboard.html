@@ -16,17 +16,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: auto;
-            padding: 0;
-            margin: 0;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: auto;
         }
         .main-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin: 0 20px 0 20px;
-            padding: 0;
+            margin: 0 20px 0 20px !important;
+            padding: 0 !important;
             overflow: hidden;
             min-height: auto;
+            height: auto;
         }
         .dashboard-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -62,6 +64,8 @@
             padding: 20px;
             background: white;
             min-height: auto;
+            margin-bottom: 0 !important;
+            padding-bottom: 20px !important;
         }
         .panel-card {
             background: white;
@@ -71,6 +75,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-left: 5px solid #667eea;
             transition: all 0.3s ease;
+        }
+        .panel-card:last-child {
+            margin-bottom: 0 !important;
         }
         .panel-card:hover {
             transform: translateY(-5px);
@@ -898,17 +905,120 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 지역별 변화 탭 -->
+            <div class="tab-pane fade" id="trends" role="tabpanel">
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-chart-line panel-icon"></i>
+                            지역별 BDS 변화 추이
+                        </h3>
+                        <p class="panel-subtitle">2016-2024년 지역별 균형발전 지수 장기 변화 분석</p>
+                    </div>
+                    
+                    <div class="chart-description">
+                        <h5><i class="fas fa-info-circle"></i> 분석 개요</h5>
+                        <p>ECOS(한국은행) + KOSIS(통계청) 통합 데이터를 기반으로 한 <strong>9년간(2016-2024년)</strong> 지역별 BDS 장기 변화를 시각화합니다.</p>
+                        <div class="alert alert-info mt-2">
+                            <small><i class="fas fa-info-circle"></i> <strong>장기 트렌드 분석:</strong> 지역별 균형발전 지수의 중장기 변화 패턴과 정책 효과를 확인할 수 있습니다</small>
+                        </div>
+                    </div>
+
+                    <!-- 지역 선택 컨트롤 -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-filter"></i> 표시할 지역 선택</h6>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-2">
+                                            <button class="btn btn-outline-primary btn-sm w-100" onclick="selectAllRegions()">
+                                                <i class="fas fa-check-double"></i> 전체 선택
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 mb-2">
+                                            <button class="btn btn-outline-secondary btn-sm w-100" onclick="clearAllRegions()">
+                                                <i class="fas fa-times"></i> 전체 해제
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 mb-2">
+                                            <button class="btn btn-outline-success btn-sm w-100" onclick="selectTopRegions()">
+                                                <i class="fas fa-star"></i> 상위 5개
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 mb-2">
+                                            <button class="btn btn-outline-warning btn-sm w-100" onclick="selectBottomRegions()">
+                                                <i class="fas fa-exclamation-triangle"></i> 하위 5개
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 지역별 변화 차트 -->
+                    <div class="chart-container">
+                        <div id="regionalTrendsChart" style="width: 100%; height: 600px;"></div>
+                    </div>
+
+                    <!-- 지역별 변화 요약 -->
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="fas fa-trending-up"></i> 상승 지역</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="region-list">
+                                        <div class="region-item positive">
+                                            <i class="fas fa-arrow-up"></i> 서울특별시 (+0.47)
+                                        </div>
+                                        <div class="region-item positive">
+                                            <i class="fas fa-arrow-up"></i> 경기도 (+0.33)
+                                        </div>
+                                        <div class="region-item positive">
+                                            <i class="fas fa-arrow-up"></i> 울산광역시 (+0.31)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="fas fa-trending-down"></i> 하락 지역</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="region-list">
+                                        <div class="region-item negative">
+                                            <i class="fas fa-arrow-down"></i> 전라북도 (-0.12)
+                                        </div>
+                                        <div class="region-item negative">
+                                            <i class="fas fa-arrow-down"></i> 강원도 (-0.08)
+                                        </div>
+                                        <div class="region-item negative">
+                                            <i class="fas fa-arrow-down"></i> 전라남도 (-0.05)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // BDS 데이터
-        // BDS 데이터 (EU RCI 방식 가중치 적용)
+        // BDS 데이터 (3지표: GRDP 40%, 재정자립도 35%, 제조업 25%)
         const bdsData = {
-            '서울특별시': 7.85, '경기도': 7.12, '울산광역시': 4.95, '세종특별자치시': 4.68,
-            '충청남도': 4.42, '인천광역시': 4.38, '부산광역시': 3.89, '경상남도': 3.78,
-            '대구광역시': 3.65, '충청북도': 3.45, '대전광역시': 3.42, '전라남도': 3.15,
-            '경상북도': 3.12, '제주특별자치도': 3.08, '광주광역시': 3.05, '강원도': 2.89, '전라북도': 2.78
+            '서울특별시': 7.25, '경기도': 6.78, '인천광역시': 4.85, '울산광역시': 4.72,
+            '세종특별자치시': 4.58, '충청남도': 4.35, '부산광역시': 4.12, '대전광역시': 3.98,
+            '경상남도': 3.85, '대구광역시': 3.72, '광주광역시': 3.65, '충청북도': 3.52,
+            '경상북도': 3.38, '제주특별자치도': 3.25, '전라남도': 3.12, '강원도': 2.95, 
+            '전라북도': 2.78
         };
 
         // 기존 BDS 데이터 (비교용)
@@ -928,37 +1038,8 @@
             '제주특별자치도': 3.98
         };
 
-        // BDS 데이터 (3지표: GRDP 40%, 재정자립도 35%, 제조업 25%)
-        const bdsData = {
-            '서울특별시': 7.25, '경기도': 6.78, '인천광역시': 4.85, '울산광역시': 4.72,
-            '세종특별자치시': 4.58, '충청남도': 4.35, '부산광역시': 4.12, '대전광역시': 3.98,
-            '경상남도': 3.85, '대구광역시': 3.72, '광주광역시': 3.65, '충청북도': 3.52,
-            '경상북도': 3.38, '제주특별자치도': 3.25, '전라남도': 3.12, '강원도': 2.95, 
-            '전라북도': 2.78
-        };
-
         // 차트 생성 함수들
         function createOverviewDistributionChart() {
-            // BDS 데이터 (2019년 기준)
-            const bdsData = {
-                "서울특별시": 7.25,
-                "경기도": 6.78,
-                "인천광역시": 4.85,
-                "울산광역시": 4.72,
-                "세종특별자치시": 4.58,
-                "충청남도": 4.35,
-                "부산광역시": 4.12,
-                "대전광역시": 3.98,
-                "경상남도": 3.85,
-                "대구광역시": 3.72,
-                "광주광역시": 3.65,
-                "충청북도": 3.52,
-                "경상북도": 3.38,
-                "제주특별자치도": 3.25,
-                "전라남도": 3.12,
-                "강원도": 2.95,
-                "전라북도": 2.78
-            };
             
             const values = Object.values(bdsData);
             const regions = Object.keys(bdsData);
