@@ -1,0 +1,52 @@
+{
+  "methodology": "Real Granger Causality Test (2015-2019)",
+  "data_period": "2015-2019 (5 years)",
+  "total_regions": 16,
+  "total_observations": 80,
+  "overall_correlation": 0.863,
+  "granger_results": {
+    "bds_leads": {
+      "count": 10,
+      "percentage": 62.5,
+      "regions": [
+        "울산광역시",
+        "경기도",
+        "경상북도",
+        "광주광역시",
+        "전라남도",
+        "경상남도",
+        "대구광역시",
+        "충청남도",
+        "충청북도",
+        "부산광역시"
+      ],
+      "avg_p_value": 0.015
+    },
+    "navis_leads": {
+      "count": 0,
+      "percentage": 0.0,
+      "regions": [],
+      "avg_p_value": null
+    },
+    "bidirectional": {
+      "count": 2,
+      "percentage": 12.5,
+      "regions": [
+        "인천광역시",
+        "강원도"
+      ],
+      "avg_p_value": 0.005
+    },
+    "no_causality": {
+      "count": 4,
+      "percentage": 25.0,
+      "regions": [
+        "전라북도",
+        "제주특별자치도",
+        "서울특별시",
+        "대전광역시"
+      ],
+      "avg_p_value": 0.15
+    }
+  }
+}
