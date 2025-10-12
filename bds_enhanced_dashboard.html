@@ -16,7 +16,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 10px 0;
+            margin: 0;
         }
         .main-container {
             background: rgba(255, 255, 255, 0.95);
@@ -25,6 +26,7 @@
             margin: 0 20px;
             padding: 0;
             overflow: hidden;
+            min-height: auto;
         }
         .dashboard-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -744,17 +746,16 @@
             </div>
 
             <!-- 지역별 변화 탭 -->
-                    <div class="tab-pane fade" id="trends" role="tabpanel">
-                        <div class="panel-card">
-                            <div class="panel-header">
+            <div class="tab-pane fade" id="trends" role="tabpanel">
+                <div class="panel-card">
+                    <div class="panel-header">
                         <h3 class="panel-title">
                             <i class="fas fa-chart-line panel-icon"></i>
                             지역별 BDS 변화 추이
                         </h3>
                         <p class="panel-subtitle">2016-2024년 지역별 균형발전 지수 장기 변화 분석</p>
-                            </div>
-                            
-
+                    </div>
+                    
                     <div class="chart-description">
                         <h5><i class="fas fa-info-circle"></i> 분석 개요</h5>
                         <p>ECOS(한국은행) + KOSIS(통계청) 통합 데이터를 기반으로 한 <strong>9년간(2016-2024년)</strong> 지역별 BDS 장기 변화를 시각화합니다.</p>
@@ -841,9 +842,9 @@
                         <p><strong>지역수렴 이론:</strong> 경제성장 이론에 따르면 지역 간 격차는 시간이 지남에 따라 수렴하는 경향이 있으나, 
                         현실적으로는 집적경제 효과로 인해 격차가 지속되거나 확대되는 현상이 나타납니다.</p>
                     </div>
-                    
                 </div>
             </div>
+
         </div>
     </div>
 
