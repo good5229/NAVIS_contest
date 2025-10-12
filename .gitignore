@@ -102,4 +102,4 @@ data/backup/
 
 # Temporary files
 *.tmp
-*.temp
+*.tempnavis_env/
