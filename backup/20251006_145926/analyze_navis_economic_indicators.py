@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NAVIS 공모전 객관지표에서 경제 관련 지표 시계열 분석
+NABIS 공모전 객관지표에서 경제 관련 지표 시계열 분석
 """
 
 import pandas as pd
@@ -12,7 +12,7 @@ import traceback
 def analyze_economic_indicators():
     """경제 관련 지표들의 시계열 분석"""
     
-    print("🚀 NAVIS 객관지표 경제 관련 지표 시계열 분석 시작")
+    print("🚀 NABIS 객관지표 경제 관련 지표 시계열 분석 시작")
     
     # 경제 관련 지표 파일들
     economic_indicators = {
@@ -128,7 +128,7 @@ def compare_with_current_data(results):
     for name, info in current_data.items():
         print(f"   • {name}: {info['start']}-{info['end']}년 ({info['years']}년간)")
     
-    print(f"\\n📊 NAVIS 객관지표 비교:")
+    print(f"\\n📊 NABIS 객관지표 비교:")
     print(f"{'지표명':<25} {'기간':<15} {'년수':<6} {'지역수':<8} {'현재 데이터와 비교'}")
     print("-" * 80)
     

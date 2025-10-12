@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NAVIS GRDP 데이터 추출 및 BDS 계산 개선 스크립트
+NABIS GRDP 데이터 추출 및 BDS 계산 개선 스크립트
 """
 
 import pandas as pd
@@ -11,9 +11,9 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 def extract_navis_grdp() -> Optional[pd.DataFrame]:
-    """NAVIS 엑셀 파일에서 GRDP 데이터 추출"""
+    """NABIS 엑셀 파일에서 GRDP 데이터 추출"""
     
-    print("🚀 NAVIS GRDP 데이터 추출 시작")
+    print("🚀 NABIS GRDP 데이터 추출 시작")
     
     navis_file = Path('civil_data/NBABIS 공모전 데이터/(NABIS_공모전)객관지표/(NABIS_공모전)객관지표/9.1_지역내총생산.xlsx')
     
@@ -96,9 +96,9 @@ def create_comprehensive_analysis():
     
     # 새로 발견된 데이터
     new_data = {
-        'NAVIS GRDP': {'start': 2019, 'end': 2024, 'years': 6, 'regions': 17, 'status': '🎯 핵심 해결책'},
-        'NAVIS 재정자립도': {'start': 2021, 'end': 2024, 'years': 4, 'regions': 17, 'status': '✅ 검증 가능'},
-        'NAVIS 소비자물가': {'start': 2021, 'end': 2024, 'years': 4, 'regions': 17, 'status': '⚡ 지역별 차별화'},
+        'NABIS GRDP': {'start': 2019, 'end': 2024, 'years': 6, 'regions': 17, 'status': '🎯 핵심 해결책'},
+        'NABIS 재정자립도': {'start': 2021, 'end': 2024, 'years': 4, 'regions': 17, 'status': '✅ 검증 가능'},
+        'NABIS 소비자물가': {'start': 2021, 'end': 2024, 'years': 4, 'regions': 17, 'status': '⚡ 지역별 차별화'},
         'KOSIS 제조업지수 (시도별)': {'start': 2015, 'end': 2024, 'years': 10, 'regions': 17, 'status': '🚀 대폭 개선'},
         'KOSIS 서비스업지수 (시도별)': {'start': 2020, 'end': 2025, 'years': 6, 'regions': 17, 'status': '🆕 신규 지표'}
     }
@@ -119,7 +119,7 @@ def create_comprehensive_analysis():
     
     print("\n🎯 핵심 문제 및 해결 방안:")
     print("1. ❌ 현재 문제: GRDP 2023년 고정값 → 서울시 등 BDS 동일값 문제")
-    print("2. 🎯 해결책: NAVIS GRDP 2019-2024년 데이터 활용")
+    print("2. 🎯 해결책: NABIS GRDP 2019-2024년 데이터 활용")
     print("3. 🚀 추가 개선: KOSIS 시도별 제조업/서비스업 지수 활용")
     
     print("\n📈 개선 후 예상 BDS 모델:")
@@ -137,12 +137,12 @@ def create_comprehensive_analysis():
 def main():
     """메인 실행 함수"""
     
-    # NAVIS GRDP 데이터 추출 시도
+    # NABIS GRDP 데이터 추출 시도
     grdp_df = extract_navis_grdp()
     
     if grdp_df is not None:
         # 샘플 데이터 출력
-        print("\n📋 NAVIS GRDP 샘플 데이터:")
+        print("\n📋 NABIS GRDP 샘플 데이터:")
         print(grdp_df.head(10))
         
         # CSV 저장
