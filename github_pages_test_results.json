@@ -1,0 +1,98 @@
+{
+  "dashboard": {
+    "file_exists": {
+      "status": "PASS",
+      "message": "파일 존재: bds_enhanced_dashboard.html"
+    },
+    "basic_html": {
+      "status": "PASS",
+      "score": "5/5",
+      "details": {
+        "doctype": true,
+        "html_tag": true,
+        "head_tag": true,
+        "body_tag": true,
+        "title_tag": true
+      }
+    },
+    "duplicate_vars": {
+      "status": "FAIL",
+      "duplicate_vars": [
+        "regions: 4회 선언",
+        "data: 4회 선언",
+        "layout: 5회 선언",
+        "checkbox: 3회 선언",
+        "checkboxes: 3회 선언"
+      ],
+      "error_count": 5
+    },
+    "file_size": {
+      "status": "PASS",
+      "size": "0.08MB",
+      "message": "적당함"
+    },
+    "overall": {
+      "status": "FAIL",
+      "tests_passed": 3,
+      "tests_total": 4
+    }
+  },
+  "simulator": {
+    "file_exists": {
+      "status": "PASS",
+      "message": "파일 존재: bds_simulator.html"
+    },
+    "basic_html": {
+      "status": "PASS",
+      "score": "5/5",
+      "details": {
+        "doctype": true,
+        "html_tag": true,
+        "head_tag": true,
+        "body_tag": true,
+        "title_tag": true
+      }
+    },
+    "duplicate_vars": {
+      "status": "FAIL",
+      "duplicate_vars": [
+        "scenario: 2회 선언",
+        "results: 3회 선언",
+        "policyParameters: 2회 선언",
+        "regionChar: 2회 선언",
+        "currentBDS: 3회 선언",
+        "baseEffect: 2회 선언",
+        "timeEffect: 2회 선언",
+        "synergyMultiplier: 2회 선언",
+        "synergyEffect: 2회 선언",
+        "diminishingEffect: 2회 선언",
+        "bdsAdjustment: 3회 선언",
+        "simulator: 2회 선언",
+        "layout: 2회 선언",
+        "config: 2회 선언",
+        "chartElement: 2회 선언",
+        "regionOrder: 2회 선언",
+        "aIndex: 2회 선언",
+        "bIndex: 2회 선언",
+        "runBtn: 2회 선언"
+      ],
+      "error_count": 19
+    },
+    "file_size": {
+      "status": "PASS",
+      "size": "0.05MB",
+      "message": "적당함"
+    },
+    "overall": {
+      "status": "FAIL",
+      "tests_passed": 3,
+      "tests_total": 4
+    }
+  },
+  "overall": {
+    "status": "FAIL",
+    "timestamp": "2025-10-13 00:43:19",
+    "total_pages": 2,
+    "passed_pages": 0
+  }
+}

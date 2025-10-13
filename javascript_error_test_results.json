@@ -1,0 +1,64 @@
+{
+  "dashboard": {
+    "undefined_vars": {
+      "status": "PASS",
+      "undefined_vars": [],
+      "error_count": 0
+    },
+    "syntax_errors": {
+      "status": "FAIL",
+      "syntax_errors": [
+        "unclosed_strings: 345 occurrences",
+        "unclosed_brackets: 120 occurrences",
+        "missing_semicolons: 90 occurrences"
+      ],
+      "error_count": 3
+    },
+    "duplicate_declarations": {
+      "status": "FAIL",
+      "duplicate_vars": [
+        "regions: 4회 선언",
+        "data: 4회 선언",
+        "layout: 5회 선언"
+      ],
+      "error_count": 3
+    },
+    "overall": {
+      "status": "FAIL",
+      "tests_passed": 1,
+      "tests_total": 3
+    }
+  },
+  "simulator": {
+    "undefined_vars": {
+      "status": "PASS",
+      "undefined_vars": [],
+      "error_count": 0
+    },
+    "syntax_errors": {
+      "status": "FAIL",
+      "syntax_errors": [
+        "unclosed_strings: 205 occurrences",
+        "unclosed_brackets: 86 occurrences",
+        "missing_semicolons: 71 occurrences"
+      ],
+      "error_count": 3
+    },
+    "duplicate_declarations": {
+      "status": "PASS",
+      "duplicate_vars": [],
+      "error_count": 0
+    },
+    "overall": {
+      "status": "FAIL",
+      "tests_passed": 2,
+      "tests_total": 3
+    }
+  },
+  "overall": {
+    "status": "FAIL",
+    "timestamp": "2025-10-13 00:51:45",
+    "total_pages": 2,
+    "passed_pages": 0
+  }
+}

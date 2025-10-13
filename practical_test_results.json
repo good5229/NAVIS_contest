@@ -1,0 +1,62 @@
+{
+  "dashboard": {
+    "file_exists": {
+      "status": "PASS",
+      "message": "파일 존재: bds_enhanced_dashboard.html"
+    },
+    "basic_html": {
+      "status": "PASS",
+      "score": "5/5",
+      "details": {
+        "doctype": true,
+        "html_tag": true,
+        "head_tag": true,
+        "body_tag": true,
+        "title_tag": true
+      }
+    },
+    "undefined_vars": {
+      "status": "PASS",
+      "undefined_vars": [],
+      "error_count": 0
+    },
+    "overall": {
+      "status": "PASS",
+      "tests_passed": 3,
+      "tests_total": 3
+    }
+  },
+  "simulator": {
+    "file_exists": {
+      "status": "PASS",
+      "message": "파일 존재: bds_simulator.html"
+    },
+    "basic_html": {
+      "status": "PASS",
+      "score": "5/5",
+      "details": {
+        "doctype": true,
+        "html_tag": true,
+        "head_tag": true,
+        "body_tag": true,
+        "title_tag": true
+      }
+    },
+    "undefined_vars": {
+      "status": "PASS",
+      "undefined_vars": [],
+      "error_count": 0
+    },
+    "overall": {
+      "status": "PASS",
+      "tests_passed": 3,
+      "tests_total": 3
+    }
+  },
+  "overall": {
+    "status": "PASS",
+    "timestamp": "2025-10-13 12:52:35",
+    "total_pages": 2,
+    "passed_pages": 2
+  }
+}

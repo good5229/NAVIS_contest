@@ -1,0 +1,35 @@
+{
+  "analysis_period": "2015-2019",
+  "region": "울산광역시",
+  "bds_trend": {
+    "start_score": 4.65,
+    "end_score": 4.72,
+    "total_growth": 1.5053763440860084,
+    "avg_annual_growth": 0.37530433246403094
+  },
+  "navis_trend": {
+    "start_score": 4.35,
+    "end_score": 4.41,
+    "total_growth": 1.3793103448275978,
+    "avg_annual_growth": 0.343646078827733
+  },
+  "correlation_analysis": {
+    "bds_navis_correlation": 0.9913144821476814,
+    "shipbuilding_correlations": {
+      "shipbuilding_orders": 0.9790129997472564,
+      "shipbuilding_production": 0.9356014857063997,
+      "shipbuilding_employment": 0.9798191986792544
+    }
+  },
+  "key_findings": [
+    "울산 BDS는 2015-2019년간 1.51% 성장",
+    "BDS-NABIS 상관계수: 0.991 (높은 상관관계)",
+    "BDS가 NABIS보다 선행성을 보임 (Granger Causality 확인됨)",
+    "제조업생산지수가 BDS 성장에 주요 기여 (조선업과 연관)"
+  ],
+  "shipbuilding_connection": {
+    "manufacturing_weight": 0.25,
+    "correlation_with_shipbuilding": 0.9356014857063997,
+    "interpretation": "제조업생산지수(25%)가 조선업 생산과 높은 상관관계를 보임"
+  }
+}
