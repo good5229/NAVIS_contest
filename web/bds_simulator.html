@@ -274,11 +274,30 @@
         // RDI 시뮬레이션 계산
         function simulateRDI(scenarioName) {
             if (!rdiSimulatorData || !rdiSimulatorData.simulation_results[scenarioName]) {
-                // 기본 시뮬레이션 로직
+                // 기본 시뮬레이션 로직 - 올바른 값으로 수정
+                const defaultImprovements = {
+                    '균형발전': 0.5,
+                    '경제중심': 0.4,
+                    '사회중심': 0.35,
+                    '환경중심': 0.3,
+                    '문화예술중심': 0.25,
+                    '안전중심': 0.3,
+                    '주거중심': 0.25,
+                    'R&D중심': 0.4,
+                    '혁신중심': 0.4
+                };
+                
+                const improvement = defaultImprovements[scenarioName] || 0.4;
+                
                 return {
                     scenario: scenarioName,
                     regions: {},
-                    summary: { averageImprovement: 0.4, maxImprovement: 0.5, minImprovement: 0.3 }
+                    summary: { 
+                        averageImprovement: improvement, 
+                        maxImprovement: improvement, 
+                        minImprovement: improvement 
+                    },
+                    bdsImprovement: improvement
                 };
             }
             
