@@ -299,6 +299,55 @@ class GitHubPagesTester:
         except Exception as e:
             return {"status": "FAIL", "error": str(e)}
     
+    def test_simulator_scenario_improvements(self) -> Dict:
+        """시뮬레이터 시나리오별 개선 효과 테스트"""
+        print("🔍 시뮬레이터 시나리오별 개선 효과 테스트...")
+        
+        try:
+            url = f"{self.base_url}/bds_simulator.html"
+            response = requests.get(url, timeout=10)
+            if response.status_code != 200:
+                return {"status": "FAIL", "error": f"HTTP {response.status_code}"}
+            
+            # JavaScript 코드에서 시나리오별 개선 효과 검증
+            content = response.text
+            
+            # 예상되는 시나리오별 개선 효과 (정확한 값)
+            expected_improvements = {
+                '균형발전': 0.5,
+                '경제중심': 0.4,
+                '사회중심': 0.35,
+                '환경중심': 0.3,
+                '문화예술중심': 0.25,
+                '안전중심': 0.3,
+                '주거중심': 0.25,
+                'R&D중심': 0.4,
+                '혁신중심': 0.4
+            }
+            
+            tests = {}
+            for scenario, expected_value in expected_improvements.items():
+                # JavaScript 코드에서 해당 시나리오의 개선 효과가 올바르게 설정되어 있는지 확인
+                pattern = rf"'{scenario}':\s*{expected_value}"
+                tests[f"{scenario}_improvement"] = bool(re.search(pattern, content))
+            
+            # 잘못된 값(70.38%)이 포함되어 있지 않은지 확인
+            tests["no_wrong_improvement"] = "0.7037679110577804" not in content and "70.38" not in content
+            
+            passed = sum(tests.values())
+            total = len(tests)
+            
+            return {
+                "status": "PASS" if passed == total else "FAIL",
+                "passed": passed,
+                "total": total,
+                "details": tests,
+                "expected_improvements": expected_improvements
+            }
+            
+        except Exception as e:
+            return {"status": "FAIL", "error": str(e)}
+    
     def run_all_tests(self) -> Dict:
         """모든 테스트 실행"""
         print("🚀 GitHub Pages 테스트 시작")
@@ -332,6 +381,10 @@ class GitHubPagesTester:
             
             # 접근성 테스트
             page_results["accessibility"] = self.test_accessibility(url, page_name)
+            
+            # 시뮬레이터 시나리오별 개선 효과 테스트 (시뮬레이터만)
+            if page_name == "Simulator":
+                page_results["scenario_improvements"] = self.test_simulator_scenario_improvements()
             
             # 페이지별 결과 요약
             page_statuses = [result["status"] for result in page_results.values()]
