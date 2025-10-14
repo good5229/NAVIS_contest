@@ -814,8 +814,13 @@
                         <div class="col-12">
                             <div class="chart-container">
                                 <div class="chart-description">
-                                    <h5><i class="fas fa-map"></i> 시도별 BDS 카테고리 분포 (2024)</h5>
-                                    <p>GeoJSON 경계를 활용해 2024년 BDS 점수 구간별로 시도 분류를 시각화합니다.</p>
+                                    <h5><i class="fas fa-map"></i> 시도별 BDS 카테고리 분포 (<span id="bdsYearLabel">2024</span>)</h5>
+                                    <p>GeoJSON 경계를 활용해 선택한 연도의 BDS 점수 구간별로 시도 분류를 시각화합니다.</p>
+                                    <div class="d-flex align-items-center gap-3 mb-2">
+                                        <label for="bdsYearSlider" class="form-label mb-0 me-2">연도 선택:</label>
+                                        <input type="range" class="form-range" id="bdsYearSlider" min="2016" max="2024" step="1" value="2024" style="max-width: 300px;">
+                                        <span class="badge bg-secondary" id="bdsYearValue">2024</span>
+                                    </div>
                                 </div>
                                 <div id="bdsChoroplethMap"></div>
                             </div>
@@ -1787,21 +1792,29 @@
                 if (!resp.ok) throw new Error('GeoJSON load failed');
                 const geo = await resp.json();
 
-                const map = L.map('bdsChoroplethMap').setView([36.5, 127.8], 6.7);
+                const map = L.map('bdsChoroplethMap', {zoomControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, touchZoom: false}).setView([36.5, 127.8], 6.7);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                // 2024년 값 사전 구성
-                const values2024 = Object.fromEntries(Object.entries(fullBDSData).map(([k,v]) => [k, v.values[v.values.length-1]]));
+                // 연도별 값 사전 구성
+                function valuesByYear(year){
+                    return Object.fromEntries(Object.entries(fullBDSData).map(([k,v]) => {
+                        const idx = v.years.indexOf(year);
+                        return [k, idx>=0? v.values[idx]: undefined];
+                    }));
+                }
                 const bins = [3.0, 4.0, 5.0, 6.0, 7.0];
                 function color(v){
                     return v>=7? '#1a9850' : v>=6? '#66bd63' : v>=5? '#a6d96a' : v>=4? '#fdae61' : v>=3? '#f46d43' : '#d73027';
                 }
 
+                let currentYear = 2024;
+                let values = valuesByYear(currentYear);
+                
                 function style(feature){
                     const name = feature.properties?.NAME_1 || feature.properties?.name || '';
-                    const val = values2024[name];
+                    const val = values[name];
                     return {
                         fillColor: color(val ?? 0),
                         weight: 1,
@@ -1814,11 +1827,11 @@
 
                 function onEachFeature(feature, layer){
                     const name = feature.properties?.NAME_1 || feature.properties?.name || '';
-                    const val = values2024[name];
+                    const val = values[name];
                     layer.bindTooltip(`${name}: ${val!==undefined? val.toFixed(2): 'N/A'}`);
                 }
 
-                L.geoJSON(geo, {style, onEachFeature}).addTo(map);
+                const geoLayer = L.geoJSON(geo, {style, onEachFeature}).addTo(map);
 
                 // 범례
                 const legend = L.control({position:'bottomright'});
@@ -1835,6 +1848,26 @@
                     return div;
                 };
                 legend.addTo(map);
+
+                // 슬라이더 연동
+                const slider = document.getElementById('bdsYearSlider');
+                const label = document.getElementById('bdsYearLabel');
+                const badge = document.getElementById('bdsYearValue');
+                if (slider){
+                    slider.addEventListener('input', () => {
+                        currentYear = parseInt(slider.value, 10);
+                        label.textContent = String(currentYear);
+                        badge.textContent = String(currentYear);
+                        values = valuesByYear(currentYear);
+                        geoLayer.setStyle(style);
+                        geoLayer.eachLayer(l => {
+                            const f = l.feature;
+                            const name = f.properties?.NAME_1 || f.properties?.name || '';
+                            const val = values[name];
+                            l.bindTooltip(`${name}: ${val!==undefined? val.toFixed(2): 'N/A'}`);
+                        });
+                    });
+                }
             } catch(e) {
                 console.error('Choropleth init failed:', e);
             }
