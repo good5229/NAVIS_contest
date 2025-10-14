@@ -1792,7 +1792,7 @@
                 if (!resp.ok) throw new Error('GeoJSON load failed');
                 const geo = await resp.json();
 
-                const map = L.map('bdsChoroplethMap', {zoomControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, touchZoom: false}).setView([36.5, 127.8], 6.7);
+                const map = L.map('bdsChoroplethMap', {zoomControl: false, dragging: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, touchZoom: false}).setView([36.2, 127.6], 6.0);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
