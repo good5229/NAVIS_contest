@@ -335,7 +335,6 @@
             </a>
             
             <h1><i class="fas fa-chart-line"></i> BDS 종합 분석 대시보드</h1>
-            <p class="lead mb-0">지역균형발전지수(BDS) 학술적 검증 및 정책 분석 시스템</p>
             
             <!-- 도움말 버튼 -->
             <button class="help-btn" data-bs-toggle="modal" data-bs-target="#helpModal">
@@ -382,7 +381,7 @@
                     
                     <div class="methodology-box">
                         <h5><i class="fas fa-cogs"></i> 구축 방법론</h5>
-                        <p><strong>BDS(Balanced Development Score)</strong>는 EU RCI 방식을 적용한 한국형 지역균형발전지수입니다.</p>
+                        <p><strong>BDS(지역균형발전지수, Balanced Development Score)</strong>는 EU RCI 방식을 적용한 한국형 지역균형발전지수입니다.</p>
                         <ul>
                     <li><strong>데이터 소스:</strong> ECOS(한국은행) + KOSIS(통계청) 공식 통계 
                         <br><small class="text-muted">• EU RCI 방식 차등 가중치 적용
@@ -1539,7 +1538,7 @@
             });
 
             if (selectedRegions.size === 0) {
-                document.getElementById('regionalTrendsChart').innerHTML = '<div class="text-center p-4"><p class="text-muted">표시할 지역을 선택해주세요.</p></div>';
+                document.getElementById('regionalTrendsChart').innerHTML = '';
                 return;
             }
 
