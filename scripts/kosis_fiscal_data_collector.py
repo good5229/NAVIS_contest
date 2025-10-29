@@ -222,53 +222,8 @@ class KosisFiscalDataCollector:
         logging.info(f"JSON 데이터 저장 완료: {filename}")
     
     def create_sample_data(self) -> Dict:
-        """API 키가 없을 때 사용할 샘플 데이터 생성"""
-        logging.info("샘플 데이터 생성 (API 키 없음)")
-        
-        # 실제 KOSIS 데이터 패턴을 기반으로 한 샘플 데이터
-        sample_data = {
-            2001: [
-                {'region': '서울특별시', 'fiscal_autonomy_ratio': 0.85, 'fiscal_independence_ratio': 0.78, 'per_capita_local_tax': 750000, 'total_revenue': 8000000000000},
-                {'region': '부산광역시', 'fiscal_autonomy_ratio': 0.72, 'fiscal_independence_ratio': 0.65, 'per_capita_local_tax': 580000, 'total_revenue': 2000000000000},
-                {'region': '대구광역시', 'fiscal_autonomy_ratio': 0.68, 'fiscal_independence_ratio': 0.62, 'per_capita_local_tax': 520000, 'total_revenue': 1500000000000},
-                {'region': '인천광역시', 'fiscal_autonomy_ratio': 0.65, 'fiscal_independence_ratio': 0.58, 'per_capita_local_tax': 480000, 'total_revenue': 1800000000000},
-                {'region': '광주광역시', 'fiscal_autonomy_ratio': 0.58, 'fiscal_independence_ratio': 0.52, 'per_capita_local_tax': 450000, 'total_revenue': 900000000000},
-                {'region': '대전광역시', 'fiscal_autonomy_ratio': 0.62, 'fiscal_independence_ratio': 0.56, 'per_capita_local_tax': 500000, 'total_revenue': 1000000000000},
-                {'region': '울산광역시', 'fiscal_autonomy_ratio': 0.55, 'fiscal_independence_ratio': 0.48, 'per_capita_local_tax': 520000, 'total_revenue': 700000000000},
-                {'region': '세종특별자치시', 'fiscal_autonomy_ratio': 0.75, 'fiscal_independence_ratio': 0.68, 'per_capita_local_tax': 650000, 'total_revenue': 250000000000},
-                {'region': '경기도', 'fiscal_autonomy_ratio': 0.78, 'fiscal_independence_ratio': 0.72, 'per_capita_local_tax': 720000, 'total_revenue': 10000000000000},
-                {'region': '강원도', 'fiscal_autonomy_ratio': 0.42, 'fiscal_independence_ratio': 0.35, 'per_capita_local_tax': 320000, 'total_revenue': 500000000000},
-                {'region': '충청북도', 'fiscal_autonomy_ratio': 0.38, 'fiscal_independence_ratio': 0.32, 'per_capita_local_tax': 350000, 'total_revenue': 600000000000},
-                {'region': '충청남도', 'fiscal_autonomy_ratio': 0.25, 'fiscal_independence_ratio': 0.18, 'per_capita_local_tax': 300000, 'total_revenue': 800000000000},
-                {'region': '전라북도', 'fiscal_autonomy_ratio': 0.45, 'fiscal_independence_ratio': 0.38, 'per_capita_local_tax': 340000, 'total_revenue': 700000000000},
-                {'region': '전라남도', 'fiscal_autonomy_ratio': 0.32, 'fiscal_independence_ratio': 0.25, 'per_capita_local_tax': 380000, 'total_revenue': 800000000000},
-                {'region': '경상북도', 'fiscal_autonomy_ratio': 0.41, 'fiscal_independence_ratio': 0.34, 'per_capita_local_tax': 390000, 'total_revenue': 1100000000000},
-                {'region': '경상남도', 'fiscal_autonomy_ratio': 0.28, 'fiscal_independence_ratio': 0.22, 'per_capita_local_tax': 340000, 'total_revenue': 1200000000000},
-                {'region': '제주특별자치도', 'fiscal_autonomy_ratio': 0.48, 'fiscal_independence_ratio': 0.42, 'per_capita_local_tax': 420000, 'total_revenue': 300000000000}
-            ]
-        }
-        
-        # 2001-2025년까지 연도별 데이터 생성 (실제 패턴 기반)
-        for year in range(2002, 2026):
-            sample_data[year] = []
-            for region_data in sample_data[2001]:
-                # 연도별 변화 패턴 적용
-                base_autonomy = region_data['fiscal_autonomy_ratio']
-                base_independence = region_data['fiscal_independence_ratio']
-                year_factor = 1 + (year - 2001) * 0.005  # 연간 0.5% 개선 추세
-                
-                new_autonomy = min(0.95, max(0.20, base_autonomy * year_factor))
-                new_independence = min(0.90, max(0.15, base_independence * year_factor))
-                
-                sample_data[year].append({
-                    'region': region_data['region'],
-                    'fiscal_autonomy_ratio': round(new_autonomy, 3),
-                    'fiscal_independence_ratio': round(new_independence, 3),
-                    'per_capita_local_tax': int(region_data['per_capita_local_tax'] * year_factor),
-                    'total_revenue': int(region_data['total_revenue'] * year_factor)
-                })
-        
-        return sample_data
+        """샘플 데이터 생성을 허용하지 않습니다."""
+        raise RuntimeError("샘플 데이터 생성이 금지되었습니다. 실제 KOSIS API를 사용하세요.")
 
 if __name__ == "__main__":
     collector = KosisFiscalDataCollector()
@@ -280,14 +235,5 @@ if __name__ == "__main__":
         collector.save_to_json(df)
         
     except Exception as e:
-        logging.warning(f"KOSIS API 접근 실패: {str(e)}")
-        logging.info("샘플 데이터 생성으로 대체")
-        
-        # 샘플 데이터 생성
-        sample_data = collector.create_sample_data()
-        
-        # JSON 파일로 저장
-        with open('kosis_fiscal_autonomy_data.json', 'w', encoding='utf-8') as f:
-            json.dump(sample_data, f, ensure_ascii=False, indent=2)
-        
-        logging.info("샘플 데이터 생성 완료: kosis_fiscal_autonomy_data.json")
+        logging.error(f"KOSIS API 접근 실패: {str(e)}")
+        raise

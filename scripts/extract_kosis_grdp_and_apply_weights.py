@@ -108,21 +108,21 @@ def calculate_regional_weights(per_capita_data: Dict[str, float]) -> Dict[str, D
     weight_schemes = {
         'high_income': {
             'grdp': 0.25,
-            'fiscal': 0.25, 
+            'fiscal': 0.25,
             'manufacturing': 0.25,
-            'service': 0.25
+            'cpi': 0.25
         },
         'middle_income': {
             'grdp': 0.35,
             'fiscal': 0.30,
             'manufacturing': 0.20,
-            'service': 0.15
+            'cpi': 0.15
         },
         'low_income': {
             'grdp': 0.40,
             'fiscal': 0.35,
             'manufacturing': 0.15,
-            'service': 0.10
+            'cpi': 0.10
         }
     }
     
@@ -156,7 +156,7 @@ def calculate_regional_weights(per_capita_data: Dict[str, float]) -> Dict[str, D
         
         print(f"   {region:<12} ({category_name}, {per_capita:,.0f}천원): "
               f"GRDP {weights['grdp']:.0%}, 재정 {weights['fiscal']:.0%}, "
-              f"제조업 {weights['manufacturing']:.0%}, 서비스업 {weights['service']:.0%}")
+              f"제조업 {weights['manufacturing']:.0%}, CPI {weights['cpi']:.0%}")
     
     # 분류 요약
     print(f"\n📈 소득 수준별 분류 요약:")
@@ -167,95 +167,119 @@ def calculate_regional_weights(per_capita_data: Dict[str, float]) -> Dict[str, D
     return regional_weights
 
 def calculate_weighted_bds(regional_weights: Dict) -> Dict:
-    """가중치를 적용한 BDS 계산"""
-    
+    """가중치를 적용한 BDS 계산 (실제 데이터 사용)"""
+
     print("\n🔧 가중치 적용 BDS 계산")
     print("="*60)
-    
-    # 기존 BDS 데이터 로드 (최신 데이터)
+
+    # 기존 BDS 데이터 로드 (기준 비교용)
     try:
         bds_file = Path('data/bds/bds_baseline.json')
         with open(bds_file, 'r', encoding='utf-8') as f:
             existing_bds = json.load(f)
-        
         baseline_data = existing_bds.get('baselines', {})
         print(f"✅ 기존 BDS 데이터 로드: {len(baseline_data)}개 지역")
     except Exception as e:
         print(f"❌ 기존 BDS 데이터 로드 실패: {e}")
-        return {}
-    
-    # 샘플 지표 데이터 (실제로는 각 데이터 소스에서 가져와야 함)
-    # 정규화된 값 (0-1 범위)으로 가정
-    sample_indicators = {}
-    
-    for region in regional_weights.keys():
-        # 기존 BDS 점수를 기반으로 역산한 대략적인 지표값
-        existing_score = baseline_data.get(region, 3.0)
-        
-        # 지역 특성에 따른 샘플 지표값 생성
-        if regional_weights[region]['category'] == 'high_income':
-            # 고소득 지역: 모든 지표가 높음
-            sample_indicators[region] = {
-                'grdp_normalized': min(1.0, existing_score / 8.0),
-                'fiscal_normalized': 0.8 + np.random.normal(0, 0.1),
-                'manufacturing_normalized': 0.7 + np.random.normal(0, 0.15),
-                'service_normalized': 0.8 + np.random.normal(0, 0.1)
-            }
-        elif regional_weights[region]['category'] == 'middle_income':
-            # 중소득 지역: 중간 수준
-            sample_indicators[region] = {
-                'grdp_normalized': min(1.0, existing_score / 8.0),
-                'fiscal_normalized': 0.5 + np.random.normal(0, 0.15),
-                'manufacturing_normalized': 0.6 + np.random.normal(0, 0.2),
-                'service_normalized': 0.5 + np.random.normal(0, 0.15)
-            }
-        else:
-            # 저소득 지역: 상대적으로 낮음
-            sample_indicators[region] = {
-                'grdp_normalized': min(1.0, existing_score / 8.0),
-                'fiscal_normalized': 0.3 + np.random.normal(0, 0.1),
-                'manufacturing_normalized': 0.4 + np.random.normal(0, 0.15),
-                'service_normalized': 0.3 + np.random.normal(0, 0.1)
-            }
-        
-        # 값 범위 조정 (0-1)
-        for key in sample_indicators[region]:
-            sample_indicators[region][key] = max(0, min(1, sample_indicators[region][key]))
-    
-    # 가중치 적용 BDS 계산
-    weighted_bds_results = {}
-    
+        baseline_data = {}
+
+    # 실제 지표 데이터 로드
+    fiscal_csv = Path('data/fiscal_autonomy/kosis_fiscal_autonomy_data.csv')
+    gdp_csv = Path('data/kosis/kosis_gdp_data_2023.csv')
+    cpi_csv = Path('data/ecos/ecos_cpi.csv')
+    mfg_csv = Path('data/ecos/ecos_industrial_production_index.csv')
+
+    fiscal_df = pd.read_csv(fiscal_csv)
+    gdp_df = pd.read_csv(gdp_csv) if gdp_csv.exists() else None
+    cpi_df = pd.read_csv(cpi_csv)
+    mfg_df = pd.read_csv(mfg_csv)
+
+    # 공통 연도 결정 (교집합)
+    years = set(fiscal_df['year'].unique())
+    if gdp_df is not None:
+        years &= set(gdp_df['year'].unique())
+    years &= set(cpi_df['year'].unique())
+    years &= set(mfg_df['year'].unique())
+    if not years:
+        raise RuntimeError('공통 연도가 없습니다. 데이터 소스를 확인하세요.')
+    target_year = max(int(y) for y in years)
+    print(f"📅 대상 연도: {target_year}")
+
+    # 연도 필터 및 지역 정리
+    fiscal_y = fiscal_df[(fiscal_df['year'] == target_year) & (fiscal_df['region'] != '전국')][['region','fiscal_autonomy_ratio']]
+    if gdp_df is not None:
+        gdp_y = gdp_df[(gdp_df['year'] == target_year) & (gdp_df['region'] != '전국')][['region','gdp_value']]
+    else:
+        gdp_y = None
+    cpi_y = cpi_df[(cpi_df['year'] == target_year) & (cpi_df['region'] != '전국')][['region','value']].rename(columns={'value':'cpi'})
+    mfg_y = mfg_df[(mfg_df['year'] == target_year) & (mfg_df['region'] != '전국')][['region','value']].rename(columns={'value':'manufacturing_index'})
+
+    # 병합
+    merged = fiscal_y.copy().rename(columns={'fiscal_autonomy_ratio':'fiscal'})
+    if gdp_y is not None:
+        merged = merged.merge(gdp_y, on='region', how='inner')
+    merged = merged.merge(cpi_y, on='region', how='inner')
+    merged = merged.merge(mfg_y, on='region', how='inner')
+
+    # 정규화 함수
+    def min_max(x: pd.Series) -> pd.Series:
+        x = pd.to_numeric(x, errors='coerce')
+        min_v = float(x.min())
+        max_v = float(x.max())
+        if max_v == min_v:
+            return pd.Series([0.5]*len(x), index=x.index)
+        return (x - min_v) / (max_v - min_v)
+
+    # 정규화 (CPI는 낮을수록 좋음 → 역정규화)
+    merged['fiscal_norm'] = min_max(merged['fiscal'])
+    if gdp_y is not None:
+        merged['gdp_norm'] = min_max(merged['gdp_value'])
+    else:
+        merged['gdp_norm'] = 0.0
+    merged['cpi_norm'] = 1.0 - min_max(merged['cpi'])
+    merged['manufacturing_norm'] = min_max(merged['manufacturing_index'])
+
+    # 결과 계산
+    weighted_bds_results: Dict[str, Dict] = {}
     print("📊 지역별 가중치 적용 BDS 계산 결과:")
     print(f"{'지역':<12} {'기존BDS':<8} {'새BDS':<8} {'변화':<8} {'분류'}")
     print("-" * 55)
-    
-    for region in regional_weights.keys():
-        weights = regional_weights[region]['weights']
-        indicators = sample_indicators[region]
-        
-        # 가중치 적용 BDS 계산
-        weighted_bds = (
-            indicators['grdp_normalized'] * weights['grdp'] +
-            indicators['fiscal_normalized'] * weights['fiscal'] +
-            indicators['manufacturing_normalized'] * weights['manufacturing'] +
-            indicators['service_normalized'] * weights['service']
-        ) * 10.0
-        
-        existing_bds_score = baseline_data.get(region, 0)
+
+    region_to_row = {row['region']: row for _, row in merged.iterrows()}
+
+    for region, info in regional_weights.items():
+        if region not in region_to_row:
+            continue
+        row = region_to_row[region]
+        weights = info['weights']
+        # 가중 합산 (사용 가능한 키만)
+        comp = 0.0
+        comp += float(row['gdp_norm']) * float(weights.get('grdp', 0.0))
+        comp += float(row['fiscal_norm']) * float(weights.get('fiscal', 0.0))
+        comp += float(row['manufacturing_norm']) * float(weights.get('manufacturing', 0.0))
+        comp += float(row['cpi_norm']) * float(weights.get('cpi', 0.0))
+        weighted_bds = comp * 10.0
+
+        existing_bds_score = float(baseline_data.get(region, 0.0)) if baseline_data else 0.0
         change = weighted_bds - existing_bds_score
-        
+
         weighted_bds_results[region] = {
             'weighted_bds': round(weighted_bds, 2),
             'existing_bds': round(existing_bds_score, 2),
             'change': round(change, 2),
-            'category': regional_weights[region]['category_name'],
+            'category': info['category_name'],
             'weights': weights,
-            'indicators': indicators
+            'indicators': {
+                'grdp_norm': float(row['gdp_norm']),
+                'fiscal_norm': float(row['fiscal_norm']),
+                'manufacturing_norm': float(row['manufacturing_norm']),
+                'cpi_norm': float(row['cpi_norm'])
+            }
         }
-        
+
         change_str = f"{change:+.2f}"
-        print(f"{region:<12} {existing_bds_score:<8.2f} {weighted_bds:<8.2f} {change_str:<8} {regional_weights[region]['category_name']}")
-    
+        print(f"{region:<12} {existing_bds_score:<8.2f} {weighted_bds:<8.2f} {change_str:<8} {info['category_name']}")
+
     return weighted_bds_results
 
 def save_weighted_bds_results(results: Dict, regional_weights: Dict):
@@ -316,7 +340,7 @@ def save_weighted_bds_results(results: Dict, regional_weights: Dict):
             'grdp_weight': result['weights']['grdp'],
             'fiscal_weight': result['weights']['fiscal'],
             'manufacturing_weight': result['weights']['manufacturing'],
-            'service_weight': result['weights']['service']
+            'cpi_weight': result['weights']['cpi']
         })
     
     csv_df = pd.DataFrame(csv_data)

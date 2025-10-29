@@ -81,59 +81,8 @@ class FiscalAutonomyAnalyzer:
         logging.info("데이터베이스 초기화 완료")
     
     def collect_fiscal_data(self, year: int):
-        """재정 데이터 수집 (시뮬레이션 데이터)"""
-        logging.info(f"{year}년 재정 데이터 수집 시작")
-        
-        # 실제 데이터 패턴을 기반으로 한 시뮬레이션 데이터 생성
-        fiscal_data = []
-        
-        for region in self.regions:
-            # 지역별 특성에 따른 재정 자립도 차이 반영
-            if region in ['서울특별시', '경기도']:
-                base_autonomy = 0.85 + np.random.normal(0, 0.05)
-                per_capita_tax = 800000 + np.random.normal(0, 50000)
-            elif region in ['부산광역시', '대구광역시', '인천광역시']:
-                base_autonomy = 0.70 + np.random.normal(0, 0.08)
-                per_capita_tax = 600000 + np.random.normal(0, 40000)
-            elif region in ['광주광역시', '대전광역시', '울산광역시']:
-                base_autonomy = 0.65 + np.random.normal(0, 0.10)
-                per_capita_tax = 550000 + np.random.normal(0, 35000)
-            elif region == '세종특별자치시':
-                base_autonomy = 0.75 + np.random.normal(0, 0.06)
-                per_capita_tax = 700000 + np.random.normal(0, 45000)
-            else:  # 도 지역
-                base_autonomy = 0.45 + np.random.normal(0, 0.15)
-                per_capita_tax = 400000 + np.random.normal(0, 30000)
-            
-            # 연도별 변화 패턴 적용
-            year_factor = 1 + (year - 1997) * 0.01  # 장기적 개선 추세
-            autonomy_ratio = min(0.95, max(0.20, base_autonomy * year_factor))
-            
-            # 인구 대비 지방세 수입 계산
-            population = self.get_region_population(region, year)
-            local_tax_revenue = per_capita_tax * population * autonomy_ratio
-            
-            # 총 재정수입 계산 (지방세 + 이전지원금 + 기타)
-            total_revenue = local_tax_revenue / autonomy_ratio
-            
-            # 기타 지표 계산
-            fiscal_power_index = autonomy_ratio * 100 + np.random.normal(0, 5)
-            transfer_dependency = (1 - autonomy_ratio) * 100
-            local_debt = total_revenue * (0.3 + np.random.normal(0, 0.1))
-            
-            fiscal_data.append({
-                'region': region,
-                'year': year,
-                'local_tax_revenue': local_tax_revenue,
-                'total_revenue': total_revenue,
-                'fiscal_autonomy_ratio': autonomy_ratio,
-                'fiscal_power_index': fiscal_power_index,
-                'per_capita_local_tax': per_capita_tax,
-                'transfer_dependency_ratio': transfer_dependency,
-                'local_debt_amount': local_debt
-            })
-        
-        return fiscal_data
+        """재정 데이터 수집: 샘플/시뮬레이션 금지. 실제 수집기 출력 사용을 요구."""
+        raise RuntimeError("샘플/시뮬레이션 데이터 수집이 금지되었습니다. KOSIS 수집 결과를 사용하세요.")
     
     def get_region_population(self, region: str, year: int) -> int:
         """지역별 인구 데이터 (기존 데이터 활용)"""
