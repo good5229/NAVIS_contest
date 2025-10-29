@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-실제 NABIS vs BDS v2.0 그레인저 인과관계 검정
+실제 NABIS vs BDS 그레인저 인과관계 검정
 - 실제 데이터를 기반으로 한 통계적 분석
 - 가상 데이터나 시연용 코드 없음
 """
@@ -41,13 +41,13 @@ def extract_navis_data_from_xml() -> Dict[str, List[float]]:
     
     return navis_data
 
-def extract_bds_v2_data() -> Dict[str, List[float]]:
+def extract_bds_data() -> Dict[str, List[float]]:
     """
-    실제 BDS v2.0 데이터 (3지표: GRDP, 재정자립도, 제조업지수)
-    2015-2019년 지역별 데이터
+    실제 BDS 데이터 (3지표: GRDP, 재정자립도, 제조업지수)
+    2015-2019년 지역별 데이터 (서비스 지표 제외)
     """
-    # 실제 BDS v2.0 계산 결과 (서비스업 지수 제외)
-    bds_v2_data = {
+    # 실제 BDS 계산 결과 (서비스업 지수 제외)
+    bds_data = {
         '서울특별시': [7.12, 7.18, 7.24, 7.21, 7.25],  # 2015-2019
         '부산광역시': [4.05, 4.08, 4.11, 4.09, 4.12],
         '대구광역시': [3.65, 3.68, 3.71, 3.69, 3.72],
@@ -66,7 +66,7 @@ def extract_bds_v2_data() -> Dict[str, List[float]]:
         '제주특별자치도': [3.19, 3.22, 3.24, 3.23, 3.25]
     }
     
-    return bds_v2_data
+    return bds_data
 
 def calculate_correlation(x: List[float], y: List[float]) -> float:
     """피어슨 상관계수 계산"""
@@ -139,14 +139,14 @@ def simple_granger_test(x: List[float], y: List[float], lag: int = 1) -> Tuple[f
 def perform_granger_analysis() -> Dict[str, Any]:
     """실제 그레인저 인과관계 분석 수행"""
     
-    logger.info("실제 NABIS vs BDS v2.0 그레인저 인과관계 분석 시작")
+    logger.info("실제 NABIS vs BDS 그레인저 인과관계 분석 시작")
     
     # 실제 데이터 로드
     navis_data = extract_navis_data_from_xml()
-    bds_data = extract_bds_v2_data()
+    bds_data = extract_bds_data()
     
     logger.info(f"NABIS 데이터: {len(navis_data)}개 지역")
-    logger.info(f"BDS v2.0 데이터: {len(bds_data)}개 지역")
+    logger.info(f"BDS 데이터: {len(bds_data)}개 지역")
     
     # 공통 지역 확인
     common_regions = set(navis_data.keys()) & set(bds_data.keys())
@@ -248,7 +248,7 @@ def save_results(results: Dict[str, Any]) -> None:
     
     # 요약 출력
     print("\n" + "="*60)
-    print("실제 NABIS vs BDS v2.0 그레인저 인과관계 분석 결과")
+    print("실제 NABIS vs BDS 그레인저 인과관계 분석 결과")
     print("="*60)
     print(f"분석 기간: {results['data_period']}")
     print(f"총 지역 수: {results['total_regions']}개")
@@ -258,7 +258,7 @@ def save_results(results: Dict[str, Any]) -> None:
     
     granger = results['granger_results']
     print("그레인저 인과관계 검정 결과:")
-    print(f"• BDS v2.0 선행: {granger['bds_leads']['count']}개 지역 ({granger['bds_leads']['percentage']}%)")
+    print(f"• BDS 선행: {granger['bds_leads']['count']}개 지역 ({granger['bds_leads']['percentage']}%)")
     if granger['bds_leads']['regions']:
         print(f"  - 지역: {', '.join(granger['bds_leads']['regions'])}")
         print(f"  - 평균 p-value: {granger['bds_leads']['avg_p_value']}")

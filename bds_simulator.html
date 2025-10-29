@@ -212,7 +212,7 @@
                         <div class="scenario-icon"><i class="fas fa-balance-scale"></i></div>
                         <h5>균형발전</h5>
                         <p>모든 정책 영역을 균등하게 투자</p>
-                    </div>
+                        </div>
                 </div>
                 <div class="col-md-4">
                     <div class="scenario-card" data-scenario="경제중심">
@@ -226,18 +226,18 @@
                         <div class="scenario-icon"><i class="fas fa-heart"></i></div>
                         <h5>사회중심</h5>
                         <p>복지, 교육, 환경 정책 집중 투자</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                
             <div class="row mt-3">
                 <div class="col-md-4">
                     <div class="scenario-card" data-scenario="혁신중심">
                         <div class="scenario-icon"><i class="fas fa-lightbulb"></i></div>
                         <h5>혁신중심</h5>
                         <p>산업, R&D, 교육 정책 집중 투자</p>
-                    </div>
-                </div>
+                        </div>
+                        </div>
                 <div class="col-md-4">
                     <div class="scenario-card" data-scenario="환경중심">
                         <div class="scenario-icon"><i class="fas fa-leaf"></i></div>
@@ -297,12 +297,12 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body text-center">
-                            <div><i class="fas fa-chart-line"></i> BDS 개선 효과</div>
+                        <div><i class="fas fa-chart-line"></i> BDS 개선 효과</div>
                             <div class="h4" id="bds-improvement">0%p</div>
                         </div>
                     </div>
                 </div>
-            </div>
+                        </div>
 
             <!-- 차트 영역 -->
             <div class="row mt-4">
@@ -311,12 +311,34 @@
                         <div class="chart-description">
                             <h6><i class="fas fa-chart-bar"></i> 지역별 BDS 개선 효과</h6>
                             <p>정책 실행 후 각 지역의 BDS 개선 효과를 비교합니다. 빨간색은 현재 BDS, 파란색은 3년 후 예측 BDS입니다.</p>
-                        </div>
+                    </div>
                         <div id="bds-improvement-chart"></div>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- 현재 vs 3년 후 예측 지도를 좌우 배치 -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-description">
+                            <h6><i class="fas fa-map"></i> 현재 BDS (시도별)</h6>
+                            <p class="mb-1">현재 BDS 점수를 시도별로 표시합니다.</p>
+                        </div>
+                        <div id="current-bds-map" style="height: 380px;"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <div class="chart-description">
+                            <h6><i class="fas fa-map"></i> 3년 후 예측 BDS (시도별)</h6>
+                            <p class="mb-1">시뮬레이션 결과를 바탕으로 3년 후 예측치를 표시합니다.</p>
+                        </div>
+                        <div id="final-bds-map" style="height: 380px;"></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="chart-container">
@@ -325,9 +347,9 @@
                             <p>선택된 시나리오에서 각 정책 카테고리별 BDS 개선 효과를 보여줍니다.</p>
                         </div>
                         <div id="policy-effects-chart"></div>
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
 
             <!-- 지역별 상세 결과 테이블 -->
             <div class="row mt-4">
@@ -338,8 +360,8 @@
                             <p>각 지역의 현재 BDS, 3년 후 예측 BDS, 개선 효과, 순위를 표시합니다. 컬럼 헤더를 클릭하여 정렬할 수 있습니다.</p>
                             <div class="alert alert-info mt-2" id="selected-scenario-info" style="display: none;">
                                 <strong><i class="fas fa-info-circle"></i> 선택된 시나리오:</strong> <span id="scenario-name"></span>
-                            </div>
-                        </div>
+                </div>
+                    </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover" id="region-results-table">
                                 <thead class="table-dark">
@@ -355,7 +377,7 @@
                                     <!-- 동적으로 생성됨 -->
                                 </tbody>
                             </table>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -385,8 +407,8 @@
                                 • <strong>안전중심:</strong> 안전, 환경, 복지 정책 집중 투자<br>
                                 • <strong>주거중심:</strong> 주거, 환경, 안전 정책 집중 투자<br>
                                 • <strong>R&D중심:</strong> R&D, 교육, 산업 정책 집중 투자
-                            </div>
-                        </div>
+                    </div>
+                    </div>
                         <div class="col-md-6">
                             <h6><i class="fas fa-chart-bar"></i> 시뮬레이션 결과</h6>
                             <div class="alert alert-success">
@@ -395,9 +417,9 @@
                                 • <strong>3년 후 예측:</strong> 정책 실행 후 예상 BDS 점수<br>
                                 • <strong>개선 효과:</strong> 정책으로 인한 BDS 증가분<br>
                                 • <strong>순위:</strong> 개선 효과 기준 지역별 순위
-                            </div>
-                        </div>
                     </div>
+                </div>
+            </div>
                     
                     <div class="row mt-3">
                         <div class="col-md-6">
@@ -414,8 +436,8 @@
                                 • <strong>문화:</strong> 문화예술 정책<br>
                                 • <strong>주거:</strong> 주거환경 정책<br>
                                 • <strong>안전:</strong> 안전관리 정책
-                            </div>
-                        </div>
+        </div>
+    </div>
                         <div class="col-md-6">
                             <h6><i class="fas fa-calculator"></i> 시뮬레이션 방법론</h6>
                             <div class="alert alert-info">
@@ -426,10 +448,10 @@
                                 • 정책 민감도: 0.6-0.9<br>
                                 • 시너지 잠재력: 0.5-0.8<br>
                                 • 한계효용 체감: 0.3-0.7
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                    </div>
+                    </div>
+                    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
                 </div>
@@ -456,10 +478,10 @@
                 
                 console.log("시뮬레이션 결과:", results);
                 
-                // 결과 표시
-                displayBDSSimulationResults(results);
-                
-                document.getElementById('results-section').style.display = 'block';
+            // 결과 표시
+            displayBDSSimulationResults(results);
+            
+            document.getElementById('results-section').style.display = 'block';
                 
                 console.log("BDS 시뮬레이션 완료");
             } catch (error) {
@@ -526,9 +548,8 @@
                     "제주특별자치도": {"development_level": "middle", "policy_sensitivity": 0.8, "synergy_potential": 0.6, "diminishing_returns": 0.5, "regional_focus": ["환경", "문화", "복지"]}
                 };
                 
-                // 현재 BDS 데이터 (2019년 기준, 3지표 기반 BDS v2.0)
-                // 출처: data/bds/bds_v2_nabis_comparison.json
-                // 방법론: GRDP(40%) + 재정자립도(35%) + 제조업생산지수(25%)
+                // 현재 BDS 데이터 (예시 표기 제거, 명칭 통일)
+                // 구성 지표: GRDP, 재정자립도, CPI(역정규화), 제조업생산지수
                 this.currentBDSData = {
                     "서울특별시": 7.25,
                     "경기도": 6.78,
@@ -745,6 +766,9 @@
                 // 정책 카테고리별 효과 차트 생성
                 createPolicyEffectsChart(results);
                 
+                // 현재/예측 지도 생성
+                createBDSMaps(results);
+                
                 // 지역별 상세 결과 테이블 생성
                 createRegionResultsTable(results);
                 
@@ -752,6 +776,72 @@
             } catch (error) {
                 console.error("시뮬레이션 결과 표시 오류:", error);
                 alert("결과 표시 중 오류가 발생했습니다: " + error.message);
+            }
+        }
+
+        // 현재/예측 BDS 지도를 생성
+        async function createBDSMaps(results) {
+            try {
+                if (!window.L) {
+                    await new Promise((resolve) => {
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+                        document.head.appendChild(link);
+                        const script = document.createElement('script');
+                        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+                        script.onload = resolve;
+                        document.body.appendChild(script);
+                    });
+                }
+                const resp = await fetch('data/nabis/skorea-provinces-2018-geo.json');
+                if (!resp.ok) return;
+                const geo = await resp.json();
+
+                const current = {};
+                const final = {};
+                Object.entries(results.regions).forEach(([region, data]) => {
+                    current[region] = data.currentBDS ?? data.current_bds ?? data.current;
+                    final[region] = data.finalBDS ?? data.final_bds ?? data.predicted ?? (current[region] + (data.totalImprovement ?? data.improvement ?? 0));
+                });
+
+                function color(v){
+                    return v>=7? '#1a9850' : v>=6? '#66bd63' : v>=5? '#a6d96a' : v>=4? '#fdae61' : v>=3? '#f46d43' : '#d73027';
+                }
+                function styleFactory(values){
+                    return function(feature){
+                        const name = feature.properties?.NAME_1 || feature.properties?.name || '';
+                        const val = values[name];
+                        return {fillColor: color(val ?? 0), weight: 1, color: '#fff', opacity: 1, fillOpacity: 0.85};
+                    };
+                }
+                function onEachFactory(values){
+                    return function(feature, layer){
+                        const name = feature.properties?.NAME_1 || feature.properties?.name || '';
+                        const val = values[name];
+                        layer.bindTooltip(`${name}: ${val!==undefined? val.toFixed(2): 'N/A'}`);
+                    };
+                }
+
+                const opts = {zoomControl:false, dragging:false, scrollWheelZoom:false, doubleClickZoom:false, boxZoom:false, keyboard:false, touchZoom:false};
+                const center = [36.2, 127.6];
+                const zoom = 6.0;
+
+                // 기존 지도 제거 (재실행 시 중복 초기화 방지)
+                const currentEl = document.getElementById('current-bds-map');
+                const finalEl = document.getElementById('final-bds-map');
+                if (currentEl) { currentEl.innerHTML = ''; }
+                if (finalEl) { finalEl.innerHTML = ''; }
+
+                const currentMap = L.map('current-bds-map', opts).setView(center, zoom);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap'}).addTo(currentMap);
+                L.geoJSON(geo, {style: styleFactory(current), onEachFeature: onEachFactory(current)}).addTo(currentMap);
+
+                const finalMap = L.map('final-bds-map', opts).setView(center, zoom);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap'}).addTo(finalMap);
+                L.geoJSON(geo, {style: styleFactory(final), onEachFeature: onEachFactory(final)}).addTo(finalMap);
+            } catch(e) {
+                console.error('BDS 지도 생성 오류:', e);
             }
         }
         
@@ -815,52 +905,22 @@
         function createPolicyEffectsChart(results) {
             try {
                 const policyEffects = {};
-                
-                // 모든 정책 카테고리 초기화
                 const allCategories = ['산업', '경제', '재정', 'R&D', '복지', '교육', '환경', '문화', '주거', '안전'];
-                allCategories.forEach(category => {
-                    policyEffects[category] = 0;
-                });
-                
-                // 모든 지역의 정책 효과 합계 (실제 계산된 값만 사용)
-                Object.values(results.regions).forEach(region => {
-                    Object.entries(region.policyEffects).forEach(([category, effect]) => {
-                        if (policyEffects.hasOwnProperty(category)) {
-                            policyEffects[category] += effect;
-                        }
-                    });
-                });
-                
-                // 시나리오에 포함되지 않은 카테고리도 기본 효과 계산
                 const simulator = new EnhancedBDSSimulatorV2();
                 const scenario = results.scenario;
                 const scenarioParams = simulator.getScenarioPolicyParameters(scenario);
-                
-                // 시나리오에 포함되지 않은 카테고리에 대해 기본 효과 계산
+
+                // 카테고리별 총효과를 시나리오 강도/기간을 반영해 직접 계산
                 allCategories.forEach(category => {
-                    if (!scenarioParams[category] && policyEffects[category] === 0) {
-                        // 기본 정책 효과 계산 (강도 0.5, 기간 3년)
-                        let totalEffect = 0;
-                        Object.keys(results.regions).forEach(regionName => {
-                            const regionChar = simulator.regionalCharacteristics[regionName];
-                            const currentBDS = simulator.currentBDSData[regionName];
-                            
-                            if (regionChar && currentBDS !== undefined) {
-                                // 기본 효과 계산
-                                const baseEffect = 0.5 * simulator.indicatorWeights[category] * simulator.policyEffectCoefficients.direct_effect * regionChar.policy_sensitivity;
-                                const timeEffect = baseEffect * (1 - Math.exp(-simulator.policyEffectCoefficients.time_delay * 3)) * regionChar.policy_sensitivity;
-                                const synergyMultiplier = regionChar.regional_focus.includes(category) ? 1.5 : 1.0;
-                                const synergyEffect = baseEffect * simulator.policyEffectCoefficients.synergy_effect * regionChar.synergy_potential * synergyMultiplier;
-                                const diminishingEffect = timeEffect * (1 - regionChar.diminishing_returns * 0.5);
-                                const bdsAdjustment = simulator.calculateBDSAdjustment(currentBDS, regionChar.development_level);
-                                
-                                const categoryEffect = (baseEffect + timeEffect + synergyEffect + diminishingEffect) * bdsAdjustment;
-                                totalEffect += categoryEffect;
-                            }
-                        });
-                        
-                        policyEffects[category] = totalEffect;
-                    }
+                    const params = scenarioParams[category] || { intensity: 0.5, duration: 3 };
+                    let totalEffect = 0;
+                    Object.keys(results.regions).forEach(regionName => {
+                        const effect = simulator.simulatePolicyEffect(regionName, category, params.intensity, params.duration);
+                        if (!Number.isNaN(effect) && Number.isFinite(effect)) {
+                            totalEffect += effect;
+                        }
+                    });
+                    policyEffects[category] = totalEffect;
                 });
                 
                 const categories = Object.keys(policyEffects);
@@ -869,16 +929,9 @@
                 // 선택된 시나리오에 따라 색상 배열 생성 (메인/서브 구분)
                 const colors = categories.map(category => {
                     if (scenarioParams[category]) {
-                        // 시나리오 이름과 같은 카테고리는 메인 (주황색)
-                        if (scenario === category + '중심' || scenario === category + '예술중심') {
-                            return '#ff6b35'; // 메인 카테고리 - 주황색
-                        } else {
-                            return '#ffa500'; // 서브 카테고리 - 연한 주황색
-                        }
-                    } else {
-                        // 시나리오에 포함되지 않은 카테고리는 회색
-                        return '#95a5a6';
+                        return '#ff6b35';
                     }
+                    return '#95a5a6';
                 });
                 
                 const trace = {
@@ -992,7 +1045,7 @@
                 // 정렬 기능 추가
                 addSortingFunctionality();
                 
-            } catch (error) {
+        } catch (error) {
                 console.error('지역별 상세 결과 테이블 생성 오류:', error);
             }
         }

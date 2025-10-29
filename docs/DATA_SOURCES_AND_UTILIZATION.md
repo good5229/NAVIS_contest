@@ -88,14 +88,13 @@ data/nabis/
 ### 4. BDS 데이터
 ```
 data/bds/
-├── bds_v2_nabis_comparison.json - BDS-NABIS 비교
-├── bds_timeseries.json - 시계열 데이터
-├── bds_regional_data.json - 지역별 데이터
-├── bds_metadata.json - 메타데이터
-└── simulation_results/ - 시뮬레이션 결과
-    ├── economic_centric.csv
-    ├── social_centric.csv
-    └── environmental_centric.csv
+├── bds_baseline.json - 대시보드/시뮬레이터 기준 BDS (최신 연도)
+├── bds_yearly_baselines.json - 연도별 베이스라인 집계
+├── bds_full_timeseries_results.csv - 전체 시계열 산출
+├── bds_weighted_results.json - 가중치 적용 결과 (요약)
+├── bds_weighted_results.csv - 가중치 적용 결과 (상세)
+├── bds_detailed_2023.csv - 2023년 상세 산출
+└── real_granger_analysis_results.json - 선행성 분석 결과
 ```
 
 ## 데이터 활용 현황

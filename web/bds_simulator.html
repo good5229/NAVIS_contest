@@ -117,17 +117,17 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="main-container">
-            <div class="header">
-                <!-- 홈 버튼 -->
-                <a href="index.html" class="home-btn" title="메인 페이지로 돌아가기">
-                    <i class="fas fa-home"></i>
-                </a>
-                
+    <div class="main-container">
+        <div class="header">
+            <!-- 홈 버튼 -->
+            <a href="index.html" class="home-btn" title="메인 페이지로 돌아가기">
+                <i class="fas fa-home"></i>
+            </a>
+            
                 <h1 class="display-4"><i class="fas fa-chart-line"></i> RDI 기반 정책 시뮬레이터</h1>
                 <p class="lead">NABIS 객관지표 데이터를 활용한 지역발전지수 정책 효과 분석</p>
             </div>
-
+            
             <div class="row">
                 <div class="col-md-8">
                     <div class="parameter-section">
@@ -136,10 +136,10 @@
                         
                         <div class="row" id="scenario-cards">
                             <!-- 시나리오 카드들이 여기에 동적으로 생성됩니다 -->
-                        </div>
                     </div>
                 </div>
-                
+            </div>
+
                 <div class="col-md-4">
                     <div class="parameter-section">
                         <h3><i class="fas fa-info-circle"></i> RDI 구조</h3>
@@ -164,17 +164,17 @@
                         <div class="rdi-section">
                             <h5>주민활력지수 (공동체의 터)</h5>
                             <div class="rdi-indicator">인구변화</div>
-                        </div>
-                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
             <div class="text-center">
                 <button class="btn btn-simulate" onclick="runRDISimulation()">
                     <i class="fas fa-play"></i> 시뮬레이션 실행
                 </button>
-            </div>
-
+                    </div>
+                    
             <div class="results-section" id="results-section" style="display: none;">
                 <h3><i class="fas fa-chart-bar"></i> 시뮬레이션 결과</h3>
                 <div id="results-content">
@@ -406,26 +406,26 @@
             const regions = regionData.map(([region, data]) => region);
             const currentRDIs = regionData.map(([region, data]) => data.current_rdi);
             const newRDIs = regionData.map(([region, data]) => data.predicted_rdi);
-            
-            const trace1 = {
-                x: regions,
+                
+                const trace1 = {
+                    x: regions,
                 y: currentRDIs,
-                type: 'bar',
+                    type: 'bar',
                 name: '현재 RDI',
                 marker: { color: '#667eea' }
-            };
-            
-            const trace2 = {
-                x: regions,
+                };
+                
+                const trace2 = {
+                    x: regions,
                 y: newRDIs,
-                type: 'bar',
+                    type: 'bar',
                 name: '예측 RDI',
                 marker: { color: '#28a745' }
-            };
-            
-            const layout = {
+                };
+                
+                const layout = {
                 title: `${results.scenario} 정책 시뮬레이션 결과`,
-                xaxis: { title: '지역' },
+                    xaxis: { title: '지역' },
                 yaxis: { title: 'RDI 점수' },
                 barmode: 'group'
             };

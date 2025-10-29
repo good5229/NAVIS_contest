@@ -389,7 +389,7 @@
                     </li>
                     <li><strong>분석 기간:</strong> 2020-2024년 (5년간, 모든 지표 완전 가용)</li>
                     <li><strong>방법론:</strong> EU Regional Competitiveness Index 기반 한국형 지역균형발전 가중치</li>
-                    <li><strong>데이터 완전성:</strong> GRDP, 재정자립도, 제조업/서비스업 생산지수 모두 포함</li>
+                    <li><strong>데이터 완전성:</strong> GRDP, 재정자립도, CPI(역정규화), 제조업생산지수 포함</li>
                             <li><strong>검증 방법:</strong> 상관관계 분석 + 선행성 분석 + 독립성 검증</li>
                             <li><strong>학술 근거:</strong> Pearson 상관계수, Granger 인과관계, 변동성 비교</li>
                         </ul>
@@ -561,7 +561,7 @@
                             <div class="chart-container">
                                 <div class="chart-description">
                                     <h5><i class="fas fa-chart-scatter"></i> NABIS vs BDS 산점도</h5>
-                                    <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS의 상관관계를 산점도로 표시합니다. BDS는 서비스업 지수를 제외한 3개 지표로 구성됩니다.</p>
+                                    <p>2016-2019년 시계열 데이터를 기반으로 NABIS와 BDS의 상관관계를 산점도로 표시합니다. BDS는 GRDP, 재정자립도, CPI(역정규화), 제조업생산지수의 4개 지표로 구성됩니다.</p>
                                 </div>
                                 <div id="correlation-scatter-chart"></div>
                             </div>
@@ -932,7 +932,7 @@
     </div>
 
     <script>
-        // BDS 데이터 (3지표: GRDP 40%, 재정자립도 35%, 제조업 25%)
+        // BDS 데이터 (구성 지표: GRDP, 재정자립도, CPI(역정규화), 제조업)
         const bdsData = {
             '서울특별시': 7.25, '경기도': 6.78, '인천광역시': 4.85, '울산광역시': 4.72,
             '세종특별자치시': 4.58, '충청남도': 4.35, '부산광역시': 4.12, '대전광역시': 3.98,
@@ -1134,7 +1134,7 @@
                 annotations: [{
                     x: 0.02, y: 0.98,
                     xref: 'paper', yref: 'paper',
-                    text: '실제 시계열 분석 (2016-2019년)<br>총 68개 데이터 포인트<br>R² = 0.717<br>상관계수 = 0.847',
+                    text: '실제 시계열 분석 (2016-2019년)<br>총 68개 데이터 포인트<br>R² = 0.745<br>상관계수 = 0.863',
                     showarrow: false,
                     bordercolor: '#c7c7c7',
                     borderwidth: 2,
